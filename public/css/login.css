@@ -1,0 +1,225 @@
+body {
+  margin: 0;
+  line-height: normal;
+}
+.frame-icon,
+.masuk-ke {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.frame-icon {
+  width: 712px;
+  height: 669px;
+  overflow: hidden;
+  opacity: 0.35;
+}
+.masuk-ke {
+  font-weight: 800;
+}
+.masuk-ke-parent,
+.nyuci-in {
+  position: absolute;
+  width: 541.89px;
+}
+.nyuci-in {
+  top: 109.47px;
+  left: 0;
+  font-size: var(--font-size-2xl);
+  display: inline-block;
+}
+.masuk-ke-parent {
+  top: 88px;
+  left: 60px;
+  height: 181.47px;
+}
+.jika-belum-punya {
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-weight: 500;
+  display: inline-block;
+  width: 439.11px;
+}
+.span {
+  font-weight: 600;
+}
+.daftar-disini,
+.kamu-bisa {
+  position: absolute;
+  top: 42.22px;
+  left: 0;
+  display: inline-block;
+  width: 123.85px;
+}
+.daftar-disini {
+  left: 128.07px;
+  font-weight: 600;
+  color: var(--color-mediumturquoise);
+  width: 156.22px;
+  text-shadow: 0 5.629629611968994px 5.63px rgba(0, 0, 0, 0.25);
+}
+.jika-belum-punya-akun-parent {
+  position: absolute;
+  top: 323px;
+  left: 64px;
+  width: 439.11px;
+  height: 76.22px;
+  font-size: var(--font-size-base);
+}
+.frame-parent,
+.login-1-inner,
+.password-child {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 712px;
+  height: 669px;
+}
+.login-1-inner,
+.password-child {
+  top: 149px;
+  left: 113px;
+}
+.password-child {
+  top: 0;
+  left: 0;
+  border-radius: var(--br-sm);
+  background-color: var(--color-white);
+  width: 369px;
+  height: 62px;
+}
+.password1 {
+  position: absolute;
+  top: 20px;
+  left: 29.25px;
+  display: inline-block;
+  width: 82.13px;
+}
+.invisible-1-icon {
+  position: absolute;
+  top: 24px;
+  left: 320px;
+  width: 17px;
+  height: 17px;
+  overflow: hidden;
+}
+.forgot-password {
+  position: absolute;
+  top: 79px;
+  left: 250px;
+  font-size: 13px;
+  color: #b0b0b0;
+}
+.login-child,
+.password {
+  position: absolute;
+  top: 173px;
+  left: 0;
+  width: 373px;
+  height: 99px;
+}
+.login-child {
+  height: 100%;
+  width: 100%;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: var(--br-md);
+  background-color: var(--color-darkturquoise);
+  box-shadow: 0 4px 61px rgba(30, 191, 193, 0.3);
+
+}
+.login1 {
+  position: absolute;
+  top: 30.51%;
+  left: 42.82%;
+  font-weight: 500;
+}
+.login,
+.or-continue-with {
+  position: absolute;
+  font-size: var(--font-size-sm);
+}
+.login {
+  height: 10.86%;
+  width: 98.93%;
+  top: 58.55%;
+  right: 1.07%;
+  bottom: 30.59%;
+  left: 0;
+  color: var(--color-white);
+}
+.or-continue-with {
+  top: 431px;
+  left: 120px;
+  font-weight: 500;
+  color: var(--color-silver);
+}
+.group-child {
+  top: 500px;
+  left: 102px;
+  width: 165px;
+  height: 43.12px;
+}
+.email1,
+.group-child,
+.masuk {
+  position: absolute;
+}
+.masuk {
+  top: 0;
+  left: 0;
+  font-size: var(--font-size-xl);
+  font-weight: 500;
+  color: var(--color-white);
+}
+.email1 {
+  top: 20px;
+  left: 29px;
+  display: inline-block;
+  width: 114px;
+}
+.email,
+.password-parent {
+  position: absolute;
+  top: 81px;
+  left: 0;
+  width: 369px;
+  height: 62px;
+}
+.password-parent {
+  top: 174px;
+  left: 991px;
+  width: 373px;
+  height: 543.12px;
+  font-size: var(--font-size-xs);
+  color: var(--color-darkslategray-200);
+
+}
+.kembali {
+  position: absolute;
+  top: 55px;
+  left: 1293px;
+  font-size: var(--font-size-sm);
+  color: var(--color-white);
+  text-align: center;
+}
+.nyuci-in1 {
+  position: absolute;
+  top: 46px;
+  left: 160px;
+  font-size: var(--font-size-lg);
+  font-weight: 700;
+}
+.login-1 {
+  position: relative;
+  background-color: var(--color-darkslategray-200);
+  width: 100%;
+  height: 900px;
+  overflow: hidden;
+  text-align: left;
+  font-size: var(--font-size-3xl);
+  color: var(--color-white);
+  font-family: var(--font-poppins);
+}

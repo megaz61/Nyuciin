@@ -1,0 +1,45 @@
+:root {
+  /* fonts */
+  --font-reem-kufi-ink: "Reem Kufi Ink";
+  --font-poppins: Poppins;
+
+  /* font sizes */
+  --font-size-2xs: 15px;
+  --font-size-xs: 16px;
+  --font-size-sm: 18px;
+  --font-size-base: 18.09px;
+  --font-size-lg: 19.9px;
+  --font-size-xl: 19.04px;
+  --font-size-2xl: 22.52px;
+  --font-size-3xl: 23.8px;
+  --font-size-4xl: 23.25px;
+  --font-size-5xl: 27px;
+  --font-size-6xl: 28.42px;
+  --font-size-7xl: 30px;
+  --font-size-8xl: 31px;
+  --font-size-9xl: 47.89px;
+  --font-size-10xl: 68.42px;
+
+  /* Colors */
+  --color-darkslategray-100: #494949;
+  --color-darkslategray-200: #143f41;
+  --color-gray-100: #faffff;
+  --color-gray-200: #122526;
+  --color-white: #fff;
+  --color-black: #000;
+  --color-darkturquoise-100: #54cfdb;
+  --color-darkturquoise-200: #1ebfc1;
+  --color-silver: #b5b5b5;
+  --color-mediumturquoise: #72f0fb;
+
+  /* Gaps */
+  --gap-md: 40px;
+
+  /* Paddings */
+  --padding-sm: 10px;
+  --padding-md: 98.17973327636719px;
+
+  /* border radiuses */
+  --br-sm: 8px;
+  --br-md: 9px;
+}
