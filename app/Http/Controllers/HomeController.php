@@ -6,10 +6,12 @@ use Illuminate\Http\Request;
 use App\Models\User;
 Use Alert;
 use Illuminate\Support\Facades\Auth;
-
+use App\Models\tempat;
 class HomeController extends Controller
 {
-    public function index(){
-        return view('index');
+
+    public function index(tempat $tempats){
+        $tempats = tempat::paginate(10);
+        return view('/tes/home',compact('tempats'));
     }
 }
