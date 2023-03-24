@@ -1,0 +1,264 @@
+.riwayat-child {
+  position: absolute;
+  top: 143px;
+  left: 78px;
+  border-radius: var(--br-mid);
+  width: 1274px;
+  height: 1040px;
+}
+.riwayat-inner,
+.riwayat-item {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: var(--color-darkslategray-200);
+  width: 1440px;
+  height: 119px;
+}
+.riwayat-inner {
+  top: 544px;
+  left: 177px;
+  border-radius: var(--br-3xs);
+  background-color: var(--color-white);
+  box-shadow: -5px 14px 30px rgba(143, 134, 134, 0.25);
+  width: 1106px;
+  height: 166px;
+  cursor: pointer;
+}
+.nilai1 {
+  position: relative;
+  font-weight: 500;
+}
+.nilai-container {
+  position: absolute;
+  top: 600px;
+  left: 1097px;
+  border-radius: var(--br-3xs);
+  background-color: var(--color-goldenrod-200);
+  box-shadow: -5px 14px 30px rgba(143, 134, 134, 0.25);
+  display: flex;
+  flex-direction: row;
+  padding: var(--padding-3xs) var(--padding-31xl);
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+.booking-id,
+.carwash69,
+.lf3up-dp908-opiu7-jk91k {
+  position: absolute;
+  top: 3px;
+  left: 0;
+  font-weight: 500;
+  display: inline-block;
+  width: 119px;
+  height: 30px;
+}
+.carwash69,
+.lf3up-dp908-opiu7-jk91k {
+  top: 0;
+  left: 300px;
+  width: 305px;
+}
+.carwash69 {
+  top: 50px;
+  left: 474px;
+  width: 131px;
+}
+.div,
+.tanggal-booking,
+.tempat-nyuci {
+  position: absolute;
+  top: 103px;
+  left: 478px;
+  font-weight: 500;
+}
+.tanggal-booking,
+.tempat-nyuci {
+  top: 53px;
+  left: 0;
+  display: inline-block;
+  width: 159px;
+  height: 31px;
+}
+.tanggal-booking {
+  top: 104px;
+  width: 222px;
+  height: 30px;
+}
+.booking-id-parent {
+  position: absolute;
+  top: 559px;
+  left: 417px;
+  width: 606px;
+  height: 137px;
+  color: var(--color-slategray);
+}
+.group-child,
+.rectangle-icon {
+  position: absolute;
+  border-radius: var(--br-3xs);
+}
+.rectangle-icon {
+  top: 553px;
+  left: 184px;
+  width: 197px;
+  height: 156px;
+  object-fit: cover;
+}
+.group-child {
+  top: 0;
+  left: 0;
+  background-color: var(--color-white);
+  box-shadow: -5px 14px 30px rgba(143, 134, 134, 0.25);
+  width: 1106px;
+  height: 166px;
+}
+.booking-id-group,
+.rectangle-icon1 {
+  position: absolute;
+  top: 15px;
+  left: 240px;
+  width: 606px;
+  height: 137px;
+}
+.rectangle-icon1 {
+  top: 9px;
+  left: 7px;
+  border-radius: var(--br-3xs);
+  width: 197px;
+  height: 156px;
+  object-fit: cover;
+}
+.b {
+  position: absolute;
+  top: 65px;
+  left: 1002.01px;
+  font-size: var(--font-size-4xl-8);
+  font-family: var(--font-reem-kufi-ink);
+  color: var(--color-black);
+}
+.vector-icon15 {
+  position: absolute;
+  height: 14.32%;
+  width: 2.37%;
+  top: 42.77%;
+  right: 9.93%;
+  bottom: 42.91%;
+  left: 87.7%;
+  max-width: 100%;
+  overflow: hidden;
+  max-height: 100%;
+}
+.rectangle-group,
+.rectangle-parent {
+  position: absolute;
+  top: 733px;
+  left: 177px;
+  width: 1106px;
+  height: 166px;
+  color: var(--color-slategray);
+}
+.rectangle-group {
+  top: 922px;
+}
+.frame-icon2 {
+  position: absolute;
+  top: 32px;
+  left: 76px;
+  width: 52.16px;
+  height: 51.73px;
+  overflow: hidden;
+}
+.rectangle1 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  border: 2.6px solid var(--color-white);
+  box-sizing: border-box;
+  width: 160.56px;
+  height: 48.69px;
+}
+.sign-up1 {
+  position: absolute;
+  top: 11.16px;
+  left: 43.98px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 65.59px;
+  height: 26.61px;
+}
+.group1 {
+  position: absolute;
+  top: 39.1px;
+  left: 1203px;
+  width: 160.56px;
+  height: 48.69px;
+  text-align: center;
+  font-size: 18.09px;
+  font-family: var(--font-reem-kufi-ink);
+}
+.home1 {
+  position: relative;
+}
+.auto-layout-horizontal1 {
+  position: absolute;
+  top: 49.87px;
+  left: 642.39px;
+  width: 500px;
+  height: 27px;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-between;
+  text-align: center;
+  font-size: 18.09px;
+  font-family: var(--font-reem-kufi-ink);
+}
+.line-div {
+  position: absolute;
+  top: 518.5px;
+  left: 176.5px;
+  border-top: 1px solid var(--color-gray-100);
+  box-sizing: border-box;
+  width: 1127px;
+  height: 1px;
+}
+.riwayat-booking {
+  position: absolute;
+  top: 291.2px;
+  left: 23px;
+  display: inline-block;
+  font-weight: 700;
+  width: 235px;
+  height: 36.85px;
+}
+.image-2-icon {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 281px;
+  height: 291px;
+  object-fit: cover;
+}
+.riwayat-booking-parent {
+  position: absolute;
+  top: 168px;
+  left: 579px;
+  width: 281px;
+  height: 328.05px;
+  font-size: var(--font-size-8xl);
+  color: var(--color-darkslategray-200);
+}
+.riwayat1 {
+  position: relative;
+  background-color: var(--color-whitesmoke);
+  width: 100%;
+  height: 1209px;
+  overflow: hidden;
+  text-align: left;
+  font-size: 22.52px;
+  color: var(--color-white);
+  font-family: var(--font-poppins);
+}

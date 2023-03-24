@@ -1,0 +1,250 @@
+.booking-success-child {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: var(--color-darkslategray-200);
+  width: 1440px;
+  height: 119px;
+}
+.booking-success-item {
+  position: absolute;
+  top: 143px;
+  left: 78px;
+  border-radius: var(--br-mid);
+  width: 1274px;
+  height: 757px;
+}
+.booking-id3,
+.carwash693,
+.div3,
+.jl-jalan-ke,
+.lf3up-dp908-opiu7-jk91k3,
+.rieki-gaming {
+  position: absolute;
+  top: 539px;
+  left: 267px;
+  font-weight: 500;
+  display: inline-block;
+  width: 119px;
+  height: 30px;
+}
+.carwash693,
+.div3,
+.jl-jalan-ke,
+.lf3up-dp908-opiu7-jk91k3,
+.rieki-gaming {
+  left: 865px;
+  width: 305px;
+}
+.carwash693,
+.div3,
+.jl-jalan-ke,
+.rieki-gaming {
+  top: 581px;
+  left: 1019px;
+  width: 151px;
+  height: 31px;
+}
+.carwash693,
+.div3,
+.jl-jalan-ke {
+  top: 624px;
+  left: 1039px;
+  width: 131px;
+  height: 30px;
+}
+.div3,
+.jl-jalan-ke {
+  top: 666px;
+  left: 797px;
+  width: 373px;
+}
+.div3 {
+  top: 708px;
+  left: 1110px;
+  width: 57px;
+}
+.alamat,
+.booking-success1,
+.jam-booking2,
+.tempat-nyuci3,
+.username {
+  position: absolute;
+  top: 581px;
+  left: 267px;
+  font-weight: 500;
+  display: inline-block;
+  width: 118px;
+  height: 31px;
+}
+.alamat,
+.booking-success1,
+.jam-booking2,
+.tempat-nyuci3 {
+  top: 623px;
+  width: 159px;
+}
+.alamat,
+.booking-success1,
+.jam-booking2 {
+  top: 666px;
+  width: 84px;
+  height: 30px;
+}
+.booking-success1,
+.jam-booking2 {
+  top: 708px;
+  width: 149px;
+}
+.booking-success1 {
+  top: 253.46px;
+  left: 131px;
+  font-weight: 700;
+  width: 235px;
+  height: 36.85px;
+}
+.artboard-3-1 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 498.26px;
+  height: 253.46px;
+  object-fit: cover;
+}
+.booking-success-parent {
+  position: absolute;
+  top: 205.74px;
+  left: 471px;
+  width: 498.26px;
+  height: 290.32px;
+  font-size: var(--font-size-8xl);
+  color: var(--color-darkslategray-200);
+}
+.frame-icon4 {
+  position: absolute;
+  top: 32px;
+  left: 76px;
+  width: 52.16px;
+  height: 51.73px;
+  overflow: hidden;
+}
+.rectangle3 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  border: 2.6px solid var(--color-white);
+  box-sizing: border-box;
+  width: 160.56px;
+  height: 48.69px;
+}
+.sign-up3 {
+  position: absolute;
+  top: 11.16px;
+  left: 43.98px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 65.59px;
+  height: 26.61px;
+}
+.group3,
+.home3 {
+  position: absolute;
+  font-size: 18.09px;
+  font-family: var(--font-reem-kufi-ink);
+  color: var(--color-white);
+  text-align: center;
+}
+.group3 {
+  top: 39.1px;
+  left: 1203px;
+  width: 160.56px;
+  height: 48.69px;
+}
+.home3 {
+  top: 49.87px;
+  left: 642.39px;
+  cursor: pointer;
+}
+.list-jasa-cuci3 {
+  left: 762.72px;
+}
+.contact3,
+.list-jasa-cuci3,
+.riwayat4 {
+  position: absolute;
+  top: 49.87px;
+  font-size: 18.09px;
+  font-family: var(--font-reem-kufi-ink);
+  color: var(--color-white);
+  text-align: center;
+}
+.riwayat4 {
+  left: 940.06px;
+  cursor: pointer;
+}
+.contact3 {
+  left: 1077.39px;
+}
+.booking-success-inner {
+  position: absolute;
+  top: 518.5px;
+  left: 176.5px;
+  border-top: 1px solid var(--color-gray-100);
+  box-sizing: border-box;
+  width: 1127px;
+  height: 1px;
+}
+.cancel1 {
+  position: relative;
+  font-weight: 500;
+  cursor: pointer;
+}
+.cancel-container {
+  position: absolute;
+  top: 777px;
+  left: 519px;
+  border-radius: var(--br-3xs);
+  background-color: var(--color-crimson);
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(4px);
+  border: 0.1px solid var(--color-black);
+  display: flex;
+  flex-direction: row;
+  padding: var(--padding-3xs) var(--padding-11xl);
+  align-items: center;
+  justify-content: center;
+  color: var(--color-white);
+}
+.ganti-jadwal {
+  position: relative;
+  font-weight: 500;
+}
+.ganti-jadwal-wrapper {
+  position: absolute;
+  top: 777px;
+  left: 710px;
+  border-radius: var(--br-3xs);
+  background-color: var(--color-goldenrod-100);
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(4px);
+  border: 0.1px solid var(--color-black);
+  display: flex;
+  flex-direction: row;
+  padding: var(--padding-3xs) var(--padding-11xl);
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: var(--color-white);
+}
+.booking-success {
+  position: relative;
+  background-color: var(--color-whitesmoke);
+  width: 100%;
+  height: 900px;
+  overflow: hidden;
+  text-align: left;
+  font-size: 22.52px;
+  color: var(--color-slategray);
+  font-family: var(--font-poppins);
+}

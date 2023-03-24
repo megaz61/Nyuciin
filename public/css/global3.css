@@ -1,0 +1,57 @@
+body {
+  margin: 0;
+  line-height: normal;
+}
+
+:root {
+  /* fonts */
+  --font-poppins: Poppins;
+  --font-reem-kufi-ink: "Reem Kufi Ink";
+
+  /* font sizes */
+  --font-size-3xl-5: 22.5px;
+  --font-size-8xl: 27px;
+  --font-size-lg-1: 18.1px;
+  --font-size-4xl-8: 23.8px;
+  --font-size-11xl: 30px;
+  --font-size-mini: 15px;
+  --font-size-13xl: 32px;
+  --font-size-29xl: 48px;
+  --font-size-xl: 20px;
+  --font-size-5xl: 24px;
+  --font-size-base: 16px;
+  --font-size-28xl-9: 47.9px;
+  --font-size-49xl-4: 68.4px;
+
+  /* Colors */
+  --color-whitesmoke: #f6f6f6;
+  --color-slategray: #5d7a7b;
+  --color-darkslategray-100: #494949;
+  --color-darkslategray-200: #143f41;
+  --color-gray-100: #8b8383;
+  --color-gray-200: #122526;
+  --color-white: #fff;
+  --color-goldenrod-100: #e79925;
+  --color-goldenrod-200: #e79924;
+  --color-black: #000;
+  --color-crimson: #f13535;
+  --color-darkturquoise-100: #54cfdb;
+  --color-darkturquoise-200: #1ebfc1;
+  --color-silver: #b5b5b5;
+  --color-mediumturquoise: #72f0fb;
+
+  /* Gaps */
+  --gap-3xs: 10px;
+
+  /* Paddings */
+  --padding-3xs: 10px;
+  --padding-31xl: 50px;
+  --padding-11xl: 30px;
+
+  /* border radiuses */
+  --br-3xs: 10px;
+  --br-mid: 17px;
+  --br-5xs: 8px;
+  --br-8xs: 5px;
+  --br-4xs: 9px;
+}
