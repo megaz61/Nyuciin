@@ -15,10 +15,10 @@ return new class extends Migration
             $table->id();
             $table->string('nama');
             $table->string('alamat');
-            $table->string('deskripsi');
-            $table->string('foto');
-            $table->string('jam_buka');
-            $table->string('jam_tutup');
+            $table->string('keterangan');
+            $table->string('gambar')->nullable();
+            $table->timestamp('jam_buka')->nullable();
+            $table->timestamp('jam_tutup')->nullable();
             $table->timestamps();
         });
     }
