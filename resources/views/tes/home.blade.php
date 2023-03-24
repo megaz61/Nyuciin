@@ -27,8 +27,26 @@
             </div>
         </div>
     </div>
-   <div class="container-fluid mt-5">
+   <div class="main container-fluid mt-5">
     <h1 class="text-center">Daftar Tempat Cuci Kendaraan</h1>
-
+        <div class="card-group" >
+        @foreach ($tempats as $tempat)
+            <div class="card center">
+              <img src="{{url('storage')}}/{{$tempat->gambar}}" class="card-img-top" alt="..." >
+              <div class="card-body">
+                <h2 class="card-title">{{$tempat->nama_tempat}}</h2>
+                <p class="card-text">
+                    Rp.{{$tempat->alamat}}<br>
+                    Buka jam:
+                    {{$tempat->jam_buka}} - {{$tempat->jam_tutup}}<br>
+                    {{$tempat->keterangan}} <br>
+                </p>
+              </div>
+              <div class="card-footer">
+                <a href="#" class="btn btn-primary">Booking</a>
+              </div>
+            </div>
+      @endforeach
+      </div>
    </div>
 @endsection

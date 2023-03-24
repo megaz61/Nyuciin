@@ -3,7 +3,6 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
-
 return new class extends Migration
 {
     /**
@@ -11,14 +10,14 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('tempat', function (Blueprint $table) {
+        Schema::create('tempats', function (Blueprint $table) {
             $table->id();
-            $table->string('nama');
+            $table->string('nama_tempat');
             $table->string('alamat');
-            $table->string('deskripsi');
-            $table->string('foto');
-            $table->string('jam_buka');
-            $table->string('jam_tutup');
+            $table->string('keterangan');
+            $table->string('gambar')->nullable();
+            $table->timestamp('jam_buka')->nullable();
+            $table->timestamp('jam_tutup')->nullable();
             $table->timestamps();
         });
     }
@@ -28,6 +27,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('tempat');
+        Schema::dropIfExists('tempats');
     }
 };
