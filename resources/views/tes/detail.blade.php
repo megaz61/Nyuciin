@@ -14,7 +14,6 @@
                                     <input type="text" name="cari" id="cari" placeholder="Cari tempat pencucian"
                                         class="" style="">
                                 </form>
-                                {{-- <a href="{{ url('tes/checkout/'.$data->id) }}" class="btn btn-primary">Pesan</a> --}}
                             </div>
                             <div class="col-md-6">
                                 <div class="">
@@ -27,8 +26,54 @@
             </div>
         </div>
     </div>
-   <div class="container-fluid mt-5">
-    <h1 class="text-center">Daftar Tempat Cuci Kendaraan</h1>
+    <div class="container-fluid mt-5">
+        <h1 class="text-center">Daftar Tempat Cuci Kendaraan</h1>
+        <div class="container mt-5">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="gambar_tempat_cuci_1.jpg" class="card-img-top" alt="Tempat Cuci 1">
+                        <div class="card-body">
+                            <h5 class="card-title">Nama Tempat Cuci 1</h5>
+                            <p class="card-text">Alamat Tempat Cuci 1</p>
+                            <p class="card-text">Rating: ★★★★☆</p>
+                            <p class="card-text">Harga: Rp. 50.000</p>
+                            <p class="card-text">Jam Buka: 08:00 - 20:00</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="gambar_tempat_cuci_2.jpg" class="card-img-top" alt="Tempat Cuci 2">
+                        <div class="card-body">
+                            <h5 class="card-title">Nama Tempat Cuci 2</h5>
+                            <p class="card-text">Alamat Tempat Cuci 2</p>
+                            <p class="card-text">Rating: ★★★☆☆</p>
+                            <p class="card-text">Harga: Rp. 40.000</p>
+                            <p class="card-text">Jam Buka: 09:00 - 21:00</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="gambar_tempat_cuci_3.jpg" class="card-img-top" alt="Tempat Cuci 3">
+                        <div class="card-body">
+                            <div class="row mb">
+                                <div class="col-md-6">
+                                    <p class="card-text">★ 4.5</p>
+                                </div>
+                                <div class="col-md-6">
+                                    <p class="card-text text-end">Rp. 60.000</p>
+                                </div>
+                            </div>
+                            <h5 class="card-title">Nama Tempat Cuci 3</h5>
+                            <p class="card-text">Alamat Tempat Cuci 3</p>
+                            <p class="card-text">Jam Buka: 10:00 - 22:00</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-   </div>
+    </div>
 @endsection
