@@ -46,9 +46,14 @@
             value="{{ old('alamat') }}">
         </div>
         <div class="form-group">
-            <label for="">stok Barang</label>
-            <input type="text" class="form-control"  @error('stok') is-invalid @enderror name="stok" id="stok" placeholder="Masukkan stok Barang" autofocus
-            value="{{ old('stok') }}">
+            <label for="">Jam Buka Tempat Pencucian</label>
+            <input type="time" class="form-control" name="jam_buka" id="jam_buka"
+            value="{{ old('jam_buka') }}">
+        </div>
+        <div class="form-group">
+            <label for="">Jam Tutup Tempat Pencucian</label>
+            <input type="time" class="form-control" name="jam_tutup" id="jam_tutup"
+            value="{{ old('jam_tutup') }}">
         </div>
         <div class="form-group">
             <label for="">Keterangan</label>
