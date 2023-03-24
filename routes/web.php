@@ -21,4 +21,5 @@ Route::get('/register', [UserController::class, 'register']);
 Route::post('/register', [UserController::class, 'store']);
 Route::get('/', [HomeController::class, 'index'])->middleware('auth');
 Route::get('/home', [HomeController::class, 'index']);
-Route::get('/detail', function(){return view('detail'); });
+Route::get('/detail', function(){return view('/tes/detail'); });
+Route::get('/up', function(){return view('/tes/upTempat'); });
