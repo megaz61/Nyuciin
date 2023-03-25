@@ -1,59 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <!-- Required meta tags -->
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous">
-</script>
-  <title>Nyuci-in</title>
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous">
+    </script>
+    <title>Woles.</title>
 </head>
+
 <body>
-  {{-- Navbar --}}
-  <nav class="navbar navbar-expand-lg navbar-light fixed-top ">
-    <div class="container-fluid mb-5">
-        <i class="nyuci-in">Nyuci-in</i>
-          <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-            <ul class="navbar-nav">
-              <li class="nav-item">
-                <a class="nav-link @yield('menuHome') home" href="/" >Home</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link @yield('listCuci') home" href="/">List Jasa Cuci</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link @yield('Riwayat') home" href="/">Riwayat</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link @yield('Contact') home" href="/">Contact</a>
-              </li>
-            @if (Auth::check())
-              <li class="nav-item">
-                <form method="POST" action="{{ url('/logout') }}">
-                    {{ csrf_field() }}
-                    <button type="submit" class="btn alert-transparent-background text-red">Logout</button>
-                </form>
+    {{-- Navbar --}}
+    <div class="mb-5">
+        <nav class="navbar navbar-expand-lg navbar-light fixed-top" style="background-color: #143F41">
+            <div class="container-fluid mb-2" style="color: white">
+                <i class="nyuci-in ms-3">Nyuci-in</i>
+                <div class="collapse navbar-collapse justify-content-end navbar-dark" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link @yield('menuHome') home" href="/">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link @yield('listCuci') home" href="/">List Jasa Cuci</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link @yield('Riwayat') home" href="/">Riwayat</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link @yield('Contact') home" href="/">Contact</a>
+                        </li>
+                        @if (Auth::check())
+                            <li class="nav-item ms-2">
+                                <form method="POST" action="{{ url('/logout') }}">
+                                    {{ csrf_field() }}
+                                    <button type="submit" class="btn btn-danger text-red">Logout</button>
+                                </form>
                 </div>
-              </li>
+                </li>
             @else
-              <li class="nav-item">
-                <a class="nav-link" href="/login"><i class="bi bi-box-arrow-right"></i> Login</a>
-              </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white" href="/login"><i class="bi bi-box-arrow-right"></i> Login</a>
+                </li>
             @endauth
             </ul>
-          </div>
         </div>
-      </nav>
-      {{-- Content Product --}}
-      {{--@section('menuProduct','active')--}}
-        @yield('content')
+    </nav>
+</div>
 
-        @show
-        {{-- Footer
+{{-- Content Product --}}
+{{-- @section('menuProduct', 'active') --}}
+@yield('content')
+
+@show
+{{-- Footer
         <div class="footer">
           <div class="container">
               <div class="row">
@@ -110,5 +114,6 @@
           </div>
       </div>
       --}}
-  </body>
+</body>
+
 </html>
