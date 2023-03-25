@@ -33,7 +33,7 @@
 
 
 <div class="col-md-6 mt-4 ms-4">
-    <form action="" method="post" enctype="multipart/form-data">
+    <form action="{{route('upTempat.store')}}" method="post" enctype="multipart/form-data">
         @csrf
         <div class="form-group mt-5">
             <label for="">Nama Tempat</label>
@@ -67,7 +67,7 @@
         <br>
         <div class="row">
             <div class="col-sm-3">
-              <form action="/upBarang" method="post">
+              <form action="/upTempat" method="post">
                 <button type="submit" class="btn buy">Submit</button>
             </form>
             </div>
