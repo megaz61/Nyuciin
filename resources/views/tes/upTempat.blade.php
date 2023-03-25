@@ -32,7 +32,7 @@
 @section('content')
 
 
-<div class="col-md-6 mt-4 ms-4">
+<div class="col-md-6 mt-5 ms-4">
     <form action="{{route('upTempat.store')}}" method="post" enctype="multipart/form-data">
         @csrf
         <div class="form-group mt-5">
