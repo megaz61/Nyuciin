@@ -3,18 +3,18 @@
 @section('menuHome', 'active')
 @section('content')
     <div class="container-fluid mt-5">
-        <div class="row ">
-            <div class="col-md-12 mt-5">
+        <div class="row">
+            <div class="col-md-12 mt-2" style="background-color: #143F41">
                 <div class="ms-4">
                     <div class="card-body">
-                        <div class="row">
-                            <div class="col-md-6 mt-5">
-                                <h1 class="mt-5">Cucikan kendaraan anda</h1>
+                        <div class="row align-items-center">
+                            <div class="col-md-6">
+                                <h1 class="text-uppercase fw-bold text-light">Cucikan kendaraan anda</h1>
                                 <form action="">
                                     <input type="text" name="cari" id="cari" placeholder="Cari tempat pencucian"
-                                        class="" style="">
+                                        class="form-control form-control-lg" style="">
                                 </form>
-                                {{-- <a href="{{ url('tes/checkout/'.$data->id) }}" class="btn btn-primary">Pesan</a> --}}
+                                <a href="{{--url('tes/checkout/'.$data->id)--}}" class="btn btn-primary">Cari</a>
                             </div>
                             <div class="col-md-6">
                                 <div class="">
