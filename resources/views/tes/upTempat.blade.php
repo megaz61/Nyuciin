@@ -38,7 +38,7 @@
         <div class="form-group mt-5">
             <label for="">Nama Tempat</label>
             <input type="text" class="form-control"  @error('nama') is-invalid @enderror name="nama_tempat" id="nama_tempat" placeholder="Masukkan Nama Tempat" autofocus
-            value="{{ old('nama_barang') }}">
+            value="{{ old('nama_tempat') }}">
         </div>
         <div class="form-group">
             <label for="">Alamat</label>
@@ -46,14 +46,18 @@
             value="{{ old('alamat') }}">
         </div>
         <div class="form-group">
-            <label for="">Jam Buka Tempat Pencucian</label>
-            <input type="time" class="form-control" name="jam_buka" id="jam_buka"
-            value="{{ old('jam_buka') }}">
+            <label for="opening_time">Jam Buka:</label>
+            <input type="time" class="form-control" name="opening_time" value="{{ old('opening_time') }}">
+        </div>
+
+        <div class="form-group">
+            <label for="closing_time">Jam Tutup:</label>
+            <input type="time" class="form-control" name="closing_time" value="{{ old('closing_time') }}">
         </div>
         <div class="form-group">
-            <label for="">Jam Tutup Tempat Pencucian</label>
-            <input type="time" class="form-control" name="jam_tutup" id="jam_tutup"
-            value="{{ old('jam_tutup') }}">
+            <label for="">List Harga</label>
+            <input type="text-field" class="form-control"  @error('list_harga') is-invalid @enderror name="list_harga" id="list_harga" placeholder="Masukkan List Harga" autofocus
+            value="{{ old('list_harga') }}">
         </div>
         <div class="form-group">
             <label for="">Keterangan</label>

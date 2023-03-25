@@ -14,10 +14,11 @@ return new class extends Migration
             $table->id();
             $table->string('nama_tempat');
             $table->string('alamat');
+            $table->time('opening_time')->nullable();
+            $table->time('closing_time')->nullable();
+            $table->string('list_harga');
             $table->string('keterangan');
             $table->string('gambar')->nullable();
-            $table->timestamp('jam_buka')->nullable();
-            $table->timestamp('jam_tutup')->nullable();
             $table->timestamps();
         });
     }

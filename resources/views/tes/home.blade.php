@@ -56,7 +56,7 @@
                     <div class="col-md-4">
                         <div class="card">
                             <div class="card center">
-                                <img src="{{ url('storage') }}/{{ $tempat->gambar }}" class="card-img-top" alt="...">
+                                <img src="{{ url('storage') }}/{{ $tempat->gambar }}" class="card-img-top">
                                 <div class="card-body">
                                     <div class="row mb">
                                         <div class="col-md-6">
@@ -70,7 +70,8 @@
                                     <p class="card-text">
                                         Rp.{{ $tempat->alamat }}<br>
                                         Buka jam:
-                                        {{ $tempat->jam_buka }} - {{ $tempat->jam_tutup }}<br>
+                                        {{ \Carbon\Carbon::parse($tempat->opening_time)->format('H:i') }} - {{ \Carbon\Carbon::parse($tempat->closing_time)->format('H:i') }}
+                                        <br>
                                         {{ $tempat->keterangan }} <br>
                                     </p>
                                 </div>

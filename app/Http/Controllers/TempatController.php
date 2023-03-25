@@ -14,9 +14,13 @@ class TempatController extends Controller
     public function store(Request $request) {
         //https://www.sahretech.com/2021/01/cara-membuat-upload-file-ke-database.html
         //dd($request->all());
-        $validatedData=$request->validate([ 'nama_tempat'=> 'required|max:255',
+        $validatedData=$request->validate([
+            'nama_tempat'=> 'required|max:255',
             'alamat'=> 'required|max:255',
             'gambar'=> 'required',
+            'opening_time' => 'nullable|date_format:H:i',
+            'closing_time' => 'nullable|date_format:H:i',
+            'list_harga'=> 'required',
             'keterangan'=> 'required'
             ]);
         //mengambil data file yg diupload
@@ -31,6 +35,9 @@ class TempatController extends Controller
         $tempat->nama_tempat=$request->nama_tempat;
         $tempat->alamat=$request->alamat;
         $tempat->gambar=$nama_file;
+        $tempat->opening_time=$request->opening_time;
+        $tempat->closing_time=$request->closing_time;
+        $tempat->list_harga=$request->list_harga;
         $tempat->keterangan=$request->keterangan;
         $tempat->save();
 
