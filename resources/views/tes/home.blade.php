@@ -7,7 +7,7 @@
             <div class="col-md-12 mt-2" style="background-color: #143F41">
                 <div class="ms-4">
                     <div class="row align-items-center">
-                        <div class="col-md-6 d-grid gap-3">
+                        <div class="col-md-4 d-grid gap-3">
                             <h1 class="text-uppercase fw-bold text-light">Cucikan kendaraan anda</h1>
                             <form action="">
                                 <input type="text" name="cari" id="cari" placeholder="Cari tempat pencucian"
@@ -15,9 +15,10 @@
                             </form>
                             <a href="{{-- url('tes/checkout/'.$data->id) --}}" class="btn btn-primary">Cari</a>
                         </div>
-                        <div class="col-md-6">
+                        <div class="col-md-2"></div>
+                        <div class="col-md-6 ">
                             <div class="">
-                                <img src="{{ asset('gambar/vector@2x.png') }}" alt="" width="100%">
+                                <img src="{{ asset('gambar/vector@2x.png') }}" class="img-fluid" alt="">
                             </div>
                         </div>
                     </div>
@@ -49,32 +50,31 @@
         </div>
         --}}
         <div class="container mt-5">
-            <div class="row">
+            <div class="row row-cols-4">
                 @foreach ($tempats as $tempat)
-                    <div class="col-md-4">
-                        <div class="card">
-                            <div class="card center">
-                                <img src="{{ url('storage') }}/{{ $tempat->gambar }}" class="card-img-top" alt="...">
-                                <div class="card-body">
-                                    <div class="row mb">
-                                        <div class="col-md-6">
-                                            <p class="card-text">★ 4.5</p>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <p class="card-text text-end"></p>
-                                        </div>
+                    <div class="col">
+                        <div class="card h-75">
+                            <img src="{{ url('storage') }}/{{ $tempat->gambar }}" class="card-img-top h-50 img-fluid" alt="...">
+                            <div class="card-body">
+                                <div class="row mb">
+                                    <div class="col-md-6">
+                                        <p class="card-text">★ 4.5</p>
                                     </div>
-                                    <h2 class="card-title">{{ $tempat->nama_tempat }}</h2>
-                                    <p class="card-text">
-                                        {{ $tempat->alamat }}<br>
-                                        Buka jam:
-                                        {{ \Carbon\Carbon::parse($tempat->opening_time)->format('H:i') }} - {{ \Carbon\Carbon::parse($tempat->closing_time)->format('H:i') }}<br>
-                                        {{ $tempat->keterangan }} <br>
-                                    </p>
+                                    <div class="col-md-6">
+                                        <p class="card-text text-end"></p>
+                                    </div>
                                 </div>
-                                <div class="card-footer">
-                                    <a href="#" class="btn btn-primary">Booking</a>
-                                </div>
+                                <h2 class="card-title">{{ $tempat->nama_tempat }}</h2>
+                                <p class="card-text">
+                                    {{ $tempat->alamat }}<br>
+                                    Buka jam:
+                                    {{ \Carbon\Carbon::parse($tempat->opening_time)->format('H:i') }} -
+                                    {{ \Carbon\Carbon::parse($tempat->closing_time)->format('H:i') }}<br>
+                                    {{ $tempat->keterangan }} <br>
+                                </p>
+                            </div>
+                            <div class="card-footer">
+                                <a href="#" class="btn btn-primary">Booking</a>
                             </div>
                         </div>
                     </div>
