@@ -17,11 +17,15 @@
 <body>
     {{-- Navbar --}}
     <div class="mb-5">
-        <nav class="navbar navbar-expand-lg navbar-light fixed-top" style="background-color: #143F41">
+        <nav class="navbar navbar-expand-lg fixed-top" style="background-color: #143F41">
             <div class="container-fluid mb-2" style="color: white">
                 <i class="nyuci-in ms-3">Nyuci-in</i>
-                <div class="collapse navbar-collapse justify-content-end navbar-dark" id="navbarNav">
-                    <ul class="navbar-nav">
+                <button class="navbar-toggler navbar-dark" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse navbar-dark" id="navbarNav">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                         <li class="nav-item">
                             <a class="nav-link @yield('menuHome') home" href="/">Home</a>
                         </li>
@@ -40,8 +44,9 @@
                                     {{ csrf_field() }}
                                     <button type="submit" class="btn btn-danger text-red">Logout</button>
                                 </form>
+                            </li>
+                    </ul>
                 </div>
-                </li>
             @else
                 <li class="nav-item">
                     <a class="nav-link text-white" href="/login"><i class="bi bi-box-arrow-right"></i> Login</a>
