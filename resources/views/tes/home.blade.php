@@ -15,7 +15,7 @@
                             </form>
                             <a href="{{-- url('tes/checkout/'.$data->id) --}}" class="btn btn-primary">Cari</a>
                         </div>
-                        <div class="col-md-2"></div>
+                        <div class="col-md-2 mt-3"></div>
                         <div class="col-md-6 ">
                             <div class="">
                                 <img src="{{ asset('gambar/vector@2x.png') }}" class="img-fluid" alt="">
@@ -50,28 +50,30 @@
         </div>
         --}}
         <div class="container mt-5">
-            <div class="row row-cols-4">
+            <div class="row row-cols-md-4">
                 @foreach ($tempats as $tempat)
-                    <div class="col">
-                        <div class="card h-75">
+                    <div class="col mb-3">
+                        <div class="card h-100">
                             <img src="{{ url('storage') }}/{{ $tempat->gambar }}" class="card-img-top h-50 img-fluid" alt="...">
                             <div class="card-body">
-                                <div class="row mb">
+                                <div class="row mb-1">
                                     <div class="col-md-6">
                                         <p class="card-text">★ 4.5</p>
                                     </div>
                                     <div class="col-md-6">
-                                        <p class="card-text text-end"></p>
+                                        <p class="card-text text-end fst-italic">{{ $tempat->list_harga }}</p>
                                     </div>
                                 </div>
                                 <h2 class="card-title">{{ $tempat->nama_tempat }}</h2>
-                                <p class="card-text">
+                                <div class="card-text">
                                     {{ $tempat->alamat }}<br>
                                     Buka jam:
                                     {{ \Carbon\Carbon::parse($tempat->opening_time)->format('H:i') }} -
                                     {{ \Carbon\Carbon::parse($tempat->closing_time)->format('H:i') }}<br>
-                                    {{ $tempat->keterangan }} <br>
-                                </p>
+                                    <div class="mt-2">
+                                        {{ $tempat->keterangan }}
+                                    </div>
+                                </div>
                             </div>
                             <div class="card-footer">
                                 <a href="#" class="btn btn-primary">Booking</a>
