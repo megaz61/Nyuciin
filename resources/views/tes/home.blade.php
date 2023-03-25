@@ -6,20 +6,18 @@
         <div class="row">
             <div class="col-md-12 mt-2" style="background-color: #143F41">
                 <div class="ms-4">
-                    <div class="card-body">
-                        <div class="row align-items-center">
-                            <div class="col-md-6">
-                                <h1 class="text-uppercase fw-bold text-light">Cucikan kendaraan anda</h1>
-                                <form action="">
-                                    <input type="text" name="cari" id="cari" placeholder="Cari tempat pencucian"
-                                        class="form-control form-control-lg" style="">
-                                </form>
-                                <a href="{{--url('tes/checkout/'.$data->id)--}}" class="btn btn-primary">Cari</a>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="">
-                                    <img src="{{ asset('gambar/vector@2x.png') }}" alt="" width="100%">
-                                </div>
+                    <div class="row align-items-center">
+                        <div class="col-md-6 d-grid gap-3">
+                            <h1 class="text-uppercase fw-bold text-light">Cucikan kendaraan anda</h1>
+                            <form action="">
+                                <input type="text" name="cari" id="cari" placeholder="Cari tempat pencucian"
+                                    class="form-control form-control-lg" style="">
+                            </form>
+                            <a href="{{-- url('tes/checkout/'.$data->id) --}}" class="btn btn-primary">Cari</a>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="">
+                                <img src="{{ asset('gambar/vector@2x.png') }}" alt="" width="100%">
                             </div>
                         </div>
                     </div>
@@ -56,7 +54,7 @@
                     <div class="col-md-4">
                         <div class="card">
                             <div class="card center">
-                                <img src="{{ url('storage') }}/{{ $tempat->gambar }}" class="card-img-top">
+                                <img src="{{ url('storage') }}/{{ $tempat->gambar }}" class="card-img-top" alt="...">
                                 <div class="card-body">
                                     <div class="row mb">
                                         <div class="col-md-6">
@@ -70,8 +68,7 @@
                                     <p class="card-text">
                                         Rp.{{ $tempat->alamat }}<br>
                                         Buka jam:
-                                        {{ \Carbon\Carbon::parse($tempat->opening_time)->format('H:i') }} - {{ \Carbon\Carbon::parse($tempat->closing_time)->format('H:i') }}
-                                        <br>
+                                        {{ $tempat->jam_buka }} - {{ $tempat->jam_tutup }}<br>
                                         {{ $tempat->keterangan }} <br>
                                     </p>
                                 </div>
