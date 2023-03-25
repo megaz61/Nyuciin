@@ -6,20 +6,18 @@
         <div class="row">
             <div class="col-md-12 mt-2" style="background-color: #143F41">
                 <div class="ms-4">
-                    <div class="card-body">
-                        <div class="row align-items-center">
-                            <div class="col-md-6">
-                                <h1 class="text-uppercase fw-bold text-light">Cucikan kendaraan anda</h1>
-                                <form action="">
-                                    <input type="text" name="cari" id="cari" placeholder="Cari tempat pencucian"
-                                        class="form-control form-control-lg" style="">
-                                </form>
-                                <a href="{{--url('tes/checkout/'.$data->id)--}}" class="btn btn-primary">Cari</a>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="">
-                                    <img src="{{ asset('gambar/vector@2x.png') }}" alt="" width="100%">
-                                </div>
+                    <div class="row align-items-center">
+                        <div class="col-md-6 d-grid gap-3">
+                            <h1 class="text-uppercase fw-bold text-light">Cucikan kendaraan anda</h1>
+                            <form action="">
+                                <input type="text" name="cari" id="cari" placeholder="Cari tempat pencucian"
+                                    class="form-control form-control-lg" style="">
+                            </form>
+                            <a href="{{-- url('tes/checkout/'.$data->id) --}}" class="btn btn-primary">Cari</a>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="">
+                                <img src="{{ asset('gambar/vector@2x.png') }}" alt="" width="100%">
                             </div>
                         </div>
                     </div>
@@ -53,30 +51,29 @@
         <div class="container mt-5">
             <div class="row">
                 @foreach ($tempats as $tempat)
-                    <div class="col-md-4">
-                        <div class="card">
-                            <div class="card center">
-                                <img src="{{ url('storage') }}/{{ $tempat->gambar }}" class="card-img-top" alt="...">
-                                <div class="card-body">
-                                    <div class="row mb">
-                                        <div class="col-md-6">
-                                            <p class="card-text">★ 4.5</p>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <p class="card-text text-end"></p>
-                                        </div>
+                    <div class="col-md-4 mt-4">
+                        <div class="card h-100">
+                            <img src="{{ url('storage') }}/{{ $tempat->gambar }}"
+                                class="card-img-top img-fluid mx-auto d-block ratio-1x1" alt="...">
+                            <div class="card-body">
+                                <div class="row mb">
+                                    <div class="col-md-6">
+                                        <p class="card-text">★ 4.5</p>
                                     </div>
-                                    <h2 class="card-title">{{ $tempat->nama_tempat }}</h2>
-                                    <p class="card-text">
-                                        Rp.{{ $tempat->alamat }}<br>
-                                        Buka jam:
-                                        {{ $tempat->jam_buka }} - {{ $tempat->jam_tutup }}<br>
-                                        {{ $tempat->keterangan }} <br>
-                                    </p>
+                                    <div class="col-md-6">
+                                        <p class="card-text text-end"></p>
+                                    </div>
                                 </div>
-                                <div class="card-footer">
-                                    <a href="#" class="btn btn-primary">Booking</a>
-                                </div>
+                                <h2 class="card-title">{{ $tempat->nama_tempat }}</h2>
+                                <p class="card-text">
+                                    Rp.{{ $tempat->alamat }}<br>
+                                    Buka jam:
+                                    {{ $tempat->jam_buka }} - {{ $tempat->jam_tutup }}<br>
+                                    {{ $tempat->keterangan }} <br>
+                                </p>
+                            </div>
+                            <div class="card-footer">
+                                <a href="#" class="btn btn-primary">Booking</a>
                             </div>
                         </div>
                     </div>
