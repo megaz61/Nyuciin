@@ -15,7 +15,7 @@
                             </form>
                             <a href="{{-- url('tes/checkout/'.$data->id) --}}" class="btn btn-primary">Cari</a>
                         </div>
-                        <div class="col-md-2 mt-3"></div>
+                        <div class="col-md-2 mt-3">{{-- jarak gambar & search --}}</div>
                         <div class="col-md-6 ">
                             <div class="">
                                 <img src="{{ asset('gambar/vector@2x.png') }}" class="img-fluid" alt="">
@@ -57,10 +57,10 @@
                             <img src="{{ url('storage') }}/{{ $tempat->gambar }}" class="card-img-top h-50 img-fluid" alt="...">
                             <div class="card-body">
                                 <div class="row mb-1">
-                                    <div class="col-md-6">
+                                    <div class="col-md-4">
                                         <p class="card-text">★ 4.5</p>
                                     </div>
-                                    <div class="col-md-6">
+                                    <div class="col-md-8">
                                         <p class="card-text text-end fst-italic">{{ $tempat->list_harga }}</p>
                                     </div>
                                 </div>

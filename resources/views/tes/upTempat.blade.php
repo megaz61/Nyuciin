@@ -56,7 +56,7 @@
                     <div class="form-group">
                         <label for="">List Harga</label>
                         <input type="text-field" class="form-control" @error('list_harga') is-invalid @enderror
-                            name="list_harga" id="list_harga" placeholder="Masukkan List Harga" autofocus
+                            name="list_harga" id="list_harga" placeholder="Contoh: 50.000 - 100.000" autofocus
                             value="{{ old('list_harga') }}">
                     </div>
                     <div class="form-group">
@@ -74,7 +74,7 @@
                     <div class="row">
                         <div class="col-sm-3">
                             <form action="/upTempat" method="post">
-                                <button type="submit" class="btn buy">Submit</button>
+                                <button type="submit" class="btn btn-success">Submit</button>
                             </form>
                         </div>
                         <div class="col-sm-9 text-secondary">
