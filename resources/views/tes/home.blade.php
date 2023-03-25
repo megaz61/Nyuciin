@@ -66,9 +66,9 @@
                                     </div>
                                     <h2 class="card-title">{{ $tempat->nama_tempat }}</h2>
                                     <p class="card-text">
-                                        Rp.{{ $tempat->alamat }}<br>
+                                        {{ $tempat->alamat }}<br>
                                         Buka jam:
-                                        {{ $tempat->jam_buka }} - {{ $tempat->jam_tutup }}<br>
+                                        {{ \Carbon\Carbon::parse($tempat->opening_time)->format('H:i') }} - {{ \Carbon\Carbon::parse($tempat->closing_time)->format('H:i') }}<br>
                                         {{ $tempat->keterangan }} <br>
                                     </p>
                                 </div>
