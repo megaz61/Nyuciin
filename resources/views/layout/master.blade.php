@@ -17,7 +17,7 @@
         font-family: 'Poppins';font-size: 22px;
     }
     </style>
-    <title>Nyuciin</title>
+    <title>Nyuciin.</title>
 </head>
 
 <body>
