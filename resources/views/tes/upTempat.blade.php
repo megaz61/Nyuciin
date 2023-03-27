@@ -31,23 +31,23 @@
         @section('content')
 
 
-            <div class="col-md-6 mt-4 ms-4">
-                <form action="{{ route('upTempat.store') }}" method="post" enctype="multipart/form-data">
-                    @csrf
-                    <div class="form-group mt-5">
-                        <label for="">Nama Tempat</label>
-                        <input type="text" class="form-control" @error('nama') is-invalid @enderror name="nama_tempat"
-                            id="nama_tempat" placeholder="Masukkan Nama Tempat" autofocus value="{{ old('nama_tempat') }}">
-                    </div>
-                    <div class="form-group">
-                        <label for="">Alamat</label>
-                        <input type="text" class="form-control" @error('alamat') is-invalid @enderror name="alamat"
-                            id="alamat" placeholder="Masukkan Alamat" autofocus value="{{ old('alamat') }}">
-                    </div>
-                    <div class="form-group">
-                        <label for="opening_time">Jam Buka:</label>
-                        <input type="time" class="form-control" name="opening_time" value="{{ old('opening_time') }}">
-                    </div>
+<div class="col-md-6 mt-4 ms-4">
+    <form action="{{route('upTempat.store')}}" method="post" enctype="multipart/form-data">
+        @csrf
+        <div class="form-group mt-5">
+            <label for="">Nama Tempat</label>
+            <input type="text" class="form-control"  @error('nama') is-invalid @enderror name="nama_tempat" id="nama_tempat" placeholder="Masukkan Nama Tempat" autofocus
+            value="{{ old('nama_tempat') }}">
+        </div>
+        <div class="form-group">
+            <label for="">Alamat</label>
+            <input type="text" class="form-control"  @error('alamat') is-invalid @enderror name="alamat" id="alamat" placeholder="Masukkan Alamat" autofocus
+            value="{{ old('alamat') }}">
+        </div>
+        <div class="form-group">
+            <label for="opening_time">Jam Buka:</label>
+            <input type="time" class="form-control" name="opening_time" value="{{ old('opening_time') }}">
+        </div>
 
                     <div class="form-group">
                         <label for="closing_time">Jam Tutup:</label>

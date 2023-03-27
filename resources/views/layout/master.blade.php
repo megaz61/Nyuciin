@@ -11,7 +11,13 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous">
     </script>
-    <title>Nyuciin</title>
+    <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+    <style>
+    body {
+        font-family: 'Poppins';font-size: 22px;
+    }
+    </style>
+    <title>Nyuciin.</title>
 </head>
 
 <body>
@@ -19,13 +25,13 @@
     <div class="mb-5">
         <nav class="navbar navbar-expand-lg fixed-top" style="background-color: #143F41">
             <div class="container-fluid mb-2" style="color: white">
-                <i class="nyuci-in ms-3">Nyuci-in</i>
+                <i class="nyuci-in mt-2 ms-4 h3">Nyuci-in</i>
                 <button class="navbar-toggler navbar-dark" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                     aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse navbar-dark" id="navbarNav">
-                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <ul class="navbar-nav mt-2 ms-auto mb-2 mb-lg-0 fs-6">
                         <li class="nav-item">
                             <a class="nav-link @yield('menuHome') home" href="/">Home</a>
                         </li>
