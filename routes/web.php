@@ -22,6 +22,7 @@ Route::get('/register', [UserController::class, 'register']);
 Route::post('/register', [UserController::class, 'store']);
 Route::get('/', [HomeController::class, 'index']);
 Route::get('/home', [HomeController::class, 'index']);
+Route::get('/detailTempat', [HomeController::class, 'detail']); //!sementara
 Route::get('/detail', function(){return view('/tes/detail'); });
 Route::get('/upTempat', [TempatController::class, 'create']);
 Route::post('/upTempat', [TempatController::class, 'store'])->name('upTempat.store');

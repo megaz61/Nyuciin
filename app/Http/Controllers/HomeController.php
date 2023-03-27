@@ -15,4 +15,9 @@ class HomeController extends Controller
         $tempats = tempat::paginate(10);
         return view('/tes/home',compact('tempats'));
     }
+
+    public function detail(tempat $tempats){
+        $tempats = tempat::paginate(10);
+        return view('/tes/detailTempat',compact('tempats'));
+    }
 }
