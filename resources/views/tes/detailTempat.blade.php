@@ -3,16 +3,15 @@
 @section('menuHome', 'active')
 @section('content')
     <div class="container-fluid">
-        <h1>(Nama Tempat cuci)</h1>
-        <div class="col">
-            <div class="row-md-4">
-                <p>★ 4.5</p>
+        <div class="row mt-5">
+            <div class="col text-start">
+                Column
             </div>
-            <div class="row-md-4">
-                <p>{{-- $tempats->alamat --}} alamat</p>
+            <div class="col text-center">
+                Column
             </div>
-            <div class="row-md-4">
-                <p>{{-- $tempats->jam_buka --}} jam buka - jam tutup</p>
+            <div class="col text-end">
+                Column
             </div>
         </div>
     </div>
