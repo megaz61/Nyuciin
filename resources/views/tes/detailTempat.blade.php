@@ -3,7 +3,10 @@
 @section('menuHome', 'active')
 @section('content')
     <div class="container-fluid">
-        <div class="row mt-5">
+        <div class="row">
+            <h1>{{$tempat->nama_tempat}}</h1> {{-- !kurang nyambung in ke database --}}
+        </div>
+        <div class="row pt-5">
             <div class="col text-start">
                 Column
             </div>
