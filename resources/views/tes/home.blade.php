@@ -70,7 +70,7 @@
                                 </div>
                             </div>
                             <div class="card-footer">
-                                <a href="#" class="btn btn-primary">Booking</a>
+                                <a href="{{url('detail/'.$tempat->id)}}" class="btn btn-primary">Booking</a>
                             </div>
                         </div>
                     </div>
