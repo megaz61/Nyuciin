@@ -26,3 +26,4 @@ Route::get('/home', [HomeController::class, 'index']);
 Route::get('/upTempat', [TempatController::class, 'create']);
 Route::post('/upTempat', [TempatController::class, 'store'])->name('upTempat.store');
 Route::get('/detail/{id}', [BookingController::class, 'index']);
+Route::get('/booking/{id}', [BookingController::class, 'booking']);

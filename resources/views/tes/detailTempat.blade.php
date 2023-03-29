@@ -15,7 +15,7 @@
        <p class="fs-5">{{$tempat->alamat}}</p>
     </div>
     <div class="col text-end">
-        Column
+        <a href="{{url('booking/'.$tempat->id)}}" class="btn btn-primary">Booking</a>
     </div>
 </div>
 <div class="row pt-5">

@@ -15,4 +15,8 @@ class BookingController extends Controller
         $tempat = tempat::find($id);
         return view('/tes/detailTempat',compact('tempat'));
     }
+    public function booking($id){
+        $tempat = tempat::find($id);
+        return view('/tes/booking',compact('tempat'));
+    }
 }
