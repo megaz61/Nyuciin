@@ -1,28 +1,43 @@
 @extends('layout.master')
 @section('title', 'Home')
 @section('menuHome', 'active')
+<style>
+    .image-container {
+        position: relative;
+        width: 100%;
+        height: 50%;
+        overflow: hidden;
+    }
+
+    .image-container img {
+        position: absolute;
+        object-fit: cover;
+    }
+</style>
+
 @section('content')
-    <div class="container-fluid">
-@if (!empty($tempat))
-<div class="row">
-    <h1 class="mt-5 pt-3">{{$tempat->nama_tempat}}</h1>{{-- !kurang nyambung in ke database --}}
-</div>
-<div class="row pt-5">
-    <div class="col text-start">
-        Rating
-    </div>
-    <div class="col text-center">
-       <p class="fs-5">{{$tempat->alamat}}</p>
-    </div>
-    <div class="col text-end">
-        <a href="{{url('booking/'.$tempat->id)}}" class="btn btn-primary">Booking</a>
-    </div>
-</div>
-<div class="row pt-5">
-    <div class="col">
-        <img src="{{ url('storage') }}/{{ $tempat->gambar }}" class="img-fluid" alt="...">
-    </div>
-</div>
-@endif
+    <div class="container-md">
+        @if (!empty($tempat))
+            <div class="row">
+                <h1 class="mt-5 pt-3">{{ $tempat->nama_tempat }}</h1>
+            </div>
+            <div class="row pt-3">
+                <div class="col text-start">
+                    Rating
+                </div>
+                <div class="col text-center">
+                    <p class="fs-5">{{ $tempat->alamat }}</p>
+                </div>
+                <div class="col text-end">
+                    <a href="{{ url('booking/' . $tempat->id) }}" class="btn btn-primary">Booking</a>
+                </div>
+            </div>
+
+            <div class="container pt-3">
+                <div class="image-container">
+                    <img src="{{ url('storage') }}/{{ $tempat->gambar }}" alt="Description" class="img-fluid w-100 h-100">
+                </div>
+            </div>
+        @endif
     </div>
 @endsection
