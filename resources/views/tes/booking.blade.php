@@ -13,7 +13,7 @@
                 </div>
                 <div class="form-group">
                     <label for="">Nomor Telpon</label>
-                    <input type="tel" id="telpon" name="telpon" pattern="[0-9]{10}"  @error('telpon') is-invalid @enderror required>
+                    <input type="tel" id="telpon" name="telpon" pattern="[0-9]{10}"  @error('telpon') is-invalid @enderror value="{{ old('telpon') }}" required>
                 </div>
                 <div class="form-group">
                     <label for="opening_time">Jam Booking</label>
