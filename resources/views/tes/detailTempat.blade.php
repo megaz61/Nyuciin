@@ -5,7 +5,7 @@
     .image-container {
         position: relative;
         width: 100%;
-        height: 50%;
+        height: 500px;
         overflow: hidden;
     }
 
@@ -21,7 +21,7 @@
             <div class="row">
                 <h1 class="mt-5 pt-3">{{ $tempat->nama_tempat }}</h1>
             </div>
-            <div class="row pt-3">
+            <div class="row pt-1">
                 <div class="col text-start">
                     Rating
                 </div>
@@ -29,13 +29,31 @@
                     <p class="fs-5">{{ $tempat->alamat }}</p>
                 </div>
                 <div class="col text-end">
-                    <a href="{{ url('booking/' . $tempat->id) }}" class="btn btn-primary">Booking</a>
+                    <p>{{ \Carbon\Carbon::parse($tempat->opening_time)->format('H:i') }} -
+                        {{ \Carbon\Carbon::parse($tempat->closing_time)->format('H:i') }}</p>
                 </div>
             </div>
 
-            <div class="container pt-3">
+            <div class="container pt-1">
                 <div class="image-container">
                     <img src="{{ url('storage') }}/{{ $tempat->gambar }}" alt="Description" class="img-fluid w-100 h-100">
+                </div>
+            </div>
+
+            <div class="row pt-4">
+                <div class="col-md-7">
+                    <h3>Deskripsi</h3>
+                    <p class="fs-6">{{ $tempat->keterangan }}</p>
+                </div>
+
+                <div class="col-md-5 text-end">
+                    <h3>List Harga</h3>
+                    <div>
+                        <p>
+                            {{ $tempat->list_harga }}
+                        </p>
+                    </div>
+                    <a href="{{ url('booking/' . $tempat->id) }}" class="btn btn-primary">Booking</a>
                 </div>
             </div>
         @endif

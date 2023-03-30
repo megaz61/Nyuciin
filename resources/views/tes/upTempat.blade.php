@@ -55,15 +55,15 @@
                     </div>
                     <div class="form-group">
                         <label for="">List Harga</label>
-                        <textarea class="form-control" @error('list_harga') is-invalid @enderror
-                            name="list_harga" id="list_harga" autofocus
-                            value="{{ old('list_harga') }}" placeholder="List"> </textarea>
+                        <input type="text-field" class="form-control" @error('list_harga') is-invalid @enderror
+                            name="list_harga" id="list_harga" placeholder="Contoh: 50.000 - 100.000" autofocus
+                            value="{{ old('list_harga') }}">
                     </div>
                     <div class="form-group">
                         <label for="">Keterangan</label>
-                        <textarea class="form-control" @error('keterangan') is-invalid @enderror
+                        <input type="text-field" class="form-control" @error('keterangan') is-invalid @enderror
                             name="keterangan" id="keterangan" placeholder="Masukkan Keterangan" autofocus
-                            value="{{ old('keterangan') }}"> </textarea>
+                            value="{{ old('keterangan') }}">
                     </div>
                     <div class="form-group">
                         <label for="">Gambar Tempat</label>
