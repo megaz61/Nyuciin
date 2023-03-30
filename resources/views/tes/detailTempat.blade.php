@@ -47,7 +47,12 @@
                 </div>
 
                 <div class="col-md-5 text-end">
-                    <h3>Booking disini chuk</h3>
+                    <h3>List Harga</h3>
+                    <div>
+                        <p>
+                            {{ $tempat->list_harga }}
+                        </p>
+                    </div>
                     <a href="{{ url('booking/' . $tempat->id) }}" class="btn btn-primary">Booking</a>
                 </div>
             </div>
