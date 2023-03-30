@@ -24,8 +24,11 @@ class BookingController extends Controller
     public function fix_booking(Request $request,$id){
         $tempat = tempat::find($id);
         $user = User::find(Auth::user()->id);
+        $tamggal = Carbon::now();
         $booking = new booking;
         $booking->user_id = $user->id;
+        $booking->tempat_id = $tempat->id;
+        $booking->tanggal = $tamggal;
         $booking->nama_lengkap = $request->nama_lengkap;
         $booking->telpon = $request->telpon;
         $booking->booking_time = $request->booking_time;
