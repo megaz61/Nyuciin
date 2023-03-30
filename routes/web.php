@@ -29,4 +29,4 @@ Route::post('/upTempat', [TempatController::class, 'store'])->name('upTempat.sto
 Route::get('/detail/{id}', [BookingController::class, 'index']);
 Route::get('/booking/{id}', [BookingController::class, 'booking']);
 Route::post('/booking/{id}', [BookingController::class, 'fix_booking'])->name('booking.store');
-Route::get('/riwayat', [RiwayatController::class, 'riwayat']);
+Route::get('/riwayat', [RiwayatController::class, 'riwayat'])->name('riwayat');
