@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-Use Alert;
+use RealRashid\SweetAlert\Facades\Alert;
 use Illuminate\Support\Facades\Auth;
 use App\Models\tempat;
 use App\Models\User;
@@ -33,6 +33,6 @@ class BookingController extends Controller
         $booking->telpon = $request->telpon;
         $booking->booking_time = $request->booking_time;
         $booking->save();
-        return redirect()->back()->with('success', 'Produk anda berhasil di tambahkan');
+        return redirect('riwayat')->with('success', 'Anda Berhasil Booking');
     }
 }

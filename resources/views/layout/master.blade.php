@@ -12,6 +12,7 @@
         integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous">
     </script>
     <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <style>
     body {
         font-family: 'Poppins';font-size: 22px;
@@ -66,6 +67,7 @@
 {{-- Content Product --}}
 {{-- @section('menuProduct', 'active') --}}
 @yield('content')
+@include('sweetalert::alert')
 
 @show
 {{-- Footer

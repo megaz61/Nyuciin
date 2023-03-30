@@ -6,6 +6,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\TempatController;
 use App\Http\Controllers\BookingController;
+use App\Http\Controllers\RiwayatController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -28,3 +29,4 @@ Route::post('/upTempat', [TempatController::class, 'store'])->name('upTempat.sto
 Route::get('/detail/{id}', [BookingController::class, 'index']);
 Route::get('/booking/{id}', [BookingController::class, 'booking']);
 Route::post('/booking/{id}', [BookingController::class, 'fix_booking'])->name('booking.store');
+Route::get('/riwayat', [RiwayatController::class, 'riwayat']);
