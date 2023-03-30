@@ -17,8 +17,8 @@ return new class extends Migration
             $table->string('alamat');
             $table->time('opening_time')->nullable();
             $table->time('closing_time')->nullable();
-            $table->string('list_harga');
-            $table->string('keterangan');
+            $table->longText('list_harga');
+            $table->longText('keterangan');
             $table->string('gambar')->nullable();
             $table->timestamps();
         });
