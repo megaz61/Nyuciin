@@ -16,7 +16,7 @@
         <div class="row align-items-center">
             <div class="col-md-6">
                 <div class="container d-flex justify-content-center ">
-                    <img src="{{ asset('gambar/vector@2x.png') }}" class="img-fluid ">
+                    <img src="{{ asset('gambar/booking.png') }}" class="img-fluid ">
                 </div>
             </div>
             <div class="col-md-6">
