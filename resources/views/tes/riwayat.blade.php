@@ -4,44 +4,26 @@
 @section('content')
 @include('sweetalert::alert')
 <div class="container-md mt-5 pt-5">
-    <div class="row mt-2">
-        <div class="col text-center">
-            <h4>ID Reservasi</h4>
-        </div>
-        <div class="col text-center">
-            <h4>Nama</h4>
-        </div>
-        <div class="col text-center">
-            <h4>Tanggal Reservasi</h4>
-        </div>
-        <div class="col text-center">
-            <h4>Jam Reservasi</h4>
-        </div>
-        <div class="col text-center">
-            <h4>Lihat Detail</h4>
-        </div>
-    </div>
-    @foreach ($booking as $booking)
-    <div class="row mt-2">
-        <div class="col text-center">
-            <p class="fs-5">{{$booking->id}}</p>
-        </div>
-        <div class="col text-center">
-            <p class="fs-5">{{$booking->nama_lengkap}}</p>
-        </div>
-        <div class="col text-center">
-            <p class="fs-5">{{$booking->tanggal}}</p>
-        </div>
-        <div class="col text-center">
-            <p class="fs-5">{{ \Carbon\Carbon::parse($booking->booking_time)->format('H:i') }}</p>
-        </div>
-        <div class="col text-center">
-            {{-- <form action="{{url('riwayat')}}/{{$booking->id}}" method="POST">
-                <button type="submit" class="btn btn-success">Detail Riwayat</button>
-            </form> --}}
-            <a href="{{url('riwayat')}}/{{$booking->id}}" class="btn btn-success">Detail Riwayat</a>
-        </div>
-    </div>
-    @endforeach
+    <h1>Detail Riwayat</h1>
+    {{-- <a href="{{url('riwayat')}}/{{$booking->id}}" class="btn btn-success">Detail Riwayat</a> --}}
+    {{-- <p class="fs-5">{{ \Carbon\Carbon::parse($booking->booking_time)->format('H:i') }}</p> --}}
+    <table class="table table-hover table-striped table-responsive-md">
+        <tr>
+            <th class="text-center">ID Booking</th>
+            <th class="text-center">Nama Lengkap</th>
+            <th class="text-center">Tanggal Booking</th>
+            <th class="text-center">Jam Booking</th>
+            <th class="text-center">Detail</th>
+        </tr>
+        @foreach ($booking as $booking)
+        <tr>
+            <td class="text-center">{{$booking->id}}</td>
+            <td class="text-center">{{$booking->nama_lengkap}}</td>
+            <td class="text-center">{{ \Carbon\Carbon::parse($booking->booking_date)->format('d-m-Y') }}</td>
+            <td class="text-center">{{ \Carbon\Carbon::parse($booking->booking_time)->format('H:i') }}</td>
+            <td class="text-center"><a href="{{url('riwayat')}}/{{$booking->id}}" class="btn btn-success">Detail Riwayat</a></td>
+        </tr>
+        @endforeach
+    </table>
 </div>
 @endsection
