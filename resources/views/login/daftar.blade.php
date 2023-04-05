@@ -22,7 +22,7 @@
     <div class="daftar">
       <div class="daftar-inner">
         <div class="frame-group">
-          <img class="frame-icon1" alt="" src="{{asset('gambar/frame1.svg')}}" />
+          <img class="frame-icon1" alt="" src="{{asset('gambar/Mobil 2.png')}}" />
           <div class="daftar-ke-parent">
             <div class="daftar-ke">Daftar ke</div>
             <b class="nyuci-in2">Nyuci-in</b>

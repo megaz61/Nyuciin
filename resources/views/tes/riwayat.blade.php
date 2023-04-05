@@ -37,7 +37,7 @@
         </div>
         <div class="col text-center">
             <form action="">
-                <input type="submit">
+                <button type="submit" class="btn btn-success">Detail Riwayat</button>
             </form>
         </div>
     </div>
