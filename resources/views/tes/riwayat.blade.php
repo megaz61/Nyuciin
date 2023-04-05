@@ -36,9 +36,10 @@
             <p class="fs-5">{{ \Carbon\Carbon::parse($booking->booking_time)->format('H:i') }}</p>
         </div>
         <div class="col text-center">
-            <form action="">
+            {{-- <form action="{{url('riwayat')}}/{{$booking->id}}" method="POST">
                 <button type="submit" class="btn btn-success">Detail Riwayat</button>
-            </form>
+            </form> --}}
+            <a href="{{url('riwayat')}}/{{$booking->id}}" class="btn btn-success">Detail Riwayat</a>
         </div>
     </div>
     @endforeach

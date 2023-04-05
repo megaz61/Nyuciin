@@ -29,4 +29,5 @@ Route::post('/upTempat', [TempatController::class, 'store'])->name('upTempat.sto
 Route::get('/detail/{id}', [BookingController::class, 'index']);
 Route::get('/booking/{id}', [BookingController::class, 'booking'])->middleware('auth');
 Route::post('/booking/{id}', [BookingController::class, 'fix_booking'])->name('booking.store');
-Route::get('/riwayat', [RiwayatController::class, 'riwayat'])->name('riwayat');
+Route::get('/riwayat', [RiwayatController::class, 'index'])->name('history')->middleware('auth');
+Route::get('/riwayat/{id}', [RiwayatController::class, 'riwayat']);

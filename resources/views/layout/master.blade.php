@@ -40,7 +40,7 @@
                             <a class="nav-link @yield('listCuci') home" href="/">List Jasa Cuci</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link @yield('Riwayat') home" href="{{route('riwayat')}}">Riwayat</a>
+                            <a class="nav-link @yield('Riwayat') home" href="{{route('history')}}">Riwayat</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link @yield('Contact') home" href="/">Contact</a>
