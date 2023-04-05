@@ -4,15 +4,7 @@
 @section('content')
 
 {{-- form nya --}}
-
     <div class="container-fluid mt-5 pt-5">
-        {{-- Error Alert --}}
-        @if (session('error'))
-        <div class="alert alert-danger alert-dismissible fade show" role="alert">
-            <strong>{{ session('error') }}</strong>
-            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-        </div>
-        @endif
         <div class="col-md-6 mt-4 ms-4">
             <form action="{{route('booking.store', $tempat->id)}}" method="post" enctype="multipart/form-data">
                 @csrf
