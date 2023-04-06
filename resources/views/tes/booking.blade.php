@@ -12,8 +12,8 @@
                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
             </div>
         @endif
-        <p class="fs-2">Form Booking</p>
         <div class="row align-items-center">
+            <p class="fs-1 text-center">Form Booking</p>
             <div class="col-md-6">
                 <div class="container d-flex justify-content-center ">
                     <img src="{{ asset('gambar/booking.png') }}" class="img-fluid ">
