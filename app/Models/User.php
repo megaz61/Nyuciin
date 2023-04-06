@@ -9,4 +9,8 @@ class User extends Authenticatable
 {
     use HasFactory;
     protected $guarded = [];
+    public function bookings()
+    {
+        return $this->hasMany('App\Models\Booking', 'user_id');
+    }
 }
