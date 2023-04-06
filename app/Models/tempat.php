@@ -12,7 +12,8 @@ class tempat extends Model
     public function booking_detail(){
         return $this->hasMany('App\Models\bookingDetail','tempat_id','id');
     }
-    public function booking(){
-        return $this->belongsTo('App\Models\booking','booking_id','id');
+    public function bookings()
+    {
+        return $this->hasMany('App\Models\Booking', 'tempat_id');
     }
 }
