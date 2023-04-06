@@ -48,8 +48,12 @@
                 </div>
                 <div class="col-md-3">
                     <div class="row mx-4">
-                        <button type="submit" class="btn btn-warning">Nilai</button>
+                        @if (\Carbon\Carbon::now('Asia/Jakarta')->diffInMinutes(\Carbon\Carbon::parse($booking->booking_time)) > 15)
 
+                        <button type="submit" class="btn btn-warning">Nilai</button>
+                        @else
+                        -
+                        @endif
                     </div>
                 </div>
             </div>
