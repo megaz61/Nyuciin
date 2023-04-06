@@ -18,7 +18,7 @@
                             <p class="card-title fs-4">Booking ID</p>
                         </div>
                         <div class="col-md-7">
-                            <p class="card-text text-end">{{$booking->id}}</p>
+                            <p class="card-text text-end opacity-75">{{$booking->id}}</p>
                         </div>
                     </div>
                     <div class="row align-items-center">
@@ -26,7 +26,7 @@
                             <p class="card-title fs-4">Tempat Cuci</p>
                         </div>
                         <div class="col-md-7">
-                            <p class="card-text text-end">{{{$booking->tempat->nama_tempat}}}</p>
+                            <p class="card-text text-end opacity-75">{{{$booking->tempat->nama_tempat}}}</p>
                         </div>
                     </div>
                     <div class="row align-items-center">
@@ -34,7 +34,7 @@
                             <p class="card-title fs-4">Tanggal Booking</p>
                         </div>
                         <div class="col-md-7">
-                            <p class="card-text text-end">{{ \Carbon\Carbon::parse($booking->booking_date)->format('d-m-Y') }}</p>
+                            <p class="card-text text-end opacity-75">{{ \Carbon\Carbon::parse($booking->booking_date)->format('d-m-Y') }}</p>
                         </div>
                     </div>
                     <div class="row align-items-center">
@@ -42,7 +42,7 @@
                             <p class="card-title fs-4">Jam Booking</p>
                         </div>
                         <div class="col-md-7">
-                            <p class="card-text text-end">{{ \Carbon\Carbon::parse($booking->booking_time)->format('H:i') }}</p>
+                            <p class="card-text text-end opacity-75">{{ \Carbon\Carbon::parse($booking->booking_time)->format('H:i') }}</p>
                         </div>
                     </div>
                 </div>
