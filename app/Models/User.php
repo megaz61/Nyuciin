@@ -11,6 +11,6 @@ class User extends Authenticatable
     protected $guarded = [];
     public function bookings()
     {
-        return $this->hasMany('App\Models\Booking', 'user_id');
+        return $this->hasMany('App\Models\Booking', 'user_id','id');
     }
 }

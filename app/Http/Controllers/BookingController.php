@@ -12,10 +12,23 @@ use Carbon\Carbon;
 
 class BookingController extends Controller
 {
+    //public function index menampilak data tabel tempat dan tabel booking bedasarkan id pada tempat adalah tempat_id pada booking
     public function index($id){
         $tempat = tempat::find($id);
-        return view('/tes/detailTempat',compact('tempat'));
+        $booking = booking::where('tempat_id',$id)->get();
+        //jika tanggal booking bukan tanggal sekarang maka akan dihapus, jika tanggal booking adalah tanggal sekarang maka akan tetap ada (tipe data booking adalah tanggal bukan jam)
+        foreach($booking as $b){
+            if($b->tanggal != Carbon::now()->format('Y-m-d')){
+                $b->delete();
+            }
+        }
+        return view('/tes/detailTempat',compact('tempat','booking'));
     }
+
+    // public function index($id){
+    //     $tempat = tempat::find($id);
+    //     return view('/tes/detailTempat',compact('tempat'));
+    // }
     public function booking($id){
         $tempat = tempat::find($id);
         return view('/tes/booking',compact('tempat'));
