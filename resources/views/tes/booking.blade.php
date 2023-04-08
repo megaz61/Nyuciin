@@ -41,7 +41,7 @@
                     <br>
                     <div class="row">
                         <div class="col-sm-2">
-                            <a href="{{ url()->previous() }}" class="btn btn-danger">Cancel</a>
+                            <a href="{{ url()->previous()}}" class="btn btn-danger">Cancel</a>
                         </div>
                         <div class="col-sm-1">
                             <button type="submit" class="btn btn-success">booking</button>

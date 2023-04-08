@@ -16,12 +16,6 @@ class BookingController extends Controller
     public function index($id){
         $tempat = tempat::find($id);
         $booking = booking::where('tempat_id',$id)->get();
-        //jika tanggal booking bukan tanggal sekarang maka akan dihapus, jika tanggal booking adalah tanggal sekarang maka akan tetap ada (tipe data booking adalah tanggal bukan jam)
-        foreach($booking as $b){
-            if($b->tanggal != Carbon::now()->format('Y-m-d')){
-                $b->delete();
-            }
-        }
         return view('/tes/detailTempat',compact('tempat','booking'));
     }
 
@@ -36,18 +30,6 @@ class BookingController extends Controller
 
     public function fix_booking(Request $request,$id){
         $tempat = tempat::find($id);
-        // $user = User::find(Auth::user()->id);
-        // $tamggal = Carbon::now();
-        // $booking = new booking;
-        // $booking->user_id = $user->id;
-        // $booking->tempat_id = $tempat->id;
-        // $booking->tanggal = $tamggal;
-        // $booking->nama_lengkap = $request->nama_lengkap;
-        // $booking->telpon = $request->telpon;
-        // $booking->booking_time = $request->booking_time;
-        // $booking->save();
-        // return redirect('riwayat')->with('success', 'Anda Berhasil Booking');
-
         $validateData = $request->validate([
             'nama_lengkap' => 'required',
             'telpon' => 'required|numeric',
