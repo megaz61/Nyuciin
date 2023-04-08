@@ -22,8 +22,8 @@
     <div class="container-md mt-5 pt-5">
         <h1>Detail Riwayat</h1>
     <div class="container-md pt-4">
-        @foreach ($booking  as $booking)
-        <div class="card shadow">
+        @foreach ($booking as $booking)
+        <div class="card shadow mb-3">
             <div class="row g-0 align-items-center">
                 <div class="col-md-2">
                     <div class="image-container">
