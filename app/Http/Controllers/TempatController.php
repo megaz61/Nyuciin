@@ -8,7 +8,7 @@ use App\Models\tempat;
 class TempatController extends Controller
 {
     public function create() {
-        return view('/tes/upTempat');
+        return view('/tes/admin/upTempat');
     }
 
     public function detail(tempat $tempats){

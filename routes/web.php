@@ -24,7 +24,7 @@ Route::get('/register', [UserController::class, 'register']);
 Route::post('/register', [UserController::class, 'store']);
 Route::get('/', [HomeController::class, 'index']);
 Route::get('/home', [HomeController::class, 'index']);
-Route::get('/upTempat', [TempatController::class, 'create']);
+Route::get('/upTempat', [TempatController::class, 'create'])->name('upTempat.create');
 Route::post('/upTempat', [TempatController::class, 'store'])->name('upTempat.store');
 Route::get('/detail/{id}', [BookingController::class, 'index']);
 Route::get('/booking/{id}', [BookingController::class, 'booking'])->middleware('auth');

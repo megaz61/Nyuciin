@@ -310,6 +310,27 @@
                 <p></p>
             </div>
 
+             <!-- Notif -->
+    <div class="container-md-5">
+        <div class="content row mt-3" id="about">
+            @if ($errors->any())
+                <div class="alert alert-danger">
+                    <ul class="mb-0">
+                        @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+            @endif
+            <!--alert berhasil daftar-->
+            @if (session()->has('success'))
+                <div class="alert alert-success alert-dismissible fade show" role="alert">
+                    {{ session('success') }}
+                </div>
+            @endif
+        @section('content')
+
+        {{-- ISI UP TEMPAT --}}
             <div class="row">
                 <div class="container-md">
 
