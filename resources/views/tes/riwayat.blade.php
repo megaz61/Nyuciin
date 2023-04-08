@@ -1,6 +1,22 @@
 @extends('layout.master')
 @section('title', 'Home')
 @section('Riwayat', 'active')
+
+<style>
+    .image-container {
+        position: relative;
+        width: 100%;
+        height: 13rem;
+        max-height: 13rem;
+        overflow: hidden;
+    }
+
+    .image-container img {
+        position: absolute;
+        object-fit: cover;
+    }
+</style>
+
 @section('content')
     @include('sweetalert::alert')
     <div class="container-md mt-5 pt-5">
@@ -8,11 +24,13 @@
     <div class="container-md pt-4">
         @foreach ($booking  as $booking)
         <div class="card shadow">
-            <div class="row align-items-center">
+            <div class="row g-0 align-items-center">
                 <div class="col-md-2">
-                    <img src="{{ url('storage') }}/{{ $booking->tempat->gambar}}" class="img-fluid rounded-start" alt="">
+                    <div class="image-container">
+                        <img src="{{ url('storage') }}/{{ $booking->tempat->gambar}}" class="img-fluid rounded-start w-100 h-100" alt="">
+                    </div>
                 </div>
-                <div class="col-md-7">
+                <div class="col-md-7 py-2 ps-3">
                     <div class="row align-items-center">
                         <div class="col-md-5">
                             <p class="card-title fs-4">Booking ID</p>
