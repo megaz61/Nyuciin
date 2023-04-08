@@ -69,9 +69,9 @@
                         </div>
                         <div class="col-md-7">
                             {{-- menampilkan data booking_time hanya hari ini dengan mencocokan data tanggal  --}}
-                            @if ($booking->tanggal == \Carbon\Carbon::now()->format('Y-m-d'))
+                            @if ($booking->tanggal == \Carbon\Carbon::now()->format('Y-m-d') && $booking->tempat_id == $tempat->id)
                                 <p class="card-text text-end opacity-75 fs-5">Pukul: {{ \Carbon\Carbon::parse($booking->booking_time)->format('H:i') }}</p>
-                            @elseif ($booking->tanggal != \Carbon\Carbon::now()->format('Y-m-d'))
+                            @elseif ($booking->tanggal != \Carbon\Carbon::now()->format('Y-m-d') || $booking->tempat_id != $tempat->id)
                                 <p class="card-text text-end opacity-75 fs-5">Tidak ada</p>
                             @endif
                             {{-- <p class="card-text text-end opacity-75 fs-5">Pukul: {{ \Carbon\Carbon::parse($booking->booking_time)->format('H:i') }}</p> --}}
