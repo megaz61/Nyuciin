@@ -57,25 +57,26 @@
             </div>
         @endif
         {{-- user sudah booking --}}
-        <div class="container-sm">
+        <div class="container-sm pb-5">
             <div class="card shadow mt-5">
-                <h1 class="card-text text-center h1">List yang sudah booking hari ini:</h1>
-            @foreach ($booking as $booking)
-            {{-- jika ada id pada data tempat yang tidak tercantum pada booking->tempat_id maka menampilkan data kosong --}}
-            <div class="card-body">
-                <div class="row pt-4 align-items-center">
-                    <div class="row align-items-center">
-                        <div class="col-md-5">
-                            <i class="bi bi-person-circle fs-5"> {{$booking->nama_lengkap}}</i>
-                        </div>
-                        <div class="col-md-7">
-                            {{-- menampilkan data booking_time hanya hari ini dengan mencocokan data tanggal  --}}
-                            @if ($booking->tanggal == \Carbon\Carbon::now()->format('Y-m-d') && $booking->tempat_id == $tempat->id)
-                                <p class="card-text text-end opacity-75 fs-5">Pukul: {{ \Carbon\Carbon::parse($booking->booking_time)->format('H:i') }}</p>
-                            @elseif ($booking->tanggal != \Carbon\Carbon::now()->format('Y-m-d') || $booking->tempat_id != $tempat->id)
-                                <p class="card-text text-end opacity-75 fs-5">Tidak ada</p>
-                            @endif
-                            {{-- <p class="card-text text-end opacity-75 fs-5">Pukul: {{ \Carbon\Carbon::parse($booking->booking_time)->format('H:i') }}</p> --}}
+                <h2 class="card-text text-center mt-3">List yang sudah booking hari ini:</h2>
+                @foreach ($booking as $booking)
+                    {{-- jika ada id pada data tempat yang tidak tercantum pada booking->tempat_id maka menampilkan data kosong --}}
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-7">
+                                <i class="bi bi-person-circle fs-5"> {{ $booking->nama_lengkap }}</i>
+                            </div>
+                            <div class="col-md-5">
+                                {{-- menampilkan data booking_time hanya hari ini dengan mencocokan data tanggal  --}}
+                                @if ($booking->tanggal == \Carbon\Carbon::now()->format('Y-m-d') && $booking->tempat_id == $tempat->id)
+                                    <p class="card-text text-end opacity-75 fs-5">Pukul:
+                                        {{ \Carbon\Carbon::parse($booking->booking_time)->format('H:i') }}</p>
+                                @elseif ($booking->tanggal != \Carbon\Carbon::now()->format('Y-m-d') || $booking->tempat_id != $tempat->id)
+                                    <p class="card-text text-end opacity-75 fs-5">Tidak ada</p>
+                                @endif
+                                {{-- <p class="card-text text-end opacity-75 fs-5">Pukul: {{ \Carbon\Carbon::parse($booking->booking_time)->format('H:i') }}</p> --}}
+                            </div>
                         </div>
                     </div>
                 @endforeach
