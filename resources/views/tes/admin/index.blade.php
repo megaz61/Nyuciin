@@ -9,16 +9,21 @@
 
 	<title>Dashboard - Atrana</title>
 
-	<!-- Bootstrap CSS-->
-	<link rel="stylesheet" href="assets/modules/bootstrap-5.1.3/css/bootstrap.css">
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+  integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+  integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous">
+</script>
+
 	<!-- Style CSS -->
-	<link rel="stylesheet" href="assets/css/style.css">
-	<!-- FontAwesome CSS-->
+	<link rel="stylesheet" href="{{asset('css/style.css')}}">
+	{{-- <!-- FontAwesome CSS-->
 	<link rel="stylesheet" href="assets/modules/fontawesome6.1.1/css/all.css">
 	<!-- Boxicons CSS-->
 	<link rel="stylesheet" href="assets/modules/boxicons/css/boxicons.min.css">
 	<!-- Apexcharts  CSS -->
-	<link rel="stylesheet" href="assets/modules/apexcharts/apexcharts.css">
+	<link rel="stylesheet" href="assets/modules/apexcharts/apexcharts.css"> --}}
 </head>
 <body>
 
@@ -507,7 +512,7 @@
 	</footer>
 
 
-	<!-- Preloader -->
+	{{-- <!-- Preloader -->
 	<div class="loader">
 		<div class="spinner-border text-light" role="status">
 			<span class="sr-only">Loading...</span>
@@ -515,22 +520,22 @@
 	</div>
 
 	<!-- Loader -->
-	<div class="loader-overlay"></div>
-
+	<div class="loader-overlay"></div> --}}
+{{--
 	<!-- General JS Scripts -->
 	<script src="assets/js/atrana.js"></script>
 
 	<!-- JS Libraies -->
 	<script src="assets/modules/jquery/jquery.min.js"></script>
 	<script src="assets/modules/bootstrap-5.1.3/js/bootstrap.bundle.min.js"></script>
-	<script src="assets/modules/popper/popper.min.js"></script>
+	<script src="assets/modules/popper/popper.min.js"></script> --}}
 
-	<!-- Chart Js -->
+	{{-- <!-- Chart Js -->
 	<script src="assets/modules/apexcharts/apexcharts.js"></script>
 	<script src="assets/js/ui-apexcharts.js"></script>
 
     <!-- Template JS File -->
-	<script src="assets/js/script.js"></script>
-	<script src="assets/js/custom.js"></script>
+	<script src="{{asset('assets/js/script.js')}}"></script>
+	<script src="{{asset('assets/js/custom.js')}}"></script> --}}
  </body>
 </html>
