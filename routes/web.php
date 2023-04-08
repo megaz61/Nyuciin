@@ -33,3 +33,6 @@ Route::get('/riwayat', [RiwayatController::class, 'index'])->name('history')->mi
 Route::get('/admin', function(){
     return view('/tes/admin/index');
 });
+Route::get('/up', function(){
+    return view('/tes/admin/upTempat');
+});
