@@ -34,7 +34,7 @@
                 </div>
             </div>
 
-            <div class="container pt-1">
+            <div class="container pt-1 g-0">
                 <div class="image-container">
                     <img src="{{ url('storage') }}/{{ $tempat->gambar }}" alt="Description" class="img-fluid w-100 h-100">
                 </div>
@@ -55,25 +55,26 @@
                     <a href="{{ url('booking/' . $tempat->id) }}" class="btn btn-primary">Booking</a>
                 </div>
             </div>
-            @endif
-            {{-- user sudah booking --}}
-            <div class="card shadow mt-5">
-                <h1 class="card-text text-center h1">List yang sudah booking hari ini:</h1>
+        @endif
+        {{-- user sudah booking --}}
+        <div class="card shadow mt-5">
+            <h2 class="card-text text-center mt-3">List yang sudah booking hari ini:</h2>
             @foreach ($booking as $booking)
-            {{-- jika ada id pada data tempat yang tidak tercantum pada booking->tempat_id maka menampilkan data kosong --}}
-            <div class="card-body">
-                <div class="row pt-4 align-items-center">
-                    <div class="row align-items-center">
-                        <div class="col-md-5">
-                            <i class="bi bi-person-circle fs-5"> {{$booking->nama_lengkap}}</i>
-                        </div>
-                        <div class="col-md-7">
-                            <p class="card-text text-end opacity-75 fs-5">Pukul: {{ \Carbon\Carbon::parse($booking->booking_time)->format('H:i') }}</p>
+                {{-- jika ada id pada data tempat yang tidak tercantum pada booking->tempat_id maka menampilkan data kosong --}}
+                <div class="card-body">
+                    <div class="row pt-3 align-items-center">
+                        <div class="row align-items-center">
+                            <div class="col-md-5">
+                                <i class="bi bi-person-circle fs-5"> {{ $booking->nama_lengkap }}</i>
+                            </div>
+                            <div class="col-md-7">
+                                <p class="card-text text-end opacity-75 fs-5">Pukul:
+                                    {{ \Carbon\Carbon::parse($booking->booking_time)->format('H:i') }}</p>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
             @endforeach
-            </div>
+        </div>
     </div>
 @endsection
