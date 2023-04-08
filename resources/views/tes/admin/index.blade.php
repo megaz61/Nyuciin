@@ -15,15 +15,14 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
   integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous">
 </script>
-
 	<!-- Style CSS -->
-	<link rel="stylesheet" href="{{asset('css/style.css')}}">
-	{{-- <!-- FontAwesome CSS-->
-	<link rel="stylesheet" href="assets/modules/fontawesome6.1.1/css/all.css">
+	<link rel="stylesheet" href="{{asset('/css/style.css')}}">
+	<!-- FontAwesome CSS-->
+	<link rel="stylesheet" href="{{asset('/modules/fontawesome6.1.1/css/all.css')}}">
 	<!-- Boxicons CSS-->
-	<link rel="stylesheet" href="assets/modules/boxicons/css/boxicons.min.css">
+	<link rel="stylesheet" href="{{asset('/modules/boxicons/css/boxicons.min.css')}}">
 	<!-- Apexcharts  CSS -->
-	<link rel="stylesheet" href="assets/modules/apexcharts/apexcharts.css"> --}}
+	{{-- <link rel="stylesheet" href="asset/modules/apexcharts/apexcharts.css"> --}}
 </head>
 <body>
 
@@ -97,7 +96,7 @@
 
 				  <li class="nav-item dropdown">
 					<a class="nav-link" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-					  <img src="assets/images/avatar/avatar-1.png" alt="">
+					  <img src="asset/images/avatar/avatar-1.png" alt="">
 					</a>
 					<ul class="dropdown-menu" aria-labelledby="navbarDropdown">
 						<a class="dropdown-item" href="my-profile.html"><i class="fa fa-user size-icon-1"></i> <span>My Profile</span></a>
@@ -117,7 +116,7 @@
 
 			<!-- Logo -->
 			<div class="logo">
-					<h2 class="mb-0"><img src="assets/images/logo.png"> Atrana</h2>
+					<h2 class="mb-0"><img src="asset/images/logo.png"> Atrana</h2>
 			</div>
 
             <ul class="side-menu">
@@ -372,57 +371,6 @@
 
 				</div>
 
-				<div class="col-md-6">
-					<div class="card">
-						<div class="card-header">
-						</div>
-						<div class="card-body">
-							<div id="columnchart"></div>
-						</div>
-					</div>
-				</div>
-
-				<div class="col-md-6">
-					<div class="card">
-						<div class="card-header">
-							<h4>Recent Messages</h4>
-						</div>
-						<div class="card-body pb-4">
-							<div class="recent-message d-flex px-4 py-3">
-								<div class="avatar avatar-lg">
-									<img src="assets/images/message/4.jpg">
-								</div>
-								<div class="name ms-4">
-									<h5 class="mb-1">Hank Schrader</h5>
-									<h6 class="text-muted mb-0">@johnducky</h6>
-								</div>
-							</div>
-							<div class="recent-message d-flex px-4 py-3">
-								<div class="avatar avatar-lg">
-									<img src="assets/images/message/5.jpg">
-								</div>
-								<div class="name ms-4">
-									<h5 class="mb-1">Dean Winchester</h5>
-									<h6 class="text-muted mb-0">@imdean</h6>
-								</div>
-							</div>
-							<div class="recent-message d-flex px-4 py-3">
-								<div class="avatar avatar-lg">
-									<img src="assets/images/message/1.jpg">
-								</div>
-								<div class="name ms-4">
-									<h5 class="mb-1">John Doe</h5>
-									<h6 class="text-muted mb-0">@Doejohn</h6>
-								</div>
-							</div>
-							<div class="px-4">
-								<button class='btn btn-block btn-xl btn-primary font-bold mt-3'>Start
-									Conversation</button>
-							</div>
-						</div>
-					</div>
-				</div>
-
 				<div class="col-md-12">
 					<div class="card">
 						<div class="card-header">
@@ -510,32 +458,20 @@
 			</div>
 		</div>
 	</footer>
-
-
-	{{-- <!-- Preloader -->
-	<div class="loader">
-		<div class="spinner-border text-light" role="status">
-			<span class="sr-only">Loading...</span>
-		</div>
-	</div>
-
-	<!-- Loader -->
-	<div class="loader-overlay"></div> --}}
-{{--
 	<!-- General JS Scripts -->
-	<script src="assets/js/atrana.js"></script>
+	<script src="{{asset('/js/atrana.js')}}"></script>
 
 	<!-- JS Libraies -->
-	<script src="assets/modules/jquery/jquery.min.js"></script>
-	<script src="assets/modules/bootstrap-5.1.3/js/bootstrap.bundle.min.js"></script>
-	<script src="assets/modules/popper/popper.min.js"></script> --}}
+	{{-- <script src="{{asset('/modules/jquery/jquery.min.js')}}"></script>
+	<script src="{{asset('/modules/bootstrap-5.1.3/js/bootstrap.bundle.min.js')}}"></script>
+	<script src="{{asset('/modules/popper/popper.min.js')}}"></script> --}}
 
-	{{-- <!-- Chart Js -->
-	<script src="assets/modules/apexcharts/apexcharts.js"></script>
-	<script src="assets/js/ui-apexcharts.js"></script>
+	<!-- Chart Js -->
+	<script src="{{asset('/modules/apexcharts/apexcharts.js')}}"></script>
+	<script src="{{asset('/js/ui-apexcharts.js')}}"></script>
 
     <!-- Template JS File -->
-	<script src="{{asset('assets/js/script.js')}}"></script>
-	<script src="{{asset('assets/js/custom.js')}}"></script> --}}
+	<script src="{{asset('/js/script.js')}}"></script>
+	<script src="{{asset('/js/custom.js')}}"></script>
  </body>
 </html>
