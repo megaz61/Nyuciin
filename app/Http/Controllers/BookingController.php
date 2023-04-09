@@ -13,22 +13,25 @@ use Carbon\Carbon;
 class BookingController extends Controller
 {
     //public function index menampilak data tabel tempat dan tabel booking bedasarkan id pada tempat adalah tempat_id pada booking
-    public function index($id){
+    public function index($id)
+    {
         $tempat = tempat::find($id);
-        $booking = booking::where('tempat_id',$id)->get();
-        return view('/tes/detailTempat',compact('tempat','booking'));
+        $booking = booking::where('tempat_id', $id)->get();
+        return view('/tes/detailTempat', compact('tempat', 'booking'));
     }
 
     // public function index($id){
     //     $tempat = tempat::find($id);
     //     return view('/tes/detailTempat',compact('tempat'));
     // }
-    public function booking($id){
+    public function booking($id)
+    {
         $tempat = tempat::find($id);
-        return view('/tes/booking',compact('tempat'));
+        return view('/tes/booking', compact('tempat'));
     }
 
-    public function fix_booking(Request $request,$id){
+    public function fix_booking(Request $request, $id)
+    {
         $tempat = tempat::find($id);
         $validateData = $request->validate([
             'nama_lengkap' => 'required',
@@ -36,11 +39,22 @@ class BookingController extends Controller
             'booking_time' => 'required',
         ]);
 
-        //Jika jam booking sudah ada, maka tidak bisa
-        $booking = booking::where('tempat_id', $id)->where('booking_time', $request->booking_time)->first();
-        if ($booking) {
+        //Jika jam booking pada tanggal hari ini sudah ada, maka tidak bisa
+        $booking = booking::where('tempat_id', $id)
+            ->where('booking_time', $request->booking_time)
+            ->where('tanggal', \Carbon\Carbon::now()->format('Y-m-d'))
+            ->first();
+
+        if ($booking !== null) {
             return redirect()->back()->with('error', 'Jam Booking Sudah Ada');
         }
+
+
+
+        // $booking = booking::where('tempat_id', $id)->where('booking_time', $request->booking_time)->first();
+        // if ($booking) {
+        //     return redirect()->back()->with('error', 'Jam Booking Sudah Ada');
+        // }
         //Jika jam booking lebih dari jam tutup dan kurang dari jam buka, maka tidak bisa
         if ($request->booking_time > $tempat->closing_time || $request->booking_time < $tempat->opening_time) {
             return redirect()->back()->with('error', 'Jam Booking Tidak Sesuai');
