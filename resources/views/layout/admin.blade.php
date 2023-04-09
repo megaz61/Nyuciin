@@ -122,18 +122,18 @@
 
                 <!-- Logo -->
                 <div class="logo">
-                    <h2 class="mb-0"> Nyuciin</h2>
+                    <h2 class="mb-0">Nyuciin</h2>
                 </div>
 
                 <ul class="side-menu">
                     <li>
-                        <a href="index.html" class="active">
+                        <a href="index.html" class="nav-link @yield('dashboard')">
                             <i class='bx bxs-dashboard icon'></i> Dashboard
                         </a>
                     </li>
 
                     <!-- Divider-->
-                    <li class="divider" data-text="STARTER">STARTER</li>
+                    <li class="divider" data-text="STARTER">Admin</li>
 
 
                     <li>
@@ -155,8 +155,31 @@
                         </a>
                     </li>
 
+
+                    <!-- Divider User-->
+                    <li class="divider" data-text="STARTER">User</li>
+
+                    <li>
+                        <a href="{{ route('upTempat.create') }}">
+                            <i class='bx bxs-meh-blank icon'></i>
+                            Upload Tempat
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <i class='bx bxs-meh-blank icon'></i>
+                            Blank Page
+                        </a>
+                    </li>
+                    <li>
+                        <a href="blank-pages.html">
+                            <i class='bx bxs-meh-blank icon'></i>
+                            Blank Page
+                        </a>
+                    </li>
+
+            </div>
         </div>
-    </div>
     </div>
     <!-- End Sidebar-->
 
@@ -166,7 +189,7 @@
     @yield('content')
     @include('sweetalert::alert')
 
-    @show
+@show
 
 
 
