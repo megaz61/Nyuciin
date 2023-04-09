@@ -63,21 +63,16 @@
                 @foreach ($booking as $booking)
                     {{-- jika ada id pada data tempat yang tidak tercantum pada booking->tempat_id maka menampilkan data kosong --}}
                     <div class="card-body">
-                        <div class="row">
-                            <div class="col-md-7">
-                                <i class="bi bi-person-circle fs-5"> {{ $booking->nama_lengkap }}</i>
-                            </div>
-                            <div class="col-md-5">
-                                {{-- menampilkan data booking_time hanya hari ini dengan mencocokan data tanggal  --}}
-                                @if ($booking->tanggal == \Carbon\Carbon::now()->format('Y-m-d') && $booking->tempat_id == $tempat->id)
-                                    <p class="card-text text-end opacity-75 fs-5">Pukul:
-                                        {{ \Carbon\Carbon::parse($booking->booking_time)->format('H:i') }}</p>
-                                @elseif ($booking->tanggal != \Carbon\Carbon::now()->format('Y-m-d') || $booking->tempat_id != $tempat->id)
-                                    <p class="card-text text-end opacity-75 fs-5">Tidak ada</p>
-                                @endif
-                                {{-- <p class="card-text text-end opacity-75 fs-5">Pukul: {{ \Carbon\Carbon::parse($booking->booking_time)->format('H:i') }}</p> --}}
-                            </div>
+                        @if (($booking->tanggal == \Carbon\Carbon::now()->format('Y-m-d')))
+                        <div class="col-md-7">
+                            <i class="bi bi-person-circle fs-5"> {{ $booking->nama_lengkap }}</i>
                         </div>
+                            <p class="card-text text-end opacity-75 fs-5">Pukul:
+                             {{ \Carbon\Carbon::parse($booking->booking_time)->format('H:i') }}</p>
+                        {{-- @else
+                            <p class="card-text text-center opacity-75 fs-5">Tidak ada yang booking hari ini</p> --}}
+                        @endif
+
                     </div>
                 @endforeach
             </div>
