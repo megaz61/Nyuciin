@@ -26,7 +26,6 @@
                     {{ session('success') }}
                 </div>
             @endif
-        @section('content')
 
         {{-- ISI UP TEMPAT --}}
             <div class="row">
@@ -62,16 +61,17 @@
                                     </div>
                                     <div class="form-group">
                                         <label for="">List Harga</label>
-                                        <input type="text-field" class="form-control"
+                                        <textarea type="text-field" class="text-secondary form-control "
                                             @error('list_harga') is-invalid @enderror name="list_harga" id="list_harga"
-                                            placeholder="Contoh: 50.000 - 100.000" autofocus
-                                            value="{{ old('list_harga') }}">
+                                            value="{{ old('list_harga') }}">Contoh: a. Paket 1 : 50.000 - 100.000
+                                        </textarea>
                                     </div>
                                     <div class="form-group">
                                         <label for="">Keterangan</label>
-                                        <input type="text-field" class="form-control"
+                                        <textarea type="text-field" class="text-secondary form-control"
                                             @error('keterangan') is-invalid @enderror name="keterangan" id="keterangan"
-                                            placeholder="Masukkan Keterangan" autofocus value="{{ old('keterangan') }}">
+                                             autofocus value="{{ old('keterangan') }}">Masukkan Keterangan tempat
+                                        </textarea>
                                     </div>
                                     <div class="form-group">
                                         <label for="">Gambar Tempat</label>
