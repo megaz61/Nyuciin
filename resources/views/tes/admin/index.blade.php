@@ -19,8 +19,11 @@
                                     <i class="fas fa-inbox icon-home bg-primary text-light"></i>
                                 </div>
                                 <div class="col-8">
-                                    <p>Revenue</p>
-                                    <h5>$65</h5>
+                                    <?php
+                                    $jumlah_user = App\Models\user::count();
+                                    ?>
+                                    <p>Jumlah User</p>
+                                    <h5>{{$jumlah_user}}</h5>
                                 </div>
                             </div>
                         </div>
@@ -35,8 +38,11 @@
                                     <i class="fas fa-clipboard-list icon-home bg-success text-light"></i>
                                 </div>
                                 <div class="col-8">
-                                    <p>Orders</p>
-                                    <h5>3000</h5>
+                                    <?php
+                                    $jumlah_tempat = App\Models\tempat::count();
+                                    ?>
+                                    <p>Jumlah Tempat Cuci</p>
+                                    <h5>{{$jumlah_tempat}}</h5>
                                 </div>
                             </div>
                         </div>
@@ -51,90 +57,53 @@
                                     <i class="fas fa-chart-bar  icon-home bg-info text-light"></i>
                                 </div>
                                 <div class="col-8">
-                                    <p>Sales</p>
-                                    <h5>5500</h5>
+                                    <?php
+                                    $jumlah_booking = App\Models\booking::count();
+                                    ?>
+                                    <p>Jumlah Booking</p>
+                                    <h5>{{$jumlah_booking}}</h5>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <div class="col-md-6 col-lg-3">
-                    <div class="card">
-                        <div class="card-body">
-                            <div class="row">
-                                <div class="col-4 d-flex align-items-center">
-                                    <i class="fas fa-id-card  icon-home bg-warning text-light"></i>
-                                </div>
-                                <div class="col-8">
-                                    <p>Employes</p>
-                                    <h5>256</h5>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-
-                <div class="col-md-12">
+                <div class="col-md-12 mt-5">
                     <div class="card">
                         <div class="card-header">
-                            <h4>Latest Transaction</h4>
+                            <h4>Latest Booking</h4>
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">
                                 <table class="table table-striped">
                                     <thead>
                                         <tr>
-                                            <th scope="col">Order Id</th>
-                                            <th scope="col">Billing Name</th>
-                                            <th scope="col">Date</th>
-                                            <th scope="col">Total</th>
-                                            <th scope="col">Payment Status</th>
-                                            <th scope="col">Payment Method</th>
-                                            <th scope="col">View Details</th>
+                                            <th scope="col">Id Booking</th>
+                                            <th scope="col">Nama</th>
+                                            <th scope="col">Email</th>
+                                            <th scope="col">Tanggal</th>
+                                            <th scope="col">Jam Booking</th>
+                                            <th scope="col">Nomor Telepon</th>
+                                            <th scope="col">Hapus</th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr>
-                                            <th scope="row">#SK2548 </th>
-                                            <td>Neal Matthews</td>
-                                            <td>07 Oct, 2022</td>
-                                            <td>$400</td>
-                                            <td><span class="text-success">Paid</span></td>
-                                            <td>Mastercard</td>
-                                            <td><button class="btn btn-primary">View Details</button></td>
-                                        </tr>
-
-                                        <tr>
-                                            <th scope="row">#SK2548 </th>
-                                            <td>Neal Matthews</td>
-                                            <td>07 Oct, 2022</td>
-                                            <td>$400</td>
-                                            <td><span class="text-success">Paid</span></td>
-                                            <td>Visa</td>
-                                            <td><button class="btn btn-primary">View Details</button></td>
-                                        </tr>
-
-                                        <tr>
-                                            <th scope="row">#SK2548 </th>
-                                            <td>Neal Matthews</td>
-                                            <td>07 Oct, 2022</td>
-                                            <td>$400</td>
-                                            <td><span class="text-danger">Chargeback</span></td>
-                                            <td>Paypal</td>
-                                            <td><button class="btn btn-primary">View Details</button></td>
-                                        </tr>
-
-                                        <tr>
-                                            <th scope="row">#SK2548 </th>
-                                            <td>Neal Matthews</td>
-                                            <td>07 Oct, 2022</td>
-                                            <td>$400</td>
-                                            <td><span class="text-warning">Refund</span></td>
-                                            <td>Visa</td>
-                                            <td><button class="btn btn-primary">View Details</button></td>
-                                        </tr>
+                                        @foreach ($booking as $booking )
+                                            <tr>
+                                                <td>{{ $booking->id }}</td>
+                                                <td>{{ $booking->nama_lengkap}}</td>
+                                                <td>{{ $booking->user->email}}</td>
+                                                <td>{{ $booking->tanggal}}</td>
+                                                <td>{{ $booking->booking_time}}</td>
+                                                <td>{{ $booking->telpon}}</td>
+                                                <td>
+                                                    <form action="{{ route('admin.destroy', $booking->id) }}" method="POST">
+                                                        @csrf
+                                                        @method('DELETE') {{-- tambahkan method DELETE --}}
+                                                        <button type="submit" class="btn btn-danger">Hapus</button>
+                                                    </form>
+                                            </tr>
+                                        @endforeach
                                     </tbody>
                                 </table>
                             </div>

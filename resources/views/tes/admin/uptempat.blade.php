@@ -1,4 +1,5 @@
 @extends('layout.admin')
+@section('upTempat', 'active')
 @section('content')
     <!--Content Start-->
     <div class="content-start transition">
