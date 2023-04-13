@@ -20,7 +20,10 @@
 @section('content')
     @include('sweetalert::alert')
     <div class="container-md mt-5 pt-5">
-        <h1>Detail Riwayat</h1>
+        <h1 class="text-center">Detail Riwayat</h1>
+        <div class="container d-flex justify-content-center ">
+            <img src="{{ asset('gambar/riwayat.png') }}" class="img-fluid ">
+        </div>
     <div class="container-md pt-4">
         @foreach ($booking as $booking)
         <div class="card shadow mb-3">
@@ -37,6 +40,14 @@
                         </div>
                         <div class="col-md-7">
                             <p class="card-text text-end opacity-75">{{$booking->id}}</p>
+                        </div>
+                    </div>
+                    <div class="row align-items-center">
+                        <div class="col-md-5">
+                            <p class="card-title fs-4">Nama</p>
+                        </div>
+                        <div class="col-md-7">
+                            <p class="card-text text-end opacity-75">{{{$booking->nama_lengkap}}}</p>
                         </div>
                     </div>
                     <div class="row align-items-center">
@@ -68,6 +79,8 @@
                     <div class="row mx-4">
                         @if (\Carbon\Carbon::now('Asia/Jakarta')->diffInMinutes(\Carbon\Carbon::parse($booking->booking_time)) > 15)
                             <button type="submit" class="btn btn-warning">Nilai</button>
+                            <button type="submit" class="btn btn-success mt-3">Edit</button>
+                            <button type="submit" class="btn btn-danger mt-3">Batal</button>
                         @else
                         -
                         @endif

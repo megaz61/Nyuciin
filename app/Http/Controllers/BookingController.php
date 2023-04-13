@@ -30,6 +30,12 @@ class BookingController extends Controller
         return view('/tes/booking', compact('tempat'));
     }
 
+    public function booking_success($id)
+    {
+        $booking = booking::find($id);
+        $tempat = tempat::find($booking->tempat_id);
+        return view('riwayat', compact('booking', 'tempat'));
+    }
     public function fix_booking(Request $request, $id)
     {
         $tempat = tempat::find($id);
@@ -46,7 +52,8 @@ class BookingController extends Controller
             ->first();
 
         if ($booking !== null) {
-            return redirect()->back()->with('error', 'Jam Booking Sudah Ada');
+            Alert::error('Gagal', 'Jam booking sudah ada');
+            return redirect()->back();
         }
 
 
@@ -57,16 +64,23 @@ class BookingController extends Controller
         // }
         //Jika jam booking lebih dari jam tutup dan kurang dari jam buka, maka tidak bisa
         if ($request->booking_time > $tempat->closing_time || $request->booking_time < $tempat->opening_time) {
-            return redirect()->back()->with('error', 'Jam Booking Tidak Sesuai');
+            Alert::error('Gagal', 'Jam Booking tidak sesuai');
+            return redirect()->back();
         }
 
+        //jika validateData kosong maka error
+        if (empty($validateData)) {
+            Alert::error('Gagal', 'Data tidak boleh kosong');
+            return redirect()->back();
+        }
 
         $validateData['user_id'] = Auth::user()->id;
         $validateData['tempat_id'] = $id;
         $validateData['tanggal'] = Carbon::now();
 
         booking::create($validateData);
-        return redirect('riwayat')->with('success', 'Anda Berhasil Booking');
+        Alert::success('Success', 'Berhasil Booking');
+        return redirect('/riwayat');
 
     }
 }

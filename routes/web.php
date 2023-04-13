@@ -7,6 +7,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\TempatController;
 use App\Http\Controllers\BookingController;
 use App\Http\Controllers\RiwayatController;
+use App\Http\Controllers\AdminController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -28,11 +29,10 @@ Route::get('/upTempat', [TempatController::class, 'create'])->name('upTempat.cre
 Route::post('/upTempat', [TempatController::class, 'store'])->name('upTempat.store');
 Route::get('/detail/{id}', [BookingController::class, 'index']);
 Route::get('/booking/{id}', [BookingController::class, 'booking'])->middleware('auth');
+Route::get('/success/{id}', [BookingController::class, 'booking_success'])->middleware('success');
 Route::post('/booking/{id}', [BookingController::class, 'fix_booking'])->name('booking.store');
 Route::get('/riwayat', [RiwayatController::class, 'index'])->name('history')->middleware('auth');
-Route::get('/admin', function(){
-    return view('/tes/admin/index');
-});
-Route::get('/up', function(){
-    return view('/tes/admin/upTempat');
-});
+Route::get('/admin', [AdminController::class, 'index'])->name('admin')->middleware('auth');
+Route::get('/admin/upTempat', [AdminController::class, 'upTempat'])->name('admin.upTempat')->middleware('auth');
+Route::delete('/hapus/{id}', [AdminController::class, 'destroy'])->name('admin.destroy');
+

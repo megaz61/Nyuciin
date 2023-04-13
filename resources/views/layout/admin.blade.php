@@ -21,6 +21,8 @@
     <link rel="stylesheet" href="{{ asset('/modules/fontawesome6.1.1/css/all.css') }}">
     <!-- Boxicons CSS-->
     <link rel="stylesheet" href="{{ asset('/modules/boxicons/css/boxicons.min.css') }}">
+   {{-- icon boostrap --}}
+   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css">
     <!-- Apexcharts  CSS -->
     {{-- <link rel="stylesheet" href="asset/modules/apexcharts/apexcharts.css"> --}}
 </head>
@@ -127,7 +129,7 @@
 
                 <ul class="side-menu">
                     <li>
-                        <a href="index.html" class="nav-link @yield('dashboard')">
+                        <a href="{{ route('admin') }}" class="nav-link @yield('dashboard')">
                             <i class='bx bxs-dashboard icon'></i> Dashboard
                         </a>
                     </li>
@@ -137,7 +139,7 @@
 
 
                     <li>
-                        <a href="{{ route('upTempat.create') }}">
+                        <a href="{{ route('upTempat.create') }}" class="nav-link @yield('upTempat')">
                             <i class='bx bxs-meh-blank icon'></i>
                             Upload Tempat
                         </a>
