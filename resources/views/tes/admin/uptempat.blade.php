@@ -26,11 +26,10 @@
                     {{ session('success') }}
                 </div>
             @endif
-        @section('content')
 
         {{-- ISI UP TEMPAT --}}
             <div class="row">
-                <div class="container-md">
+                <div class="">
 
                     <div class="card">
                         <div class="card-body">
@@ -93,10 +92,8 @@
                             </div>
                         </div>
                     </div>
-
                 </div>
             </div>
-
         </div> <!-- End Container -->
     </div><!-- End Content -->
 @endsection
