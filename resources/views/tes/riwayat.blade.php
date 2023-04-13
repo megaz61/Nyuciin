@@ -19,12 +19,12 @@
 
 @section('content')
     @include('sweetalert::alert')
-    <div class="container-md mt-5 pt-5">
+    <div class="container-fluid mt-5 pt-5">
         <h1 class="text-center">Detail Riwayat</h1>
         <div class="container d-flex justify-content-center ">
-            <img src="{{ asset('gambar/riwayat.png') }}" class="img-fluid ">
+            <img src="{{ asset('gambar/riwayat.png') }}" class="img-fluid w-25">
         </div>
-    <div class="container-md pt-4">
+    <div class="container-md pt-4 ">
         @foreach ($booking as $booking)
         <div class="card shadow mb-3">
             <div class="row g-0 align-items-center">
