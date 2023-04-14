@@ -52,7 +52,7 @@
         <div class="container mt-5">
             <div class="row row-cols-md-4">
                 @foreach ($tempats as $tempat)
-                    <div class="col mb-3">
+                    <div class="col mb-4">
                         <div class="card h-100 shadow">
                             <img src="{{ url('storage') }}/{{ $tempat->gambar }}" class="card-img-top h-50 img-fluid" alt="...">
                             <div class="card-body">
