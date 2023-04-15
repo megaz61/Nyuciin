@@ -100,7 +100,7 @@
                                                     <form action="{{ route('admin.destroy', $booking->id) }}" method="POST">
                                                         @csrf
                                                         @method('DELETE') {{-- tambahkan method DELETE --}}
-                                                        <button type="submit" class="btn btn-danger">Hapus</button>
+                                                        <button type="submit" class="btn btn-danger" onclick="return confirm('Apakah Anda yakin ingin menghapus?')">Hapus</button>
                                                     </form>
                                             </tr>
                                         @endforeach

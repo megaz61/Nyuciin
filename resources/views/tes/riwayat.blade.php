@@ -76,15 +76,42 @@
                     </div>
                 </div>
                 <div class="col-md-3">
+
                     <div class="row mx-4">
-                        @if (\Carbon\Carbon::now('Asia/Jakarta')->diffInMinutes(\Carbon\Carbon::parse($booking->booking_time)) > 15)
-                            <button type="submit" class="btn btn-warning">Nilai</button>
-                            <button type="submit" class="btn btn-success mt-3">Edit</button>
-                            <button type="submit" class="btn btn-danger mt-3">Batal</button>
-                        @else
-                        -
-                        @endif
+                        <a href="" class="btn btn-warning">Nilai</a>
+                        <a href="{{ url('ganti/' . $booking->id) }}" class="btn btn-success mt-3">Ganti Jadwal</a>
                     </div>
+                    <form action="{{ route('history.destroy', $booking->id) }}" method="POST">
+                        <div class="row mx-4">
+                                @csrf
+                                @method('DELETE')
+                                <button type="submit" class="btn btn-danger mt-3" onclick="return confirm('Apakah Anda yakin ingin membatalkan?')">Batalkan</button>
+                        </div>
+                    </form>
+
+                    {{-- Percobaan GAGAL --}}
+
+                    {{-- @if (date('H:i') < $booking->booking_time)
+                    <div class="row mx-4">
+                        <a href="{{ url('ganti/' . $booking->id) }}" class="btn btn-success mt-3">Ganti Jadwal</a>
+                    </div>
+                    <form action="{{ route('history.destroy', $booking->id) }}" method="POST">
+                        <div class="row mx-4">
+                                @csrf
+                                @method('DELETE')
+                                <button type="submit" class="btn btn-danger mt-3" onclick="return confirm('Apakah Anda yakin ingin membatalkan?')">Batalkan</button>
+                        </div>
+                    </form>
+                @elseif (date('H:i') > date('H:i', strtotime($booking->booking_time . '+15 minutes')))
+                    <div class="row mx-4">
+                        <a href="" class="btn btn-warning">Nilai</a>
+                    </div>
+                @else
+                <div class="row mx-4">
+                    <h1>sedang mencuci</h1>
+                </div>
+                @endif --}}
+
                 </div>
             </div>
         </div>

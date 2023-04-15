@@ -55,14 +55,6 @@ class BookingController extends Controller
             Alert::error('Gagal', 'Jam booking sudah ada');
             return redirect()->back();
         }
-
-
-
-        // $booking = booking::where('tempat_id', $id)->where('booking_time', $request->booking_time)->first();
-        // if ($booking) {
-        //     return redirect()->back()->with('error', 'Jam Booking Sudah Ada');
-        // }
-        //Jika jam booking lebih dari jam tutup dan kurang dari jam buka, maka tidak bisa
         if ($request->booking_time > $tempat->closing_time || $request->booking_time < $tempat->opening_time) {
             Alert::error('Gagal', 'Jam Booking tidak sesuai');
             return redirect()->back();
