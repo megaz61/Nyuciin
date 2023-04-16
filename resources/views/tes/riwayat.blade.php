@@ -75,23 +75,8 @@
                         </div>
                     </div>
                 </div>
+                @if (date('H:i') < $booking->booking_time)
                 <div class="col-md-3">
-
-                    <div class="row mx-4">
-                        <a href="" class="btn btn-warning">Nilai</a>
-                        <a href="{{ url('ganti/' . $booking->id) }}" class="btn btn-success mt-3">Ganti Jadwal</a>
-                    </div>
-                    <form action="{{ route('history.destroy', $booking->id) }}" method="POST">
-                        <div class="row mx-4">
-                                @csrf
-                                @method('DELETE')
-                                <button type="submit" class="btn btn-danger mt-3" onclick="return confirm('Apakah Anda yakin ingin membatalkan?')">Batalkan</button>
-                        </div>
-                    </form>
-
-                    {{-- Percobaan GAGAL --}}
-
-                    {{-- @if (date('H:i') < $booking->booking_time)
                     <div class="row mx-4">
                         <a href="{{ url('ganti/' . $booking->id) }}" class="btn btn-success mt-3">Ganti Jadwal</a>
                     </div>
@@ -102,17 +87,30 @@
                                 <button type="submit" class="btn btn-danger mt-3" onclick="return confirm('Apakah Anda yakin ingin membatalkan?')">Batalkan</button>
                         </div>
                     </form>
+                </div>
                 @elseif (date('H:i') > date('H:i', strtotime($booking->booking_time . '+15 minutes')))
+                <div class="col-md-3">
+                    <div class="row mx-4">
+                        <a href="{{ url('nilai/' . $booking->id) }}" class="btn btn-warning">Nilai</a>
+                    </div>
+                </div>
+                @endif
+
+
+                {{-- tanpa if --}}
+                {{-- <div class="col-md-3">
                     <div class="row mx-4">
                         <a href="" class="btn btn-warning">Nilai</a>
+                        <a href="{{ url('ganti/' . $booking->id) }}" class="btn btn-success mt-3">Ganti Jadwal</a>
                     </div>
-                @else
-                <div class="row mx-4">
-                    <h1>sedang mencuci</h1>
-                </div>
-                @endif --}}
-
-                </div>
+                    <form action="{{ route('history.destroy', $booking->id) }}" method="POST">
+                        <div class="row mx-4">
+                                @csrf
+                                @method('DELETE')
+                                <button type="submit" class="btn btn-danger mt-3" onclick="return confirm('Apakah Anda yakin ingin membatalkan?')">Batalkan</button>
+                        </div>
+                    </form>
+                </div> --}}
             </div>
         </div>
         @endforeach
