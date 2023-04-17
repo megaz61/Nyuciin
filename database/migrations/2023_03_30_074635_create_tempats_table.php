@@ -20,7 +20,7 @@ return new class extends Migration
             $table->longText('list_harga');
             $table->longText('keterangan');
             $table->string('gambar')->nullable();
-            $table->integer('jumlah_rating')->nullable();
+            $table->double('jumlah_rating')->nullable();
             $table->timestamps();
         });
     }

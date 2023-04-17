@@ -28,6 +28,7 @@
     }
 
     .rating-css input {
+        color: #ffe400;
         display: none;
     }
 
@@ -44,6 +45,7 @@
     .rating-css label:active {
         transform: scale(0.8);
         transition: 0.3s ease;
+
     }
 
     /* End of Star Rating */
@@ -125,63 +127,73 @@
                                     </div>
                                 </form>
                             </div>
-                            {{-- @elseif (date('H:i') > date('H:i', strtotime($bookingItem->booking_time . '+15 minutes'))) --}}
+                        @elseif ($bookingItem->rating != null)
                             <div class="col-md-3">
                                 <div class="row mx-4">
-                                    <!-- Button trigger modal -->
+                                    <p class="text-center">★ {{ number_format($bookingItem->rating, 1 ,'.') }}</p>
+                                </div>
+                            </div>
+                        @elseif (date('H:i') > date('H:i', strtotime($bookingItem->booking_time . '+15 minutes')))
+                            <div class="col-md-3">
+                                <div class="row mx-4">
                                     <button type="button" class="btn btn-warning" data-toggle="modal"
-                                        data-target="#rating">
+                                        data-target="#rating{{ $bookingItem->id }}">
                                         Nilai
                                     </button>
                                 </div>
+
                                 <!-- Modal -->
-                                <div class="modal fade" id="rating" tabindex="-1" role="dialog"
+                                <div class="modal fade" id="rating{{ $bookingItem->id }}" tabindex="-1" role="dialog"
                                     aria-labelledby="ratingLabel" aria-hidden="true">
                                     <div class="modal-dialog" role="document">
                                         <div class="modal-content">
-                                            <div class="modal-header">
-                                                <h5 class="modal-title" id="ratingLabel">Nilai Tempat Cuci</h5>
-                                                <button type="button" class="close" data-dismiss="modal"
-                                                    aria-label="Close">
-                                                    <span aria-hidden="true">&times;</span>
-                                                </button>
-                                            </div>
-                                            <div class="modal-body">
-                                                <form action="{{ route('rating.store', $bookingItem->id) }}" method="POST">
-                                                    @csrf
-                                                    <div class="rating-css">
-                                                        <input type="radio" id="star5" name="rating"
-                                                            value="5" />
-                                                        <label for="star5" title="Sangat Bagus">&#9733;</label>
-                                                        <input type="radio" id="star4" name="rating"
-                                                            value="4" />
-                                                        <label for="star4" title="Bagus">&#9733;</label>
-                                                        <input type="radio" id="star3" name="rating"
-                                                            value="3" />
-                                                        <label for="star3" title="Cukup">&#9733;</label>
-                                                        <input type="radio" id="star2" name="rating"
-                                                            value="2" />
-                                                        <label for="star2" title="Buruk">&#9733;</label>
-                                                        <input type="radio" id="star1" name="rating"
-                                                            value="1" />
-                                                        <label for="star1" title="Sangat Buruk">&#9733;</label>
+                                            <form action="{{ route('rating.store', $bookingItem->id) }}" method="POST">
+                                                @csrf
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title" id="ratingLabel">Nilai Tempat Cuci (Booking ID:
+                                                        {{ $bookingItem->id }})</h5>
+                                                    <button type="button" class="close" data-dismiss="modal"
+                                                        aria-label="Close">
+                                                        <span aria-hidden="true">&times;</span>
+                                                    </button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <div class="rating-css text-center">
+                                                        <input type="radio" id="star1{{ $bookingItem->id }}"
+                                                            name="rating" value="1" />
+                                                        <label for="star1{{ $bookingItem->id }}" title="Sangat Buruk"><i
+                                                                class="bi bi-star-fill"></i></label>
+                                                        <input type="radio" id="star2{{ $bookingItem->id }}"
+                                                            name="rating" value="2" />
+                                                        <label for="star2{{ $bookingItem->id }}" title="Buruk"><i
+                                                                class="bi bi-star-fill"></i></label>
+                                                        <input type="radio" id="star3{{ $bookingItem->id }}"
+                                                            name="rating" value="3" />
+                                                        <label for="star3{{ $bookingItem->id }}" title="Cukup"><i
+                                                                class="bi bi-star-fill"></i></label>
+                                                        <input type="radio" id="star4{{ $bookingItem->id }}"
+                                                            name="rating" value="4" />
+                                                        <label for="star4{{ $bookingItem->id }}" title="Bagus"><i
+                                                                class="bi bi-star-fill"></i></label>
+                                                        <input type="radio" id="star5{{ $bookingItem->id }}"
+                                                            name="rating" value="5" />
+                                                        <label for="star5{{ $bookingItem->id }}" title="Sangat Bagus"><i
+                                                                class="bi bi-star-fill"></i></label>
                                                     </div>
-                                                    <div class="form-group">
+                                                    <div class="form-group mt-4">
                                                         <label for="feedback">Ulasan</label>
-                                                        <textarea class="form-control" id="feedback" name="feedback" rows="3"></textarea>
+                                                        <textarea class="form-control" id="feedback{{ $bookingItem->id }}" name="feedback" rows="3"></textarea>
                                                     </div>
-                                                    <button type="submit" class="btn btn-primary mt-3">Submit</button>
-                                                </form>
-                                            </div>
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-secondary"
+                                                        data-dismiss="modal">Batal</button>
+                                                    <button type="submit" class="btn btn-primary">Submit</button>
+                                                </div>
+                                            </form>
                                         </div>
                                     </div>
                                 </div>
-
-                                <script>
-                                    $(document).ready(function() {
-                                        $('#exampleModal').modal('show');
-                                    });
-                                </script>
                             </div>
                         @endif
                         {{-- tanpa if --}}

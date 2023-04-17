@@ -23,7 +23,7 @@
             </div>
             <div class="row pt-1">
                 <div class="col text-start">
-                    Rating
+                    ★ {{ number_format($tempat->jumlah_rating, 1 ,'.') }}
                 </div>
                 <div class="col text-center">
                     <p class="fs-5">{{ $tempat->alamat }}</p>

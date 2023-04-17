@@ -88,7 +88,6 @@ class RiwayatController extends Controller
             Alert::error('Gagal', 'Anda sudah memberikan rating');
             return redirect()->back();
         }
-        $booking = booking::find($id);
         $booking->rating = $request->rating;
         $booking->feedback = $request->feedback;
         $booking->update();
@@ -97,5 +96,26 @@ class RiwayatController extends Controller
         Alert::success('Success', 'Rating berhasil diberikan');
         return redirect('/riwayat');
     }
+    //error
+    // public function store(Request $request,$id){
+    //     $booking = booking::find($id);
+    //     $tempat = tempat::find($booking->tempat_id);
+    //     $validateData = $request->validate([
+    //         'rating' => 'required',
+    //         'feedback' => 'nullable'
+    //     ]);
+    //     if($booking->rating != null){
+    //         Alert::error('Gagal', 'Anda sudah memberikan rating');
+    //         return redirect()->back();
+    //     }
+    //     $booking = booking::find($id);
+    //     $booking->rating = $request->rating;
+    //     $booking->feedback = $request->feedback;
+    //     $booking->update();
+    //     $tempat->jumlah_rating = ($tempat->jumlah_rating + $request->rating)/2;
+    //     $tempat->update();
+    //     Alert::success('Success', 'Rating berhasil diberikan');
+    //     return redirect('/riwayat');
+    // }
 
 }
