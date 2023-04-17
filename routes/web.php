@@ -38,8 +38,6 @@ Route::delete('/hapus/{id}', [AdminController::class, 'destroy'])->name('admin.d
 Route::delete('/riwayat/{id}', [RiwayatController::class, 'destroy'])->name('history.destroy');
 Route::get('/ganti/{id}', [RiwayatController::class, 'indexGanti'])->name('history.ganti');
 Route::post('/ganti/{id}', [RiwayatController::class, 'ganti'])->name('ganti.store');
-Route::get('/rating', function () {
-    return view('tes/rating');
-});
+Route::post('/rating/{id}', [RiwayatController::class, 'rating'])->name('rating.store');
 
 

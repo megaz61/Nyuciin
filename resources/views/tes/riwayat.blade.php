@@ -117,7 +117,7 @@
                 </div>
             </form>
         </div>
-    @elseif (date('H:i') > date('H:i', strtotime($booking->booking_time . '+15 minutes')))
+    {{-- @elseif (date('H:i') > date('H:i', strtotime($booking->booking_time . '+15 minutes'))) --}}
         <div class="col-md-3">
             <div class="row mx-4">
                 <!-- Button trigger modal -->
@@ -136,7 +136,7 @@
                             </button>
                         </div>
                         <div class="modal-body">
-                            <form action="" method="POST">
+                            <form action="{{ route('rating.store', $booking->id) }}" method="POST">
                                 @csrf
                                 <div class="rating-css">
                                     <input type="radio" id="star5" name="rating" value="5" />
