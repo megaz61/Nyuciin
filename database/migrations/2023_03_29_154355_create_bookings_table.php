@@ -19,7 +19,7 @@ return new class extends Migration
             $table->date('tanggal');
             $table->string('telpon');
             $table->time('booking_time');
-            $table->double('rating')->nullable();
+            $table->tinyInteger('rating')->nullable();
             $table->string('feedback')->nullable();
             $table->timestamps();
         });

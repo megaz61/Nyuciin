@@ -91,31 +91,17 @@ class RiwayatController extends Controller
         $booking->rating = $request->rating;
         $booking->feedback = $request->feedback;
         $booking->update();
-        $tempat->jumlah_rating = ($tempat->jumlah_rating + $request->rating)/2;
-        $tempat->update();
+        //jika jumlah rating != 0, jumlah_rating dari rating pada booking ditambahkan dengan jumlah_rating pada tempat dulu kemudian hasilnya dibagi dengan jumlah rating yang ada pada booking
+        if($tempat->jumlah_rating != 0 ){
+            $tempat->jumlah_rating = ($tempat->jumlah_rating + $booking->rating) / 2;
+            $tempat->update();
+        }
+        //jika jumlah rating == 0, maka rating pada tempat sama dengan rating pada booking
+        elseif ($tempat->jumlah_rating == 0){
+            $tempat->jumlah_rating = $booking->rating;
+            $tempat->update();
+        }
         Alert::success('Success', 'Rating berhasil diberikan');
         return redirect('/riwayat');
     }
-    //error
-    // public function store(Request $request,$id){
-    //     $booking = booking::find($id);
-    //     $tempat = tempat::find($booking->tempat_id);
-    //     $validateData = $request->validate([
-    //         'rating' => 'required',
-    //         'feedback' => 'nullable'
-    //     ]);
-    //     if($booking->rating != null){
-    //         Alert::error('Gagal', 'Anda sudah memberikan rating');
-    //         return redirect()->back();
-    //     }
-    //     $booking = booking::find($id);
-    //     $booking->rating = $request->rating;
-    //     $booking->feedback = $request->feedback;
-    //     $booking->update();
-    //     $tempat->jumlah_rating = ($tempat->jumlah_rating + $request->rating)/2;
-    //     $tempat->update();
-    //     Alert::success('Success', 'Rating berhasil diberikan');
-    //     return redirect('/riwayat');
-    // }
-
 }
