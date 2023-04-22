@@ -9,11 +9,11 @@
                     <div class="row align-items-center">
                         <div class="col-md-4 d-grid gap-3 ">
                             <h1 class="text-uppercase fw-bold text-light h1">Cucikan kendaraan anda</h1>
-                            <form action="">
-                                <input type="text" name="cari" id="cari" placeholder="Cari tempat pencucian"
+                            <form action="{{route('search')}}">
+                                <input type="search" id="search" name="search" placeholder="Cari tempat pencucian"
                                     class="form-control form-control-lg shadow fs-5" style="">
+                                <button type="submit" class="btn btn-primary shadow fs-6">Cari</button>
                             </form>
-                            <a href="{{-- url('tes/checkout/'.$data->id) --}}" class="btn btn-primary shadow fs-6">Cari</a>
                         </div>
                         <div class="col-md-2 mt-3">{{-- jarak gambar & search --}}</div>
                         <div class="col-md-6 ">

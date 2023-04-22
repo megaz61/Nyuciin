@@ -162,7 +162,7 @@
                                                         <input type="radio" id="star1{{ $bookingItem->id }}"
                                                             name="rating" value="1" />
                                                         <label for="star1{{ $bookingItem->id }}" title="Sangat Buruk"><i
-                                                                class="bi bi-star-fill"></i></label>
+                                                                class="bi bi-star-fill "></i></label>
                                                         <input type="radio" id="star2{{ $bookingItem->id }}"
                                                             name="rating" value="2" />
                                                         <label for="star2{{ $bookingItem->id }}" title="Buruk"><i
