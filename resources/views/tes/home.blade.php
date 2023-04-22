@@ -58,7 +58,13 @@
                             <div class="card-body">
                                 <div class="row mb-1">
                                     <div class="col-md-4">
-                                        <p class="card-text h5">★ {{ number_format($tempat->jumlah_rating, 1 ,'.') }}</p>
+                                        <p class="card-text h5">
+                                            @if ($tempat->jumlah_rating != 0)
+                                            ★ {{ number_format($tempat->jumlah_rating, 1 ,'.') }}
+                                            @else
+                                            ★ -
+                                            @endif
+                                        </p>
                                     </div>
                                 </div>
                                 <h2 class="card-title">{{ $tempat->nama_tempat }}</h2>
