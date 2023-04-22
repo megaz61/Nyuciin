@@ -12,7 +12,7 @@
                             <form action="{{route('search')}}">
                                 <input type="search" id="search" name="search" placeholder="Cari tempat pencucian"
                                     class="form-control form-control-lg shadow fs-5" style="">
-                                <button type="submit" class="btn btn-primary shadow fs-6">Cari</button>
+                                <button type="submit" class="mt-3 btn btn-primary form-control shadow fs-6">Cari</button>
                             </form>
                         </div>
                         <div class="col-md-2 mt-3">{{-- jarak gambar & search --}}</div>
