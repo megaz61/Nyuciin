@@ -2,6 +2,7 @@
 @section('title', 'Home')
 @section('menuHome', 'active')
 @section('content')
+@include('sweetalert::alert')
     <div class="container-fluid mt-5">
         <div class="row">
             <div class="col-md-12 mt-2" style="background-color: #143F41">
@@ -9,7 +10,7 @@
                     <div class="row align-items-center">
                         <div class="col-md-4 d-grid gap-3 ">
                             <h1 class="text-uppercase fw-bold text-light h1">Cucikan kendaraan anda</h1>
-                            <form action="{{route('search')}}">
+                            <form action="{{ route('search') }}">
                                 <input type="search" id="search" name="search" placeholder="Cari tempat pencucian"
                                     class="form-control form-control-lg shadow fs-5" style="">
                                 <button type="submit" class="mt-3 btn btn-primary form-control shadow fs-6">Cari</button>
@@ -28,6 +29,22 @@
     </div>
     <div class="main container-fluid mt-5">
         <h1 class="text-center">Daftar Tempat Cuci Kendaraan</h1>
+
+        <form action="{{ route('filter') }}">
+            <div class="row row-cols-md-4">
+                <div class="col-mb-4">
+                    <label for="value">Filter by</label>
+                    <select name="value" id="value" class="form-select">
+                        <option value="">Select Status</option>
+                        <option value="jumlah_rating">Jumlah Rating</option>
+                        <option value="terbaru">Terbaru</option>
+                    </select>
+                </div>
+                <div class="col-mb-4 mt-4">
+                    <button type="submit" class="btn btn-success">Filter</button>
+                </div>
+            </div>
+        </form>
 
         {{--
         <div class="col-md-4">
@@ -54,15 +71,16 @@
                 @foreach ($tempats as $tempat)
                     <div class="col mb-4">
                         <div class="card h-100 shadow">
-                            <img src="{{ url('storage') }}/{{ $tempat->gambar }}" class="card-img-top h-50 img-fluid" alt="...">
+                            <img src="{{ url('storage') }}/{{ $tempat->gambar }}" class="card-img-top h-50 img-fluid"
+                                alt="...">
                             <div class="card-body">
                                 <div class="row mb-1">
                                     <div class="col-md-4">
                                         <p class="card-text h5">
                                             @if ($tempat->jumlah_rating != 0)
-                                            ★ {{ number_format($tempat->jumlah_rating, 1 ,'.') }}
+                                                ★ {{ number_format($tempat->jumlah_rating, 1, '.') }}
                                             @else
-                                            ★ -
+                                                ★ -
                                             @endif
                                         </p>
                                     </div>
@@ -76,7 +94,7 @@
                                 </div>
                             </div>
                             <div class="card-footer">
-                                <a href="{{url('detail/'.$tempat->id)}}" class="btn btn-primary">Booking</a>
+                                <a href="{{ url('detail/' . $tempat->id) }}" class="btn btn-primary">Booking</a>
                             </div>
                         </div>
                     </div>

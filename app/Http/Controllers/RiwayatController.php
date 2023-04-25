@@ -92,15 +92,15 @@ class RiwayatController extends Controller
         $booking->feedback = $request->feedback;
         $booking->update();
         //jika jumlah rating != 0, jumlah_rating dari rating pada booking ditambahkan dengan jumlah_rating pada tempat dulu kemudian hasilnya dibagi dengan jumlah rating yang ada pada booking
-        if($tempat->jumlah_rating != 0 ){
-            $tempat->jumlah_rating = ($tempat->jumlah_rating + $booking->rating) / 2;
-            $tempat->update();
-        }
+        // if($tempat->jumlah_rating != 0 ){
+        //     $tempat->jumlah_rating = ($tempat->jumlah_rating + $booking->rating) / 2;
+        //     $tempat->update();
+        // }
         //jika jumlah rating == 0, maka rating pada tempat sama dengan rating pada booking
-        elseif ($tempat->jumlah_rating == 0){
-            $tempat->jumlah_rating = $booking->rating;
-            $tempat->update();
-        }
+        // elseif ($tempat->jumlah_rating == 0){
+        //     $tempat->jumlah_rating = $booking->rating;
+        //     $tempat->update();
+        // }
         Alert::success('Success', 'Rating berhasil diberikan');
         return redirect('/riwayat');
     }

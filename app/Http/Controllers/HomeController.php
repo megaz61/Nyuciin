@@ -42,5 +42,23 @@ class HomeController extends Controller
         }
         return view('/tes/home', compact('tempats'));
     }
+    public function filter(Request $request){
+        // jika request value adalah jumlah_rating, maka akan diurutkan berdasarkan jumlah_rating
+        // jika request value adalah jumlah, maka akan diurutkan berdasarkan booking terbanyak atau id booking pada tempat terbanyak
+        // jika request value adalah terbaru, maka akan diurutkan berdasarkan tanggal terbaru
+        if($request->input('value') === 'jumlah_rating'){
+            $tempats = tempat::orderBy('jumlah_rating', 'desc')->paginate(10);
+        }
+        // elseif($request->input('value') === 'jumlah') {
+        //     $tempats = Tempat::withCount('bookings')->orderBy('bookings_count', 'desc')->paginate(10);
+        // }
+        elseif($request->input('value') === 'terbaru') {
+            $tempats = tempat::latest()->paginate(10);
+        } else {
+            $tempats = tempat::paginate(10);
+        }
+        return view('tes.home', compact('tempats'));
+    }
+
 
 }

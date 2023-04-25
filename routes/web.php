@@ -41,5 +41,5 @@ Route::post('/ganti/{id}', [RiwayatController::class, 'ganti'])->name('ganti.sto
 Route::post('/rating/{id}', [RiwayatController::class, 'rating'])->name('rating.store');
 Route::get('/search', [HomeController::class, 'search'])->name('search');
 // Route::post('/rating/store/{id}', [RiwayatController::class, 'store'])->name('rating.store');
-
+Route::get('/filter', [HomeController::class, 'filter'])->name('filter');
 
