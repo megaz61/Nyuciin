@@ -1,11 +1,11 @@
 @extends('layout.admin')
-@section('dashboard', 'active')
+@section('profile', 'active')
 @section('content')
 
     <div class="content-start transition">
         <div class="container-fluid dashboard">
             <div class="content-header">
-                <h4>Hi, (nama pengguna)!</h4>
+                <h4>Hi, {{$user->nama}} !</h4>
                 <p>Change information about yourself on this page</p>
             </div>
 
@@ -28,33 +28,29 @@
                     </div>
 
                     <div class="card-body">
-                        <form method="POST" accept="my-profile.html">
+                        <form action="{{route('profile.update', $user->id)}}" method="POST">
+                            @csrf
                             <div class="row">
                                 <div class="mb-3 col-md-6">
-                                    <label for="firstName" class="form-label">First Name</label>
-                                    <input class="form-control" type="text" id="firstName" name="firstName"
-                                        value="Andree" autofocus />
+                                    <label for="nama" class="form-label">Nama Lengkap</label>
+                                    <input class="form-control" type="text" id="nama" name="nama"
+                                        value="{{$user->nama}}" autofocus />
                                 </div>
 
                                 <div class="mb-3 col-md-6">
-                                    <label for="lastName" class="form-label">Last Name</label>
-                                    <input class="form-control" type="text" name="lastName" id="lastName"
-                                        value="Doe" />
+                                    <label for="telpon" class="form-label">Nomor Telpon</label>
+                                    <?php $telp = intval($user->telpon); ?>
+                                    <input class="form-control" type="tel" name="telpon" id="telpon" value="0{{ $telp }}" />
                                 </div>
+
                                 <div class="mb-3 col-md-6">
                                     <label for="email" class="form-label">E-mail</label>
                                     <input class="form-control" type="text" id="email" name="email"
-                                        value="Andree@example.com" placeholder="Andree@example.com" />
-                                </div>
-                                <div class="mb-3 col-md-6">
-                                    <label for="organization" class="form-label">Organization</label>
-                                    <input type="text" class="form-control" id="organization" name="organization"
-                                        value="AtranaTheme" />
+                                        value="{{$user->email}}" placeholder="" />
                                 </div>
 
                                 <div class="mt-2">
                                     <button type="submit" class="btn btn-primary me-2">Save changes</button>
-                                    <button type="reset" class="btn btn-outline-secondary">Cancel</button>
                                 </div>
                         </form>
                     </div>

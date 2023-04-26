@@ -70,4 +70,23 @@ class AdminController extends Controller
         Alert::success('Success', 'Data Berhasil Diubah');
         return redirect('/tes/admin/index');
     }
+    public function profile(){
+        $user = User::find(Auth::user()->id);
+        return view('/tes/admin/profile', compact('user'));
+    }
+    public function updateProfile(Request $request, $id){
+        $validate = $request->validate([
+            'nama' => 'required',
+            'email' => 'required',
+            'telpon' => 'required',
+        ]);
+        $user = user::find($id);
+        $user->nama = $request->nama;
+        $user->email = $request->email;
+        $user->telpon = $request->telpon;
+        $user->update();
+        Alert::success('Success', 'Data Berhasil Diubah');
+        return view('/tes/admin/profile', compact('user'));
+    }
+
 }

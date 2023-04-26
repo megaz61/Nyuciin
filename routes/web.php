@@ -46,7 +46,9 @@ Route::get('/search', [HomeController::class, 'search'])->name('search');
 // Route::post('/rating/store/{id}', [RiwayatController::class, 'store'])->name('rating.store');
 Route::get('/filter', [HomeController::class, 'filter'])->name('filter');
 
+Route::get('/profile', [AdminController::class, 'profile'])->name('profile')->middleware('auth');
+Route::post('/profile/{id}', [AdminController::class, 'updateProfile'])->name('profile.update');
 
-Route::get('/profile', function () {
-    return view('tes.admin.profile');
-})->name('profile');
+// Route::get('/profile', function () {
+//     return view('tes.admin.profile');
+// })->name('profile');

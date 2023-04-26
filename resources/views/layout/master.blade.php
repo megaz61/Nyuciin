@@ -56,42 +56,64 @@
                         <li class="nav-item">
                             <a class="nav-link @yield('Riwayat') home" href="{{ route('history') }}">Riwayat</a>
                         </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link" href="#" id="navbarDropdown" role="button"
-                                data-bs-toggle="dropdown" aria-expanded="false">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30"
-                                    fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
-                                    <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
-                                    <path fill-rule="evenodd"
-                                        d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z" />
-                                </svg>
-                            </a>
-                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="{{ route('profile') }}"><i
-                                        class="fa fa-user size-icon-1"></i> <span>My
-                                        Profil</span></a>
-                                <a class="dropdown-item" href="{{ route('history') }}"><i
-                                        class="fa fa-cog size-icon-1"></i>
-                                    <span>Riwayat</span></a>
-                                <hr class="dropdown-divider">
-                                @if (Auth::check())
-                                <form method="POST" action="{{ url('/logout') }}">
-                                    {{ csrf_field() }}
-                                    <a class="dropdown-item text-danger" href="#"><i
-                                            class="fa fa-sign-out-alt  size-icon-1"></i>
-                                        <span>Keluar</span></a>
-                                </form>
-                            </ul>
-                        </li>
-                    </ul>
-                </div>
-            @else
-                <li class="nav-item">
-                    <a class="nav-link text-white" href="/login"><i class="bi bi-box-arrow-right"></i> Login</a>
-                </li>
-            @endauth
-            </ul>
-        </div>
+                        @if (Auth::check() && auth()->user()->is_admin == null)
+                            <li class="nav-item dropdown">
+                                <a class="nav-link" href="#" id="navbarDropdown" role="button"
+                                    data-bs-toggle="dropdown" aria-expanded="false">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30"
+                                        fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
+                                        <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
+                                        <path fill-rule="evenodd"
+                                            d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z" />
+                                    </svg>
+                                </a>
+                                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="{{ route('profile') }}">
+                                        <i class="bi bi-person-bounding-box "></i> <span> My Profil</span>
+                                    </a>
+                                    <a class="dropdown-item" href="{{ route('history') }}"><i
+                                            class="bi bi-layout-text-sidebar-reverse"></i><span> Riwayat</span></a>
+                                    <hr class="dropdown-divider">
+                                    <form method="POST" action="{{ url('/logout') }}">
+                                        @csrf
+                                        <button type="submit" class="dropdown-item">
+                                            <i class="bi bi-box-arrow-left"></i> <span>Keluar</span>
+                                        </button>
+                                    </form>
+                                </ul>
+                            </li>
+                            @elseif (Auth::check() && auth()->user()->is_admin != null)
+                            <li class="nav-item dropdown">
+                                <a class="nav-link" href="#" id="navbarDropdown" role="button"
+                                    data-bs-toggle="dropdown" aria-expanded="false">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30"
+                                        fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
+                                        <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
+                                        <path fill-rule="evenodd"
+                                            d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z" />
+                                    </svg>
+                                </a>
+                                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="{{ route('admin') }}">
+                                        <i class="bi bi-person-bounding-box "></i> <span> Dashboard</span>
+                                    </a>
+                                    <hr class="dropdown-divider">
+                                    <form method="POST" action="{{ url('/logout') }}">
+                                        @csrf
+                                        <button type="submit" class="dropdown-item">
+                                            <i class="bi bi-box-arrow-left"></i> <span>Keluar</span>
+                                        </button>
+                                    </form>
+                                </ul>
+                            </li>
+                        @else
+                            <li class="nav-item">
+                                <a class="nav-link text-white" href="/login"><i class="bi bi-box-arrow-right"></i>
+                                    Login</a>
+                            </li>
+                        @endauth
+                </ul>
+            </div>
     </nav>
 </div>
 
