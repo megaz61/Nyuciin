@@ -104,7 +104,7 @@
                         <img src="asset/images/avatar/avatar-1.png" alt="">
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="my-profile.html"><i class="fa fa-user size-icon-1"></i> <span>My
+                        <a class="dropdown-item" href="{{ route('profile') }}"><i class="fa fa-user size-icon-1"></i> <span>My
                                 Profile</span></a>
                         <a class="dropdown-item" href="settings.html"><i class="fa fa-cog size-icon-1"></i>
                             <span>Settings</span></a>
