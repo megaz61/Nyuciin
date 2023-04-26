@@ -13,15 +13,7 @@
              <!-- Notif -->
     <div class="container-md-5">
         <div class="content row mt-3" id="about">
-            @if ($errors->any())
-                <div class="alert alert-danger">
-                    <ul class="mb-0">
-                        @foreach ($errors->all() as $error)
-                            <li>{{ $error }}</li>
-                        @endforeach
-                    </ul>
-                </div>
-            @endif
+
             <!--alert berhasil daftar-->
             @if (session()->has('success'))
                 <div class="alert alert-success alert-dismissible fade show" role="alert">
@@ -38,19 +30,29 @@
             </div>
         </div>
         <div class="col-md-6">
-            <form action="" method="post" enctype="multipart/form-data">
+            <form action="{{route('update.Tempat', $tempat->id)}}" method="post" enctype="multipart/form-data">
                 @csrf
+                @if ($errors->any())
+                <div class="alert alert-danger">
+                    <ul class="mb-0">
+                        @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+            @endif
                 <div class="form-group mt-5">
                     <label for="">Nama Tempat</label>
                     <input type="text" class="form-control" @error('nama_tempat') is-invalid @enderror
-                        name="nama_tempat" id="nama_tempat" placeholder="{{$tempat->nama_tempat}}" autofocus
-                        value="{{ old('nama_lengkap') }}">
+                        name="nama_tempat" id="nama_tempat" placeholder="" autofocus
+                        value="{{$tempat->nama_tempat}}">
+
                 </div>
                 <div class="form-group mt-4">
                     <label for="">Alamat</label>
                     <input type="text" id="alamat" class="form-control" name="alamat"
-                        placeholder="{{$tempat->alamat}}" @error('alamat') is-invalid @enderror
-                        value="{{ old('alamat') }}">
+                        placeholder="" @error('alamat') is-invalid @enderror
+                        value="{{$tempat->alamat}}">
                 </div>
                 <div class="form-group mt-4">
                     <label for="opening_time">Jam Buka</label>
@@ -64,14 +66,14 @@
                     <label for="">List Harga</label>
                     <textarea type="text-field" class="text-secondary form-control preseveLine"
                         @error('list_harga') is-invalid @enderror name="list_harga" id="list_harga"
-                        value="{{ old('list_harga') }}">Contoh: a. Paket 1 : 50.000 - 100.000
+                        value="">{{ $tempat->list_harga }}
                     </textarea>
                 </div>
                 <div class="form-group mt-4">
                     <label for="">Keterangan</label>
                     <textarea type="text-field" class="text-secondary form-control"
                         @error('keterangan') is-invalid @enderror name="keterangan" id="keterangan"
-                         autofocus value="{{ old('keterangan') }}">Masukkan Keterangan tempat
+                         autofocus value=""> {{ $tempat->keterangan}}
                     </textarea>
                 </div>
                 <div class="form-group mt-4">
@@ -83,7 +85,7 @@
                 <div class="row">
                     <div class="d-grid">
                         <a href="{{ url()->previous() }}" class="btn btn-danger">Cancel</a>
-                        <button type="submit" class="btn btn-success">booking</button>
+                        <button type="submit" class="btn btn-success">Submit</button>
                     </div>
                 </div>
                 <br>
