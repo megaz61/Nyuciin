@@ -89,14 +89,14 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        @foreach ($booking as $b )
+                                        @foreach ($booking as $booking )
                                             <tr>
-                                                <td>{{ $b->id }}</td>
-                                                <td>{{ $b->nama_lengkap}}</td>
-                                                <td>{{ $b->user->email}}</td>
-                                                <td>{{ $b->tanggal}}</td>
-                                                <td>{{ $b->booking_time}}</td>
-                                                <td>{{ $b->telpon}}</td>
+                                                <td>{{ $booking->id }}</td>
+                                                <td>{{ $booking->nama_lengkap}}</td>
+                                                <td>{{ $booking->user->email}}</td>
+                                                <td>{{ $booking->tanggal}}</td>
+                                                <td>{{ $booking->booking_time}}</td>
+                                                <td>{{ $booking->telpon}}</td>
                                                 <td>
                                                     <form action="{{ route('admin.destroy', $booking->id) }}" method="POST">
                                                         @csrf
@@ -120,9 +120,6 @@
                                             <th scope="col">Alamat</th>
                                             <th scope="col">Jam Buka</th>
                                             <th scope="col">Jam Tutup</th>
-                                            <th scope="col">List Harga</th>
-                                            <th scope="col">Keterangan</th>
-                                            <th scope="col">Edit</th>
                                             <th scope="col">Hapus</th>
                                         </tr>
                                     </thead>
@@ -132,21 +129,15 @@
                                                 <td>{{ $tempat->id }}</td>
                                                 <td>{{ $tempat->nama_tempat}}</td>
                                                 <td>{{ $tempat->alamat}}</td>
-                                                <td>{{ $tempat->opening_time}}</td>
-                                                <td>{{ $tempat->colsing_time}}</td>
-                                                <td>{{ $tempat->list_harga}}</td>
-                                                <td>{{ $tempat->keterangan}}</td>
+                                                <td>{{ \Carbon\Carbon::parse($tempat->opening_time)->format('H:i') }}</td>
+                                                <td>{{ \Carbon\Carbon::parse($tempat->closing_time)->format('H:i') }}</td>
                                                 <td>
-                                                    <form action="">
-                                                        <button type="submit" class="btn btn-primary"></button>
-                                                    </form>
-                                                </td>
-                                                <td>
-                                                    <form action="{{ route('admin.destroy', $booking->id) }}" method="POST">
+                                                    <form action="{{ route('admin.destroyTempat', $tempat->id) }}" method="POST">
                                                         @csrf
                                                         @method('DELETE') {{-- tambahkan method DELETE --}}
                                                         <button type="submit" class="btn btn-danger" onclick="return confirm('Apakah Anda yakin ingin menghapus?')">Hapus</button>
-                                                    </form>
+                                                    </form>''
+                                                </td>
                                             </tr>
                                         @endforeach
                                     </tbody>

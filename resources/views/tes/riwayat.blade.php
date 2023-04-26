@@ -112,7 +112,7 @@
                                 </div>
                             </div>
                         </div>
-                        @if (date('H:i') < $bookingItem->booking_time && date('Y-m-d ') == $bookingItem->tanggal)
+                        @if (date('H:i') < $bookingItem->booking_time && date('Y-m-d') == $bookingItem->tanggal)
                             <div class="col-md-3">
                                 <div class="row mx-4">
                                     <a href="{{ url('ganti/' . $bookingItem->id) }}" class="btn btn-success mt-3">Ganti
