@@ -102,7 +102,7 @@
                                     <i class="">★ 5.0</i>
                                 </div>
                             </div>
-                            <div class="col-md">
+                            <div class="col-md mt-2">
                                 <p class="card-text opacity-75 fs-5 pt-2">{{-- {{ $user->ulasan }} --}}sabun bauk pesing,
                                     kelinci saya hilang habis cuci disini</p>
                             </div>
