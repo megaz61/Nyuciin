@@ -1,6 +1,12 @@
 @extends('layout.admin')
 @section('upTempat', 'active')
 @section('content')
+
+<style>
+    .preseveLines{
+        white-space: pre-wrap;
+    }
+</style>
     <!--Content Start-->
     <div class="content-start transition">
         <div class="container-fluid dashboard">
@@ -62,7 +68,7 @@
                                     </div>
                                     <div class="form-group">
                                         <label for="">List Harga</label>
-                                        <textarea type="text-field" class="text-secondary form-control "
+                                        <textarea type="text-field" class="text-secondary form-control preseveLine"
                                             @error('list_harga') is-invalid @enderror name="list_harga" id="list_harga"
                                             value="{{ old('list_harga') }}">Contoh: a. Paket 1 : 50.000 - 100.000
                                         </textarea>

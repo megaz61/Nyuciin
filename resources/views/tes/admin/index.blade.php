@@ -73,6 +73,7 @@
                         <div class="card-header">
                             <h4>Latest Booking</h4>
                         </div>
+                        {{-- Lastest booking --}}
                         <div class="card-body">
                             <div class="table-responsive">
                                 <table class="table table-striped">
@@ -88,14 +89,58 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        @foreach ($booking as $booking )
+                                        @foreach ($booking as $b )
                                             <tr>
-                                                <td>{{ $booking->id }}</td>
-                                                <td>{{ $booking->nama_lengkap}}</td>
-                                                <td>{{ $booking->user->email}}</td>
-                                                <td>{{ $booking->tanggal}}</td>
-                                                <td>{{ $booking->booking_time}}</td>
-                                                <td>{{ $booking->telpon}}</td>
+                                                <td>{{ $b->id }}</td>
+                                                <td>{{ $b->nama_lengkap}}</td>
+                                                <td>{{ $b->user->email}}</td>
+                                                <td>{{ $b->tanggal}}</td>
+                                                <td>{{ $b->booking_time}}</td>
+                                                <td>{{ $b->telpon}}</td>
+                                                <td>
+                                                    <form action="{{ route('admin.destroy', $booking->id) }}" method="POST">
+                                                        @csrf
+                                                        @method('DELETE') {{-- tambahkan method DELETE --}}
+                                                        <button type="submit" class="btn btn-danger" onclick="return confirm('Apakah Anda yakin ingin menghapus?')">Hapus</button>
+                                                    </form>
+                                            </tr>
+                                        @endforeach
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        {{-- tempat --}}
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table class="table table-striped">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">Id</th>
+                                            <th scope="col">Nama Tempat</th>
+                                            <th scope="col">Alamat</th>
+                                            <th scope="col">Jam Buka</th>
+                                            <th scope="col">Jam Tutup</th>
+                                            <th scope="col">List Harga</th>
+                                            <th scope="col">Keterangan</th>
+                                            <th scope="col">Edit</th>
+                                            <th scope="col">Hapus</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @foreach ($tempat as $tempat )
+                                            <tr>
+                                                <td>{{ $tempat->id }}</td>
+                                                <td>{{ $tempat->nama_tempat}}</td>
+                                                <td>{{ $tempat->alamat}}</td>
+                                                <td>{{ $tempat->opening_time}}</td>
+                                                <td>{{ $tempat->colsing_time}}</td>
+                                                <td>{{ $tempat->list_harga}}</td>
+                                                <td>{{ $tempat->keterangan}}</td>
+                                                <td>
+                                                    <form action="">
+                                                        <button type="submit" class="btn btn-primary"></button>
+                                                    </form>
+                                                </td>
                                                 <td>
                                                     <form action="{{ route('admin.destroy', $booking->id) }}" method="POST">
                                                         @csrf

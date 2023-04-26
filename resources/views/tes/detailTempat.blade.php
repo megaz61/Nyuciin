@@ -51,7 +51,7 @@
                     <h3>List Harga</h3>
                     <div>
                         <p>
-                            {{ $tempat->list_harga }}
+                            {!! nl2br(e($tempat->list_harga)) !!}
                         </p>
                     </div>
                     <a href="{{ url('booking/' . $tempat->id) }}" class="btn btn-primary">Booking</a>

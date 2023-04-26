@@ -14,7 +14,8 @@ class AdminController extends Controller
 {
     public function index(){
         $booking = booking::where('user_id',Auth::user()->id)->get();
-        return view('/tes/admin/index',compact('booking'));
+        $tempat = tempat::all();
+        return view('/tes/admin/index',compact('booking, tempat'));
     }
     public function upTempat(){
         return view('/tes/admin/upTempat');

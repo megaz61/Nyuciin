@@ -19,7 +19,7 @@ class BookingController extends Controller
         $booking = booking::where('tempat_id', $id)->get();
         // Menghitung rating yang != null
 
-        $jumlah_rating = booking::where('rating', '!=', null)->count();
+        $jumlah_rating = booking::where('tempat_id',$id)->where('rating', '!=', null)->count();
         return view('/tes/detailTempat', compact('tempat', 'booking', 'jumlah_rating'));
     }
 
