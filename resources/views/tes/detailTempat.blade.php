@@ -90,7 +90,7 @@
 
             <div class="col-md-4">
                 <div class="container-md">
-                    <h1 class="card-text text-end mt-5 pt-3">Ulasan</h1>
+                    <h1 class="card-text text-center mt-5 pt-3">Ulasan</h1>
                     <div class="card shadow mt-3 pb-3">
                         <div class="card-body">
                             <div class="row">
