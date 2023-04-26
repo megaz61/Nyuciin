@@ -17,10 +17,11 @@ class BookingController extends Controller
     {
         $tempat = tempat::find($id);
         $booking = booking::where('tempat_id', $id)->get();
+        $rating = booking::where('tempat_id', $id)->get();
         // Menghitung rating yang != null
 
         $jumlah_rating = booking::where('tempat_id',$id)->where('rating', '!=', null)->count();
-        return view('/tes/detailTempat', compact('tempat', 'booking', 'jumlah_rating'));
+        return view('/tes/detailTempat', compact('tempat', 'booking', 'jumlah_rating', 'rating'));
     }
 
     // public function index($id){

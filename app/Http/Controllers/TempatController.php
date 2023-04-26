@@ -7,15 +7,6 @@ use App\Models\tempat;
 
 class TempatController extends Controller
 {
-    public function create() {
-        return view('/tes/admin/upTempat');
-    }
-
-    public function detail(tempat $tempats){
-        $tempats = tempat::paginate(10);
-        return view('/tes/detailTempat',compact('tempats'));
-    }
-
     public function store(Request $request) {
         //https://www.sahretech.com/2021/01/cara-membuat-upload-file-ke-database.html
         //dd($request->all());

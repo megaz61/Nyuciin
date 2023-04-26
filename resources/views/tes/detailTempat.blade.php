@@ -90,12 +90,51 @@
 
             <div class="col-md-4">
                 <div class="container-md">
-                    <h1 class="card-text text-end mt-5 pt-3">Ulasan</h1>
+                    <h1 class="card-text text-center mt-5 pt-3">Ulasan</h1>
+                    @foreach ($rating as $rating )
+                    {{-- jika rating dan feedback == 0, maka diskip--}}
+                    @if ($rating->rating != null && $rating->feedback != null)
                     <div class="card shadow mt-3 pb-3">
                         <div class="card-body">
                             <div class="row">
                                 <div class="col-md-8">
-                                    <i class="bi bi-person-circle fs-5"> {{-- {{ $user->nama_lengkap }} --}} Muhammad Rieki
+                                    <i class="bi bi-person-circle fs-5">{{$rating->nama_lengkap}}</i><br>
+                                </div>
+                                <div class="col-md-4 text-end">
+                                    <i class="">★ {{ number_format($rating->rating, 1) }}</i>
+                                </div>
+                            </div>
+                            <div class="col-md mt-2">
+                                <p class="card-text opacity-75 fs-5 pt-2">{{$rating->feedback}}</p>
+                            </div>
+                        </div>
+                    </div>
+                    @elseif ($rating->rating != null && $rating->feedback == null)
+                    <div class="card shadow mt-3 pb-3">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-md-8">
+                                    <i class="bi bi-person-circle fs-5">{{$rating->nama_lengkap}}</i><br>
+                                </div>
+                                <div class="col-md-4 text-end">
+                                    <i class="">★ {{ number_format($rating->rating, 1) }}</i>
+                                </div>
+                            </div>
+                            <div class="col-md mt-2">
+                                <p class="card-text opacity-75 fs-5 pt-2">-</p>
+                            </div>
+                        </div>
+                    </div>
+                    @else
+
+                    @endif
+                    @endforeach
+
+                    {{-- <div class="card shadow mt-3 pb-3">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-md-8">
+                                    <i class="bi bi-person-circle fs-5">  Muhammad Rieki
                                         Hredaya</i><br>
                                 </div>
                                 <div class="col-md-4 text-end">
@@ -103,11 +142,11 @@
                                 </div>
                             </div>
                             <div class="col-md mt-2">
-                                <p class="card-text opacity-75 fs-5 pt-2">{{-- {{ $user->ulasan }} --}}sabun bauk pesing,
+                                <p class="card-text opacity-75 fs-5 pt-2">sabun bauk pesing,
                                     kelinci saya hilang habis cuci disini</p>
                             </div>
                         </div>
-                    </div>
+                    </div> --}}
                 </div>
             </div>
 
