@@ -73,8 +73,8 @@ class BookingController extends Controller
         $validateData['tempat_id'] = $id;
         $validateData['tanggal'] = Carbon::now();
         //jumlah_booking pada tempat bertambah 1
-        $tempat->jumlah_booking = $tempat->jumlah_booking + 1;
-        $tempat->update();
+        // $tempat->jumlah_booking = $tempat->jumlah_booking + 1;
+        // $tempat->update();
 
         booking::create($validateData);
         Alert::success('Success', 'Berhasil Booking');

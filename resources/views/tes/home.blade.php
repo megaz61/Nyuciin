@@ -29,22 +29,23 @@
     </div>
     <div class="main container-fluid mt-5">
         <h1 class="text-center">Daftar Tempat Cuci Kendaraan</h1>
-
-        <form action="{{ route('filter') }}">
-            <div class="row row-cols-md-4">
-                <div class="col-mb-4">
-                    <label for="value">Filter by</label>
-                    <select name="value" id="value" class="form-select">
-                        <option value="">Select Status</option>
-                        <option value="jumlah_rating">Jumlah Rating</option>
-                        <option value="terbaru">Terbaru</option>
-                    </select>
+        <div class="container-md mt-2">
+            <form action="{{ route('filter') }}">
+                <label for="value">Filter by</label>
+                <div class="row row-cols-md-4">
+                    <div class="col-mb-4">
+                        <select name="value" id="value" class="form-select">
+                            <option value="">Select Status</option>
+                            <option value="jumlah_rating">Jumlah Rating</option>
+                            <option value="terbaru">Terbaru</option>
+                        </select>
+                    </div>
+                    <div class="col-mb-4">
+                        <button type="submit" class="btn btn-success">Filter</button>
+                    </div>
                 </div>
-                <div class="col-mb-4 mt-4">
-                    <button type="submit" class="btn btn-success">Filter</button>
-                </div>
-            </div>
-        </form>
+            </form>
+        </div>
 
         {{--
         <div class="col-md-4">
@@ -66,7 +67,7 @@
             </div>
         </div>
         --}}
-        <div class="container mt-5">
+        <div class="container mt-3">
             <div class="row row-cols-md-4">
                 @foreach ($tempats as $tempat)
                     <div class="col mb-4">

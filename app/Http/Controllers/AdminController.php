@@ -15,7 +15,7 @@ class AdminController extends Controller
     public function index(){
         $booking = booking::where('user_id',Auth::user()->id)->get();
         $tempat = tempat::all();
-        return view('/tes/admin/index',compact('booking, tempat'));
+        return view('/tes/admin/index',compact('booking', 'tempat'));
     }
     public function upTempat(){
         return view('/tes/admin/upTempat');
@@ -23,6 +23,12 @@ class AdminController extends Controller
     public function destroy($id){
         $booking = booking::find($id);
         $booking->delete();
+        Alert::success('Success', 'Data Berhasil Dihapus');
+        return redirect('/admin');
+    }
+    public function destroyTempat($id){
+        $tempat = tempat::find($id);
+        $tempat->delete();
         Alert::success('Success', 'Data Berhasil Dihapus');
         return redirect('/admin');
     }

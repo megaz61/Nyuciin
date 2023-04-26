@@ -35,6 +35,7 @@ Route::get('/riwayat', [RiwayatController::class, 'index'])->name('history')->mi
 Route::get('/admin', [AdminController::class, 'index'])->name('admin')->middleware('auth');
 Route::get('/admin/upTempat', [AdminController::class, 'upTempat'])->name('admin.upTempat')->middleware('auth');
 Route::delete('/hapus/{id}', [AdminController::class, 'destroy'])->name('admin.destroy');
+Route::delete('/hapus2/{id}', [AdminController::class, 'destroyTempat'])->name('admin.destroyTempat');
 Route::delete('/riwayat/{id}', [RiwayatController::class, 'destroy'])->name('history.destroy');
 Route::get('/ganti/{id}', [RiwayatController::class, 'indexGanti'])->name('history.ganti');
 Route::post('/ganti/{id}', [RiwayatController::class, 'ganti'])->name('ganti.store');
