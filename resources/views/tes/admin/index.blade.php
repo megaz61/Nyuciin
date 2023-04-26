@@ -23,7 +23,7 @@
                                     $jumlah_user = App\Models\user::count();
                                     ?>
                                     <p>Jumlah User</p>
-                                    <h5>{{$jumlah_user}}</h5>
+                                    <h5>{{ $jumlah_user }}</h5>
                                 </div>
                             </div>
                         </div>
@@ -42,7 +42,7 @@
                                     $jumlah_tempat = App\Models\tempat::count();
                                     ?>
                                     <p>Jumlah Tempat Cuci</p>
-                                    <h5>{{$jumlah_tempat}}</h5>
+                                    <h5>{{ $jumlah_tempat }}</h5>
                                 </div>
                             </div>
                         </div>
@@ -61,7 +61,7 @@
                                     $jumlah_booking = App\Models\booking::count();
                                     ?>
                                     <p>Jumlah Booking</p>
-                                    <h5>{{$jumlah_booking}}</h5>
+                                    <h5>{{ $jumlah_booking }}</h5>
                                 </div>
                             </div>
                         </div>
@@ -89,54 +89,22 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        @foreach ($booking as $booking )
+                                        @foreach ($booking as $booking)
                                             <tr>
                                                 <td>{{ $booking->id }}</td>
-                                                <td>{{ $booking->nama_lengkap}}</td>
-                                                <td>{{ $booking->user->email}}</td>
-                                                <td>{{ $booking->tanggal}}</td>
-                                                <td>{{ $booking->booking_time}}</td>
-                                                <td>{{ $booking->telpon}}</td>
+                                                <td>{{ $booking->nama_lengkap }}</td>
+                                                <td>{{ $booking->user->email }}</td>
+                                                <td>{{ $booking->tanggal }}</td>
+                                                <td>{{ $booking->booking_time }}</td>
+                                                <td>{{ $booking->telpon }}</td>
                                                 <td>
-                                                    <form action="{{ route('admin.destroy', $booking->id) }}" method="POST">
+                                                    <form action="{{ route('admin.destroy', $booking->id) }}"
+                                                        method="POST">
                                                         @csrf
                                                         @method('DELETE') {{-- tambahkan method DELETE --}}
-                                                        <button type="submit" class="btn btn-danger" onclick="return confirm('Apakah Anda yakin ingin menghapus?')">Hapus</button>
+                                                        <button type="submit" class="btn btn-danger"
+                                                            onclick="return confirm('Apakah Anda yakin ingin menghapus?')">Hapus</button>
                                                     </form>
-                                            </tr>
-                                        @endforeach
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                        {{-- tempat --}}
-                        <div class="card-body">
-                            <div class="table-responsive">
-                                <table class="table table-striped">
-                                    <thead>
-                                        <tr>
-                                            <th scope="col">Id</th>
-                                            <th scope="col">Nama Tempat</th>
-                                            <th scope="col">Alamat</th>
-                                            <th scope="col">Jam Buka</th>
-                                            <th scope="col">Jam Tutup</th>
-                                            <th scope="col">Hapus</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        @foreach ($tempat as $tempat )
-                                            <tr>
-                                                <td>{{ $tempat->id }}</td>
-                                                <td>{{ $tempat->nama_tempat}}</td>
-                                                <td>{{ $tempat->alamat}}</td>
-                                                <td>{{ \Carbon\Carbon::parse($tempat->opening_time)->format('H:i') }}</td>
-                                                <td>{{ \Carbon\Carbon::parse($tempat->closing_time)->format('H:i') }}</td>
-                                                <td>
-                                                    <form action="{{ route('admin.destroyTempat', $tempat->id) }}" method="POST">
-                                                        @csrf
-                                                        @method('DELETE') {{-- tambahkan method DELETE --}}
-                                                        <button type="submit" class="btn btn-danger" onclick="return confirm('Apakah Anda yakin ingin menghapus?')">Hapus</button>
-                                                    </form>''
                                                 </td>
                                             </tr>
                                         @endforeach
@@ -147,6 +115,60 @@
                     </div>
                 </div>
 
+                {{-- tempat --}}
+                <div class="col-md-12 mt-5">
+                    <div class="card">
+                        <div class="card-header">
+                            <h4>Tempat</h4>
+                        </div>
+                        {{-- Lastest booking --}}
+                        {{-- tempat --}}
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table class="table table-striped">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col" class="text-center">Id</th>
+                                            <th scope="col" class="text-center">Nama Tempat</th>
+                                            <th scope="col" class="text-center">Alamat</th>
+                                            <th scope="col" class="text-center">Jam Buka</th>
+                                            <th scope="col" class="text-center">Jam Tutup</th>
+                                            <th scope="col" class="text-center">Edit</th>
+                                            <th scope="col" class="text-center">Hapus</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @foreach ($tempat as $tempat)
+                                            <tr>
+                                                <td class="text-center">{{ $tempat->id }}</td>
+                                                <td class="text-center">{{ $tempat->nama_tempat }}</td>
+                                                <td class="text-center">{{ $tempat->alamat }}</td>
+                                                <td class="text-center">{{ \Carbon\Carbon::parse($tempat->opening_time)->format('H:i') }}</td>
+                                                <td class="text-center">{{ \Carbon\Carbon::parse($tempat->closing_time)->format('H:i') }}</td>
+                                                <td class="text-center">
+                                                    <form action="{{ url('editTempat/' . $tempat->id) }}">
+                                                        @csrf
+                                                        <button type="submit" class="btn btn-warning"
+                                                            >Edit</button>
+                                                    </form>
+                                                </td>
+                                                <td class="text-center">
+                                                    <form action="{{ route('admin.destroyTempat', $tempat->id) }}"
+                                                        method="POST">
+                                                        @csrf
+                                                        @method('DELETE') {{-- tambahkan method DELETE --}}
+                                                        <button type="submit" class="btn btn-danger"
+                                                            onclick="return confirm('Apakah Anda yakin ingin menghapus?')">Hapus</button>
+                                                    </form>
+                                                </td>
+                                            </tr>
+                                        @endforeach
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

@@ -32,4 +32,12 @@ class AdminController extends Controller
         Alert::success('Success', 'Data Berhasil Dihapus');
         return redirect('/admin');
     }
+    public function tempat($id)
+    {
+        $tempat = tempat::find($id);
+        return view('/tes/admin/editTempat',compact('tempat'));
+    }
+    public function editTempat($id){
+
+    }
 }

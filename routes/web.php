@@ -43,4 +43,5 @@ Route::post('/rating/{id}', [RiwayatController::class, 'rating'])->name('rating.
 Route::get('/search', [HomeController::class, 'search'])->name('search');
 // Route::post('/rating/store/{id}', [RiwayatController::class, 'store'])->name('rating.store');
 Route::get('/filter', [HomeController::class, 'filter'])->name('filter');
+Route::get('/editTempat/{id}', [AdminController::class, 'tempat'])->name('edit.Tempat');
 
