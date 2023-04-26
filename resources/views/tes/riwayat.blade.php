@@ -99,7 +99,7 @@
                                 </div>
                                 <div class="col-md-7">
                                     <p class="card-text text-end opacity-75">
-                                        {{ \Carbon\Carbon::parse($bookingItem->booking_date)->format('d-m-Y') }}</p>
+                                        {{date('d-m-Y', strtotime($bookingItem->tanggal))}}</p>
                                 </div>
                             </div>
                             <div class="row align-items-center">
@@ -112,7 +112,7 @@
                                 </div>
                             </div>
                         </div>
-                        @if (date('H:i') < $bookingItem->booking_time && $bookingItem->rating == null)
+                        @if (date('H:i') < $bookingItem->booking_time && date('Y-m-d ') == $bookingItem->tanggal)
                             <div class="col-md-3">
                                 <div class="row mx-4">
                                     <a href="{{ url('ganti/' . $bookingItem->id) }}" class="btn btn-success mt-3">Ganti
@@ -133,7 +133,7 @@
                                     <p class="text-center">★ {{ number_format($bookingItem->rating, 1 ,'.') }}</p>
                                 </div>
                             </div>
-                        @elseif (date('H:i') > date('H:i', strtotime($bookingItem->booking_time . '+15 minutes')) && $bookingItem->rating == null)
+                        @elseif (date('H:i') > date('H:i', strtotime($bookingItem->booking_time . '+15 minutes')) || date('Y-m-d') > $bookingItem->tanggal)
                             <div class="col-md-3">
                                 <div class="row mx-4">
                                     <button type="button" class="btn btn-warning" data-toggle="modal"

@@ -24,6 +24,8 @@
             <div class="row pt-1">
                 <div class="col text-start">
                     ★ {{ number_format($tempat->jumlah_rating, 1 ,'.') }}
+                    {{-- menjumlah ulasan pada database booking kemudian ditampilkan --}}
+                    ({{$jumlah_rating}} ulasan)
                 </div>
                 <div class="col text-center">
                     <p class="fs-5">{{ $tempat->alamat }}</p>
