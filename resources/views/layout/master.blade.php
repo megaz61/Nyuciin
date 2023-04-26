@@ -12,17 +12,24 @@
         integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous">
     </script>
     {{-- boostrap js --}}
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+    </script>
 
     <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css">
     <style>
-    body {
-        font-family: 'Poppins';font-size: 22px;
-    }
+        body {
+            font-family: 'Poppins';
+            font-size: 22px;
+        }
     </style>
     <title>Nyuciin.</title>
 </head>
@@ -33,8 +40,9 @@
         <nav class="navbar navbar-expand-lg fixed-top" style="background-color: #143F41">
             <div class="container-fluid mb-2" style="color: white">
                 <i class="nyuci-in mt-2 ms-4 h3">Nyuci-in</i>
-                <button class="navbar-toggler navbar-dark" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <button class="navbar-toggler navbar-dark" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
+                    aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse navbar-dark" id="navbarNav">
@@ -46,18 +54,35 @@
                             <a class="nav-link @yield('listCuci') home" href="/">List Jasa Cuci</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link @yield('Riwayat') home" href="{{route('history')}}">Riwayat</a>
+                            <a class="nav-link @yield('Riwayat') home" href="{{ route('history') }}">Riwayat</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link @yield('Contact') home" href="/">Contact</a>
-                        </li>
-                        @if (Auth::check())
-                            <li class="nav-item ms-2">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link" href="#" id="navbarDropdown" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30"
+                                    fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
+                                    <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
+                                    <path fill-rule="evenodd"
+                                        d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z" />
+                                </svg>
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="{{ route('profile') }}"><i
+                                        class="fa fa-user size-icon-1"></i> <span>My
+                                        Profil</span></a>
+                                <a class="dropdown-item" href="{{ route('history') }}"><i
+                                        class="fa fa-cog size-icon-1"></i>
+                                    <span>Riwayat</span></a>
+                                <hr class="dropdown-divider">
+                                @if (Auth::check())
                                 <form method="POST" action="{{ url('/logout') }}">
                                     {{ csrf_field() }}
-                                    <button type="submit" class="btn btn-danger text-red">Logout</button>
+                                    <a class="dropdown-item text-danger" href="#"><i
+                                            class="fa fa-sign-out-alt  size-icon-1"></i>
+                                        <span>Keluar</span></a>
                                 </form>
-                            </li>
+                            </ul>
+                        </li>
                     </ul>
                 </div>
             @else

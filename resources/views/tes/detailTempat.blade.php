@@ -15,10 +15,8 @@
     }
 </style>
 
-@section('content')
+
     <div class="container-md">
-
-
         <div class="row justify-content-center  g-2">
             <div class="col-md-8">
                 <div class="container-md">

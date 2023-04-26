@@ -8,6 +8,8 @@ use App\Http\Controllers\TempatController;
 use App\Http\Controllers\BookingController;
 use App\Http\Controllers\RiwayatController;
 use App\Http\Controllers\AdminController;
+use Symfony\Component\HttpKernel\Profiler\Profile;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -43,5 +45,8 @@ Route::post('/rating/{id}', [RiwayatController::class, 'rating'])->name('rating.
 Route::get('/search', [HomeController::class, 'search'])->name('search');
 // Route::post('/rating/store/{id}', [RiwayatController::class, 'store'])->name('rating.store');
 Route::get('/filter', [HomeController::class, 'filter'])->name('filter');
-Route::get('/editTempat/{id}', [AdminController::class, 'tempat'])->name('edit.Tempat');
-Route::post('/editTempat/{id}', [AdminController::class, 'updateTempat'])->name('update.Tempat');
+
+
+Route::get('/profile', function () {
+    return view('tes.admin.profile');
+})->name('profile');
