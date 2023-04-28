@@ -16,7 +16,10 @@
             <p class="fs-1 text-center">Form Booking</p>
             <div class="col-md-6">
                 <div class="container d-flex justify-content-center ">
-                    <img src="{{ asset('gambar/booking.png') }}" class="img-fluid ">
+                    {{-- <img src="{{ asset('gambar/booking.png') }}" class="img-fluid "> --}}
+                    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+                    <lottie-player src="https://assets7.lottiefiles.com/packages/lf20_fxvz0c.json" mode="bounce" background="transparent"
+                        speed="1" class="img-fluid" loop autoplay></lottie-player>
                 </div>
             </div>
             <div class="col-md-6">

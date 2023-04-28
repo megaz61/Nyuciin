@@ -17,7 +17,7 @@ class BookingController extends Controller
     {
         $tempat = tempat::find($id);
         $booking = booking::where('tempat_id', $id)->get();
-        $rating = booking::where('tempat_id', $id)->get();
+        $rating = booking::where('tempat_id', $id)->paginate(8);
         // Menghitung rating yang != null
 
         $jumlah_rating = booking::where('tempat_id',$id)->where('rating', '!=', null)->count();

@@ -56,7 +56,10 @@
     <div class="container-fluid mt-5 pt-5">
         <h1 class="text-center">Detail Riwayat</h1>
         <div class="container d-flex justify-content-center ">
-            <img src="{{ asset('gambar/riwayat.png') }}" class="img-fluid w-25">
+            {{-- <img src="{{ asset('gambar/riwayat.png') }}" class="img-fluid w-25"> --}}
+            <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+            <lottie-player src="https://assets10.lottiefiles.com/packages/lf20_z4cshyhf.json" background="transparent"
+                speed="1" style="width: 300px; height: 300px;" loop autoplay></lottie-player>
         </div>
         <div class="container-md pt-4 ">
             @foreach ($booking as $bookingItem)
@@ -99,7 +102,7 @@
                                 </div>
                                 <div class="col-md-7">
                                     <p class="card-text text-end opacity-75">
-                                        {{date('d-m-Y', strtotime($bookingItem->tanggal))}}</p>
+                                        {{ date('d-m-Y', strtotime($bookingItem->tanggal)) }}</p>
                                 </div>
                             </div>
                             <div class="row align-items-center">
@@ -130,10 +133,11 @@
                         @elseif ($bookingItem->rating != null)
                             <div class="col-md-3">
                                 <div class="row mx-4">
-                                    <p class="text-center">★ {{ number_format($bookingItem->rating, 1 ,'.') }}</p>
+                                    <p class="text-center">★ {{ number_format($bookingItem->rating, 1, '.') }}</p>
                                 </div>
                             </div>
-                        @elseif (date('H:i') > date('H:i', strtotime($bookingItem->booking_time . '+15 minutes')) || date('Y-m-d') > $bookingItem->tanggal)
+                        @elseif (date('H:i') > date('H:i', strtotime($bookingItem->booking_time . '+15 minutes')) ||
+                                date('Y-m-d') > $bookingItem->tanggal)
                             <div class="col-md-3">
                                 <div class="row mx-4">
                                     <button type="button" class="btn btn-warning" data-toggle="modal"
@@ -150,8 +154,7 @@
                                             <form action="{{ route('rating.store', $bookingItem->id) }}" method="POST">
                                                 @csrf
                                                 <div class="modal-header">
-                                                    <h5 class="modal-title" id="ratingLabel">Nilai Tempat Cuci (Booking ID:
-                                                        {{ $bookingItem->id }})</h5>
+                                                    <h5 class="modal-title" id="ratingLabel">Nilai Tempat Cuci</h5>
                                                     <button type="button" class="close" data-dismiss="modal"
                                                         aria-label="Close">
                                                         <span aria-hidden="true">&times;</span>

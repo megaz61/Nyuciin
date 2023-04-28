@@ -91,6 +91,10 @@
             <div class="col-md-4">
                 <div class="container-md">
                     <h1 class="card-text text-center mt-5 pt-3">Ulasan</h1>
+                    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+                    <lottie-player src="https://assets6.lottiefiles.com/packages/lf20_kaabpl4e.json" background="transparent"
+                        speed="1" style="width: 300px; height: 300px;
+                        left: 50%; transform: translateX(18%);" loop autoplay></lottie-player>
                     @foreach ($rating as $rating )
                     {{-- jika rating dan feedback == 0, maka diskip--}}
                     @if ($rating->rating != null && $rating->feedback != null)
