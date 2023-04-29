@@ -14,39 +14,25 @@
                 <div class="card">
                     <div class="card-body">
                         <div class="button-wrapper form-group">
-                            <img src="" class="profile-user-img rounded-circle img-fluid mx-auto d-block" alt="">
+                            <form action="{{ route('profile.update', $user->id) }}" method="POST" enctype="multipart/form-data">
+                                @csrf
+                                {{-- gambar --}}
+                            <img src="{{asset('gambar/user.jpg')}}" class="profile-user-img rounded-circle img-fluid mx-auto" style="height: 10%; width: 10%" alt="">
                             <label for="_userAvatarfile" class="btn btn-primary me-2 mb-4" tabindex="0">
-                                <span class="d-none d-sm-block">Upload new photo</span>
+                              <span class="d-none d-sm-block">Upload new photo</span>
                             </label>
                             <i class="bx bx-upload d-block d-sm-none"></i>
-                            <input type="file" id="_userAvatarfile" class="account-file-input" name="_userAvatarfile"
-                                hidden accept="image/png, image/jpeg" />
-                            <p class="text-muted mb-0">Allowed JPG, GIF or PNG. Max size of 800K</p>
+                            <input type="file" id="_userAvatarfile" class="account-file-input" name="_userAvatarfile" hidden accept="image/png, image/jpeg" data-value-type="file" />
+                            <p class="text-muted mb-0 mt-3">Allowed JPG, GIF or PNG. Max size of 800K</p>
                             <div class="image-previewer"></div>
-                            <script>
-                                $('#_userAvatarfile').ijaboCropTool({
-                                    processUrl: '{{ route("user.crop") }}',
-                                    withCSRF: ['{{ csrf_token() }}'],
-                                    onSuccess: function (message, element, status) {
-                                        alert(message);
-                                    },
-                                    onError: function (message, element, status) {
-                                        alert(message);
-                                    }
-                                });
-                            </script>
-                        </div>
-                    </div>
-                    <div class="card-body">
-                        <form action="{{ route('profile.update', $user->id) }}" method="POST" enctype="multipart/form-data">
-                            @csrf
-                            <div class="row">
+                            <div class="row mt-5">
                                 <div class="mb-3 col-md-6">
                                     <label for="nama" class="form-label">Nama Lengkap</label>
                                     <input class="form-control" type="text" id="nama" name="nama"
                                         value="{{ $user->nama }}" autofocus />
                                 </div>
 
+                                {{-- isi data --}}
                                 <div class="mb-3 col-md-6">
                                     <label for="telpon" class="form-label">Nomor Telpon</label>
                                     <?php $telp = intval($user->telpon); ?>
@@ -66,6 +52,7 @@
                             </div>
                         </form>
                     </div>
+                </div>
                 </div>
 
             <div class="card mt-3">

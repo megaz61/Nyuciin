@@ -51,7 +51,7 @@ Route::post('editTempat/{id}', [AdminController::class, 'updateTempat'])->name('
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [AdminController::class, 'profile'])->name('profile');
     Route::post('/profile/{id}', [AdminController::class, 'updateProfile'])->name('profile.update');
-    Route::post('/user/crop', [AdminController::class, 'crop'])->name('user.crop');
+    // Route::post('/user/crop', [AdminController::class, 'crop'])->name('user.crop');
 });
 
 // Route::get('/profile', function () {

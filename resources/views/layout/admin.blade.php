@@ -25,8 +25,8 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css">
 
 <link rel="stylesheet" href="{{asset('ijaboCropTool/ijaboCropTool.min.css')}}">
-<script src="{{asset('ijaboCropTool/jquery-1.7.1.min.js')}}"></script>
-<script src="{{asset('ijaboCropTool/ijaboCropTool.min.js')}}"></script>
+{{-- <script src="{{asset('ijaboCropTool/jquery-1.7.1.min.js')}}"></script>
+<script src="{{asset('ijaboCropTool/ijaboCropTool.min.js')}}"></script> --}}
 
 
     <!-- Apexcharts  CSS -->

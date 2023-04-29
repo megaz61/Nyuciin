@@ -54,12 +54,14 @@
 @section('content')
     @include('sweetalert::alert')
     <div class="container-fluid mt-5 pt-5">
-        <h1 class="text-center">Detail Riwayat</h1>
-        <div class="container d-flex justify-content-center ">
+        <div class="container d-flex justify-content-center">
             {{-- <img src="{{ asset('gambar/riwayat.png') }}" class="img-fluid w-25"> --}}
             <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
             <lottie-player src="https://assets10.lottiefiles.com/packages/lf20_z4cshyhf.json" background="transparent"
                 speed="1" style="width: 300px; height: 300px;" loop autoplay></lottie-player>
+        </div>
+        <div class="container d-flex justify-content-center">
+            <h2>Detail Riwayat</h2>
         </div>
         <div class="container-md pt-4 ">
             @foreach ($booking as $bookingItem)
