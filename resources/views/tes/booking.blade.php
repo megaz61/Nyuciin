@@ -13,7 +13,7 @@
             </div>
         @endif
         <div class="row align-items-center">
-            <p class="fs-1 text-center">Form Booking</p>
+            <p class="fs-1 text-center ">Form Booking</p>
             <div class="col-md-6">
                 <div class="container d-flex justify-content-center ">
                     {{-- <img src="{{ asset('gambar/booking.png') }}" class="img-fluid "> --}}
