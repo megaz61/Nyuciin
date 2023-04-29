@@ -45,9 +45,14 @@ Route::post('/rating/{id}', [RiwayatController::class, 'rating'])->name('rating.
 Route::get('/search', [HomeController::class, 'search'])->name('search');
 // Route::post('/rating/store/{id}', [RiwayatController::class, 'store'])->name('rating.store');
 Route::get('/filter', [HomeController::class, 'filter'])->name('filter');
+Route::get('editTempat/{id}', [AdminController::class, 'tempat']);
+Route::post('editTempat/{id}', [AdminController::class, 'updateTempat'])->name('update.tempat');
 
-Route::get('/profile', [AdminController::class, 'profile'])->name('profile')->middleware('auth');
-Route::post('/profile/{id}', [AdminController::class, 'updateProfile'])->name('profile.update');
+Route::middleware('auth')->group(function () {
+    Route::get('/profile', [AdminController::class, 'profile'])->name('profile');
+    Route::post('/profile/{id}', [AdminController::class, 'updateProfile'])->name('profile.update');
+    Route::post('/user/crop', [AdminController::class, 'crop'])->name('user.crop');
+});
 
 // Route::get('/profile', function () {
 //     return view('tes.admin.profile');

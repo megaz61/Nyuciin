@@ -77,16 +77,35 @@ class AdminController extends Controller
     public function updateProfile(Request $request, $id){
         $validate = $request->validate([
             'nama' => 'required',
-            'email' => 'required',
-            'telpon' => 'required',
+            'email' => 'required|email|unique:users,email,'.$id,
+            'telpon' => 'required|numeric',
         ]);
-        $user = user::find($id);
+        $user = User::find($id);
         $user->nama = $request->nama;
         $user->email = $request->email;
         $user->telpon = $request->telpon;
-        $user->update();
+        $user->save();
         Alert::success('Success', 'Data Berhasil Diubah');
-        return view('/tes/admin/profile', compact('user'));
+        return redirect()->route('profile');
     }
-
+    public function crop(Request $request)
+    {
+        $dest ='user_image/';
+        $file = $request->file('_userAvatarfile');
+        $new_image_name ='UIMG_'.date('YmdHis').uniqid().'.jpg';
+        $move = $file->move(public_path($dest), $new_image_name);
+        if(!$move){
+            return response()->json(['status'=>false,'msg'=>'Failed to upload image']);
+        } else {
+            $UserInfo = user::find(Auth::user()->id);
+            $UserPhoto = $UserInfo->picture;
+            if($UserPhoto != ''){
+                unlink($dest.$UserPhoto);
+            }
+            $user =user::find(Auth::user()->id);
+            $user->gambar = $new_image_name;
+            $user->update();
+            return response()->json(['status'=>true,'msg'=>'Image uploaded successfully','name'=>$new_image_name]);
+        }
+    }
 }

@@ -3,26 +3,32 @@
 
 <head>
 
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <!-- Required meta tags -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <title>Nyuciin</title>
+<title>Nyuciin</title>
 
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous">
-    </script>
-    <!-- Style CSS -->
-    <link rel="stylesheet" href="{{ asset('/css/style.css') }}">
-    <!-- FontAwesome CSS-->
-    <link rel="stylesheet" href="{{ asset('/modules/fontawesome6.1.1/css/all.css') }}">
-    <!-- Boxicons CSS-->
-    <link rel="stylesheet" href="{{ asset('/modules/boxicons/css/boxicons.min.css') }}">
-    {{-- icon boostrap --}}
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css">
+<!-- Bootstrap CSS -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous">
+</script>
+<!-- Style CSS -->
+<link rel="stylesheet" href="{{ asset('/css/style.css') }}">
+<!-- FontAwesome CSS-->
+<link rel="stylesheet" href="{{ asset('/modules/fontawesome6.1.1/css/all.css') }}">
+<!-- Boxicons CSS-->
+<link rel="stylesheet" href="{{ asset('/modules/boxicons/css/boxicons.min.css') }}">
+{{-- icon boostrap --}}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css">
+
+<link rel="stylesheet" href="{{asset('ijaboCropTool/ijaboCropTool.min.css')}}">
+<script src="{{asset('ijaboCropTool/jquery-1.7.1.min.js')}}"></script>
+<script src="{{asset('ijaboCropTool/ijaboCropTool.min.js')}}"></script>
+
+
     <!-- Apexcharts  CSS -->
     {{-- <link rel="stylesheet" href="asset/modules/apexcharts/apexcharts.css"> --}}
 </head>

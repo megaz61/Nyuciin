@@ -2,60 +2,71 @@
 @section('profile', 'active')
 @section('content')
 
+
     <div class="content-start transition">
         <div class="container-fluid dashboard">
             <div class="content-header">
-                <h4>Hi, {{$user->nama}} !</h4>
+                <h4>Hi, {{ $user->nama }} !</h4>
                 <p>Change information about yourself on this page</p>
             </div>
 
             <div class="row">
                 <div class="card">
                     <div class="card-body">
-                        <div class="d-flex align-items-start align-items-sm-center  ">
-                            <img src="assets/images/avatar/avatar-1.png" alt="user-avatar" class="d-block rounded"
-                                height="100" width="100px" id="uploadedAvatar" />
-                            <div class="button-wrapper">
-                                <label for="upload" class="btn btn-primary me-2 mb-4" tabindex="0">
-                                    <span class="d-none d-sm-block">Upload new photo</span>
-                                    <i class="bx bx-upload d-block d-sm-none"></i>
-                                    <input type="file" id="upload" class="account-file-input" hidden
-                                        accept="image/png, image/jpeg" />
-                                </label>
-                                <p class="text-muted mb-0">Allowed JPG, GIF or PNG. Max size of 800K</p>
-                            </div>
+                        <div class="button-wrapper form-group">
+                            <img src="" class="profile-user-img rounded-circle img-fluid mx-auto d-block" alt="">
+                            <label for="_userAvatarfile" class="btn btn-primary me-2 mb-4" tabindex="0">
+                                <span class="d-none d-sm-block">Upload new photo</span>
+                            </label>
+                            <i class="bx bx-upload d-block d-sm-none"></i>
+                            <input type="file" id="_userAvatarfile" class="account-file-input" name="_userAvatarfile"
+                                hidden accept="image/png, image/jpeg" />
+                            <p class="text-muted mb-0">Allowed JPG, GIF or PNG. Max size of 800K</p>
+                            <div class="image-previewer"></div>
+                            <script>
+                                $('#_userAvatarfile').ijaboCropTool({
+                                    processUrl: '{{ route("user.crop") }}',
+                                    withCSRF: ['{{ csrf_token() }}'],
+                                    onSuccess: function (message, element, status) {
+                                        alert(message);
+                                    },
+                                    onError: function (message, element, status) {
+                                        alert(message);
+                                    }
+                                });
+                            </script>
                         </div>
                     </div>
-
                     <div class="card-body">
-                        <form action="{{route('profile.update', $user->id)}}" method="POST">
+                        <form action="{{ route('profile.update', $user->id) }}" method="POST" enctype="multipart/form-data">
                             @csrf
                             <div class="row">
                                 <div class="mb-3 col-md-6">
                                     <label for="nama" class="form-label">Nama Lengkap</label>
                                     <input class="form-control" type="text" id="nama" name="nama"
-                                        value="{{$user->nama}}" autofocus />
+                                        value="{{ $user->nama }}" autofocus />
                                 </div>
 
                                 <div class="mb-3 col-md-6">
                                     <label for="telpon" class="form-label">Nomor Telpon</label>
                                     <?php $telp = intval($user->telpon); ?>
-                                    <input class="form-control" type="tel" name="telpon" id="telpon" value="0{{ $telp }}" />
+                                    <input class="form-control" type="tel" name="telpon" id="telpon"
+                                        value="0{{ $telp }}" />
                                 </div>
 
                                 <div class="mb-3 col-md-6">
                                     <label for="email" class="form-label">E-mail</label>
                                     <input class="form-control" type="text" id="email" name="email"
-                                        value="{{$user->email}}" placeholder="" />
+                                        value="{{ $user->email }}" placeholder="" />
                                 </div>
-
+                                <input type="hidden" name="gambar" id="gambar" value="{{ $user->gambar }}">
                                 <div class="mt-2">
                                     <button type="submit" class="btn btn-primary me-2">Save changes</button>
                                 </div>
+                            </div>
                         </form>
                     </div>
                 </div>
-            </div>
 
             <div class="card mt-3">
                 <h5 class="card-header">Delete Account</h5>
@@ -79,8 +90,6 @@
             </div>
         </div>
     </div>
-
-
     </div> <!-- End Container -->
     </div><!-- End Content -->
 @endsection
