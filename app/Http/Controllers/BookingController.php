@@ -49,6 +49,12 @@ class BookingController extends Controller
             'booking_time' => 'required',
         ]);
 
+        //jika jam booking sudah lewat dengan jam saat ini maka error
+        if ($request->booking_time < Carbon::now()->format('H:i')) {
+            Alert::error('Gagal', 'Jam booking sudah lewat');
+            return redirect()->back();
+        }
+
         //Jika jam booking pada tanggal hari ini sudah ada, maka tidak bisa
         $booking = booking::where('tempat_id', $id)
             ->where('booking_time', $request->booking_time)
