@@ -88,14 +88,7 @@ Pastikan sistem Anda memiliki:
    php artisan db:seed
    ```
 
-6. **Konfigurasi API Maps (Opsional)**
-   
-   Tambahkan API key untuk Google Maps di file `.env`:
-   ```env
-   GOOGLE_MAPS_API_KEY=your_google_maps_api_key
-   ```
-
-7. **Build Assets**
+6. **Build Assets**
    ```bash
    # Compile assets
    npm run build
@@ -103,7 +96,7 @@ Pastikan sistem Anda memiliki:
    npm run dev
    ```
 
-8. **Jalankan Aplikasi**
+7. **Jalankan Aplikasi**
    ```bash
    # Start Laravel development server
    php artisan serve
