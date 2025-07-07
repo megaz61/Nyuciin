@@ -55,16 +55,7 @@ Pastikan sistem Anda memiliki:
    npm install
    ```
 
-3. **Environment Configuration**
-   ```bash
-   # Copy environment file
-   cp .env.example .env
-   
-   # Generate application key
-   php artisan key:generate
-   ```
-
-4. **Database Setup**
+3. **Database Setup**
    
    Edit file `.env` dan sesuaikan konfigurasi database:
    ```env
@@ -76,7 +67,7 @@ Pastikan sistem Anda memiliki:
    DB_PASSWORD=your_password
    ```
 
-5. **Jalankan Migrasi Database**
+4. **Jalankan Migrasi Database**
    ```bash
    # Jalankan migrasi
    php artisan migrate
@@ -85,7 +76,7 @@ Pastikan sistem Anda memiliki:
    php artisan db:seed
    ```
 
-6. **Build Assets**
+5. **Build Assets**
    ```bash
    # Compile assets
    npm run build
@@ -93,7 +84,7 @@ Pastikan sistem Anda memiliki:
    npm run dev
    ```
 
-7. **Jalankan Aplikasi**
+6. **Jalankan Aplikasi**
    ```bash
    # Start Laravel development server
    php artisan serve
