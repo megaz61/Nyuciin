@@ -16,18 +16,15 @@ Nyuciin adalah platform web yang dirancang untuk memudahkan pengguna dalam booki
 ### Fitur Utama
 
 - **📅 Booking Online**: Sistem pemesanan layanan cuci motor secara online yang mudah dan cepat
-- **🗺️ Peta Lokasi**: Fitur pencarian tempat cuci motor terdekat menggunakan peta interaktif
 - **⭐ Rating & Review**: Sistem rating dan ulasan untuk tempat cuci motor berdasarkan pengalaman pengguna
 - **👤 Manajemen Pengguna**: Sistem autentikasi dan profil pengguna
 - **💼 Dashboard Admin**: Panel administrasi untuk mengelola layanan dan pesanan
-- **📱 Responsive Design**: Tampilan yang optimal di berbagai perangkat
 
 ### Teknologi yang Digunakan
 
 - **Backend**: Laravel Framework
 - **Frontend**: HTML5, CSS3, JavaScript
 - **Database**: MySQL
-- **Maps Integration**: Google Maps API / OpenStreetMap
 - **Authentication**: Laravel Sanctum/Auth
 
 ## Instalasi
@@ -163,14 +160,7 @@ Proyek ini dibuat untuk tujuan edukasi dan pembelajaran. Silakan gunakan sebagai
 
 Jika Anda memiliki pertanyaan atau saran, silakan hubungi:
 - GitHub: [@megaz61](https://github.com/megaz61)
-- Email: [egawijaya355@gmail.com]
-
-## Acknowledgments
-
-- Laravel Framework
-- Google Maps API
-- Bootstrap
-- Dan semua library open source yang digunakan
+- Email: [ega](egawijaya355@gmail.com)
 
 ---
 
