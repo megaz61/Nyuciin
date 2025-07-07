@@ -133,9 +133,9 @@ docker-compose exec app php artisan migrate
 ## Kontribusi
 
 Proyek ini adalah hasil kerja tim dengan pembagian tugas:
-- **Full-stack Developer**: Pengembangan backend dan frontend
+- **Full-stack Developer**: Pengembangan backend dan membantu pengembangan frontend
 - **UI/UX Design**: Desain antarmuka pengguna
-- **Database Design**: Perancangan struktur database
+- **Front-End Developer**: Pengembangan Desain Website
 - **Testing**: Pengujian sistem dan fitur
 
 ## Struktur Proyek
