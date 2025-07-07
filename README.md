@@ -123,7 +123,7 @@ docker-compose exec app php artisan migrate
 
 ### Untuk Pengguna
 1. **Registrasi/Login**: Buat akun baru atau login dengan akun yang sudah ada
-2. **Cari Tempat Cuci**: Gunakan fitur peta untuk mencari tempat cuci motor terdekat
+2. **Cari Tempat Cuci**: Cari Tempat Cuci Bedasarkan Nama Tempat Cuci 
 3. **Booking Layanan**: Pilih tempat cuci dan waktu yang diinginkan
 4. **Rating & Review**: Berikan rating dan ulasan setelah menggunakan layanan
 
@@ -147,8 +147,8 @@ Proyek ini adalah hasil kerja tim dengan pembagian tugas:
 Nyuciin/
 ├── app/                 # Aplikasi Laravel
 ├── database/           # Migrasi dan seeder
-├── public/             # Assets publik
-├── resources/          # Views, CSS, JS
+├── public/             # Assets publik, CSS, JS
+├── resources/          # Views
 ├── routes/             # Routing aplikasi
 ├── storage/            # File storage
 ├── tests/              # Unit tests
