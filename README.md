@@ -160,7 +160,7 @@ Proyek ini dibuat untuk tujuan edukasi dan pembelajaran. Silakan gunakan sebagai
 
 Jika Anda memiliki pertanyaan atau saran, silakan hubungi:
 - GitHub: [@megaz61](https://github.com/megaz61)
-- Email: [ega](egawijaya355@gmail.com)
+- Email: [email](egawijaya355@gmail.com)
 
 ---
 
