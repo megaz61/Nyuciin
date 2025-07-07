@@ -1,66 +1,184 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Nyuciin - Platform Booking Cuci Motor Online
 
 <p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
+    <img src="https://img.shields.io/badge/Laravel-FF2D20?style=for-the-badge&logo=laravel&logoColor=white" alt="Laravel">
+    <img src="https://img.shields.io/badge/PHP-777BB4?style=for-the-badge&logo=php&logoColor=white" alt="PHP">
+    <img src="https://img.shields.io/badge/MySQL-005C84?style=for-the-badge&logo=mysql&logoColor=white" alt="MySQL">
+    <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black" alt="JavaScript">
+    <img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white" alt="HTML5">
+    <img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white" alt="CSS3">
 </p>
 
-## About Laravel
+## Tentang Nyuciin
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+Nyuciin adalah platform web yang dirancang untuk memudahkan pengguna dalam booking layanan cuci kendaraan, khususnya motor. Website ini dibuat sebagai bagian dari proyek kelompok selama masa kuliah, dengan fokus pada pengalaman pengguna yang mudah dan intuitif.
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+### Fitur Utama
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+- **📅 Booking Online**: Sistem pemesanan layanan cuci motor secara online yang mudah dan cepat
+- **🗺️ Peta Lokasi**: Fitur pencarian tempat cuci motor terdekat menggunakan peta interaktif
+- **⭐ Rating & Review**: Sistem rating dan ulasan untuk tempat cuci motor berdasarkan pengalaman pengguna
+- **👤 Manajemen Pengguna**: Sistem autentikasi dan profil pengguna
+- **💼 Dashboard Admin**: Panel administrasi untuk mengelola layanan dan pesanan
+- **📱 Responsive Design**: Tampilan yang optimal di berbagai perangkat
 
-## Learning Laravel
+### Teknologi yang Digunakan
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+- **Backend**: Laravel Framework
+- **Frontend**: HTML5, CSS3, JavaScript
+- **Database**: MySQL
+- **Maps Integration**: Google Maps API / OpenStreetMap
+- **Authentication**: Laravel Sanctum/Auth
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+## Instalasi
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+### Persyaratan Sistem
 
-## Laravel Sponsors
+Pastikan sistem Anda memiliki:
+- PHP >= 8.0
+- Composer
+- MySQL >= 5.7
+- Node.js & NPM
+- Git
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+### Langkah-langkah Instalasi
 
-### Premium Partners
+1. **Clone Repository**
+   ```bash
+   git clone https://github.com/megaz61/Nyuciin.git
+   cd Nyuciin
+   ```
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
+2. **Install Dependencies**
+   ```bash
+   # Install PHP dependencies
+   composer install
+   
+   # Install JavaScript dependencies
+   npm install
+   ```
 
-## Contributing
+3. **Environment Configuration**
+   ```bash
+   # Copy environment file
+   cp .env.example .env
+   
+   # Generate application key
+   php artisan key:generate
+   ```
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+4. **Database Setup**
+   
+   Edit file `.env` dan sesuaikan konfigurasi database:
+   ```env
+   DB_CONNECTION=mysql
+   DB_HOST=127.0.0.1
+   DB_PORT=3306
+   DB_DATABASE=nyuciin
+   DB_USERNAME=your_username
+   DB_PASSWORD=your_password
+   ```
 
-## Code of Conduct
+5. **Jalankan Migrasi Database**
+   ```bash
+   # Jalankan migrasi
+   php artisan migrate
+   
+   # Jalankan seeder (optional)
+   php artisan db:seed
+   ```
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+6. **Konfigurasi API Maps (Opsional)**
+   
+   Tambahkan API key untuk Google Maps di file `.env`:
+   ```env
+   GOOGLE_MAPS_API_KEY=your_google_maps_api_key
+   ```
 
-## Security Vulnerabilities
+7. **Build Assets**
+   ```bash
+   # Compile assets
+   npm run build
+   # atau untuk development
+   npm run dev
+   ```
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+8. **Jalankan Aplikasi**
+   ```bash
+   # Start Laravel development server
+   php artisan serve
+   ```
 
-## License
+   Website akan tersedia di `http://localhost:8000`
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+### Instalasi dengan Docker (Opsional)
+
+Jika Anda menggunakan Docker:
+
+```bash
+# Build dan jalankan containers
+docker-compose up -d
+
+# Install dependencies
+docker-compose exec app composer install
+
+# Jalankan migrasi
+docker-compose exec app php artisan migrate
+```
+
+## Penggunaan
+
+### Untuk Pengguna
+1. **Registrasi/Login**: Buat akun baru atau login dengan akun yang sudah ada
+2. **Cari Tempat Cuci**: Gunakan fitur peta untuk mencari tempat cuci motor terdekat
+3. **Booking Layanan**: Pilih tempat cuci dan waktu yang diinginkan
+4. **Rating & Review**: Berikan rating dan ulasan setelah menggunakan layanan
+
+### Untuk Admin
+1. **Dashboard Admin**: Akses panel admin untuk mengelola sistem
+2. **Manajemen Tempat Cuci**: Tambah, edit, atau hapus tempat cuci motor
+3. **Manajemen Booking**: Kelola pesanan dan jadwal layanan
+4. **Laporan**: Lihat statistik dan laporan penggunaan
+
+## Kontribusi
+
+Proyek ini adalah hasil kerja tim dengan pembagian tugas:
+- **Full-stack Developer**: Pengembangan backend dan frontend
+- **UI/UX Design**: Desain antarmuka pengguna
+- **Database Design**: Perancangan struktur database
+- **Testing**: Pengujian sistem dan fitur
+
+## Struktur Proyek
+
+```
+Nyuciin/
+├── app/                 # Aplikasi Laravel
+├── database/           # Migrasi dan seeder
+├── public/             # Assets publik
+├── resources/          # Views, CSS, JS
+├── routes/             # Routing aplikasi
+├── storage/            # File storage
+├── tests/              # Unit tests
+└── vendor/             # Dependencies
+```
+
+## Lisensi
+
+Proyek ini dibuat untuk tujuan edukasi dan pembelajaran. Silakan gunakan sebagai referensi untuk proyek serupa.
+
+## Kontak
+
+Jika Anda memiliki pertanyaan atau saran, silakan hubungi:
+- GitHub: [@megaz61](https://github.com/megaz61)
+- Email: [egawijaya355@gmail.com]
+
+## Acknowledgments
+
+- Laravel Framework
+- Google Maps API
+- Bootstrap
+- Dan semua library open source yang digunakan
+
+---
+
+⭐ Jika proyek ini membantu Anda, jangan lupa untuk memberikan star!
