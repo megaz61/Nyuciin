@@ -9,7 +9,7 @@
     <img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white" alt="CSS3">
 </p>
 <p align="center">
-    <img src="[https://drive.google.com/file/d/1FTMsGkdTRMzTDwSYEy1dTYChYM8gIR8v](https://drive.google.com/file/d/1FTMsGkdTRMzTDwSYEy1dTYChYM8gIR8v/view?usp=sharing)" alt="Tampilan Beranda Nyuciin" width="600"/>
+    <img src="https://drive.google.com/uc?export=view&id=1FTMsGkdTRMzTDwSYEy1dTYChYM8gIR8v" alt="Tampilan Nyuciin" width="600"/>
 </p>
 ## Tentang Nyuciin
 
