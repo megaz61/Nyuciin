@@ -8,7 +8,9 @@
     <img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white" alt="HTML5">
     <img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white" alt="CSS3">
 </p>
-
+<p align="center">
+    <img src="https://drive.google.com/uc?export=view&id=1JOx0jWNZ-fD0rNC86E6Gr3Oqg2MaNbzR" alt="Tampilan Beranda Nyuciin" width="600"/>
+</p>
 ## Tentang Nyuciin
 
 Nyuciin adalah platform web yang dirancang untuk memudahkan pengguna dalam booking layanan cuci kendaraan, khususnya motor. Website ini dibuat sebagai bagian dari proyek kelompok selama masa kuliah, dengan fokus pada pengalaman pengguna yang mudah dan intuitif.
