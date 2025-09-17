@@ -4,6 +4,12 @@ use App\Http\Controllers\SessionController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\TempatController;
+use App\Http\Controllers\BookingController;
+use App\Http\Controllers\RiwayatController;
+use App\Http\Controllers\AdminController;
+use Symfony\Component\HttpKernel\Profiler\Profile;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -19,5 +25,35 @@ Route::post('/login', [UserController::class, 'authenticate']);
 Route::post('/logout', [UserController::class, 'logout']);
 Route::get('/register', [UserController::class, 'register']);
 Route::post('/register', [UserController::class, 'store']);
-Route::get('/', [HomeController::class, 'index'])->middleware('auth');
+Route::get('/', [HomeController::class, 'index']);
 Route::get('/home', [HomeController::class, 'index']);
+Route::get('/upTempat', [TempatController::class, 'create'])->name('upTempat.create');
+Route::post('/upTempat', [TempatController::class, 'store'])->name('upTempat.store');
+Route::get('/detail/{id}', [BookingController::class, 'index']);
+Route::get('/booking/{id}', [BookingController::class, 'booking'])->middleware('auth');
+Route::get('/success/{id}', [BookingController::class, 'booking_success'])->middleware('success');
+Route::post('/booking/{id}', [BookingController::class, 'fix_booking'])->name('booking.store');
+Route::get('/riwayat', [RiwayatController::class, 'index'])->name('history')->middleware('auth');
+Route::get('/admin', [AdminController::class, 'index'])->name('admin')->middleware('auth');
+Route::get('/admin/upTempat', [AdminController::class, 'upTempat'])->name('admin.upTempat')->middleware('auth');
+Route::delete('/hapus/{id}', [AdminController::class, 'destroy'])->name('admin.destroy');
+Route::delete('/hapus2/{id}', [AdminController::class, 'destroyTempat'])->name('admin.destroyTempat');
+Route::delete('/riwayat/{id}', [RiwayatController::class, 'destroy'])->name('history.destroy');
+Route::get('/ganti/{id}', [RiwayatController::class, 'indexGanti'])->name('history.ganti');
+Route::post('/ganti/{id}', [RiwayatController::class, 'ganti'])->name('ganti.store');
+Route::post('/rating/{id}', [RiwayatController::class, 'rating'])->name('rating.store');
+Route::get('/search', [HomeController::class, 'search'])->name('search');
+// Route::post('/rating/store/{id}', [RiwayatController::class, 'store'])->name('rating.store');
+Route::get('/filter', [HomeController::class, 'filter'])->name('filter');
+Route::get('editTempat/{id}', [AdminController::class, 'tempat']);
+Route::post('editTempat/{id}', [AdminController::class, 'updateTempat'])->name('update.tempat');
+
+Route::middleware('auth')->group(function () {
+    Route::get('/profile', [AdminController::class, 'profile'])->name('profile');
+    Route::post('/profile/{id}', [AdminController::class, 'updateProfile'])->name('profile.update');
+    // Route::post('/user/crop', [AdminController::class, 'crop'])->name('user.crop');
+});
+
+// Route::get('/profile', function () {
+//     return view('tes.admin.profile');
+// })->name('profile');

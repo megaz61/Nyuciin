@@ -45,7 +45,7 @@
 
       <div class="login-1-inner">
         <div class="frame-parent">
-          <img class="frame-icon" alt="" src="{{asset('gambar/frame.svg')}}" />
+          <img class="frame-icon" alt="" src="{{asset('gambar/Mobil 1.png')}}" />
           <div class="masuk-ke-parent">
             <div class="masuk-ke">Masuk ke</div>
             <b class="nyuci-in">Nyuci-in</b>
